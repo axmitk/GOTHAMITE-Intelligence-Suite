@@ -1,101 +1,130 @@
-# GOTHAMITE | Cyber Intelligence Suite
+<div align="center">
+    <h1>GOTHAMITE INTELLIGENCE SUITE</h1>
+    <p><b>Advanced Cyber-Intelligence & Entity Resolution Platform</b></p>
+    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat-square"></a>
+    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="Status" src="https://img.shields.io/badge/status-production_ready-success.svg?style=flat-square"></a>
+    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="License" src="https://img.shields.io/badge/license-MIT-darkgray.svg?style=flat-square"></a>
+    <br><br>
+    <p>An end-to-end operational intelligence platform engineered for deep-web source monitoring, multi-factor entity resolution, and explainable intelligence correlation. GOTHAMITE transforms fragmented digital observations into a unified, actionable intelligence dossier.</p>
+    <a href="#architecture">Architecture</a> &bull; <a href="#nist-csf-integration">NIST CSF Integration</a> &bull; <a href="#core-capabilities">Core Capabilities</a> &bull; <a href="#installation-and-deployment">Installation</a>
+</div>
 
-GOTHAMITE is an end-to-end cyber-intelligence and investigation platform engineered for deep-web source monitoring, multi-factor entity resolution, and explainable intelligence correlation. Designed for analysts, GOTHAMITE transforms fragmented, multi-source digital observations into a unified, actionable intelligence dossier.
+<br>
 
-## 🎯 Core Value Proposition
+<div align="center">
+  <img src="gothamite/frontend-react/scripts/overview_rendered.png" alt="GOTHAMITE Dashboard" width="800">
+</div>
 
-* **What GOTHAMITE collects:** Multi-source cyber intelligence (Dark Web Forums, Marketplaces, Open Web, Browser Intel).
-* **What it does with the data:** Extracts, normalizes, correlates, and enriches identifiers into unified identities.
-* **What makes it different:** Transparent cross-source entity resolution, explainable confidence scoring, and dynamic 3D graph analysis.
-* **What the analyst gets:** A unified intelligence picture, risk context, evidence provenance, an investigation timeline, and a comprehensive entity dossier.
-* **How it aligns with operations:** The entire workflow is meticulously mapped to the **NIST Cybersecurity Framework (CSF)**.
+<br>
 
----
+## Architecture
 
-## 🏗️ Intelligence Pipeline Architecture
+The GOTHAMITE platform operates on a robust data-fusion pipeline designed to minimize analyst fatigue and maximize actionable intelligence. The system continuously ingests, normalizes, and scores data from multiple external vectors.
 
-The GOTHAMITE platform operates on a robust data-fusion pipeline designed to minimize analyst fatigue and maximize actionable intelligence:
+<b>SOURCE ➔ COLLECTION ➔ NORMALIZATION ➔ EXTRACTION ➔ ENRICHMENT ➔ CORRELATION ➔ ANALYSIS ➔ RISK ➔ INVESTIGATION ➔ REPORT</b>
 
-SOURCE → COLLECTION → NORMALIZATION → EXTRACTION → ENRICHMENT → CORRELATION → ANALYSIS → RISK → INVESTIGATION → REPORT
+### Data Collection Layer
+GOTHAMITE ingests intelligence through modular, autonomous collectors. It features automated Dark Web Scrapers that probe authenticated .onion forums and marketplaces, alongside a Browser Intelligence Layer that allows analysts to seamlessly capture open-web data.
 
-### 1. Data Collection & Browser Intelligence
-GOTHAMITE ingests intelligence through modular collectors:
-- **Dark Web Scrapers:** Headless autonomous collectors probing .onion forums and marketplaces.
-- **Browser Intelligence Layer:** Analyst-driven manual captures from the open web seamlessly fed into the pipeline (Parse DOM → Extract NER → Normalize → Store Evidence).
+### Entity Resolution Engine
+The core technical differentiator of the platform. The engine performs explainable identity resolution by extracting identifiers (handles, aliases, emails, domains, PGP fingerprints, and cryptocurrency wallets). It standardizes these artifacts and connects entities using temporal proximity, shared infrastructure, and deterministic identifiers, producing a transparent confidence score.
 
-### 2. Entity Resolution & Correlation Engine
-The core technical differentiator of GOTHAMITE. It performs explainable identity resolution:
-1. **Extraction:** Identifies handles, aliases, emails, domains, PGP fingerprints, and cryptocurrency wallets.
-2. **Normalization:** Standardizes artifacts (e.g., stripping spaces from PGP keys).
-3. **Correlation:** Connects entities using temporal proximity, shared infrastructure, and deterministic identifiers.
-4. **Scoring:** Calculates confidence (HIGH/MED/LOW) and maintains transparent provenance for every linkage.
+### Analytical Risk Model
+Risk is dynamically calculated as a combination of multiple intelligence signals. The analytical model directly influences entity prioritization, alert queues, and visual highlighting within the analyst workstation. 
 
-### 3. Analytical Risk Engine
-Risk is dynamically calculated as a combination of multiple intelligence signals:
-Risk = Exposure + Threat Indicators + Correlation Strength + Activity + Confidence
-This analytical model directly influences entity prioritization, alert queues, and visual highlighting in the analyst workstation.
+<br>
 
----
+## NIST CSF Integration
 
-## 🛡️ NIST-Aligned Analyst Workflow
+The GOTHAMITE user interface is designed as a professional cyber-intelligence workstation, not a generic dashboard. The investigation journey is operationally mapped directly to the National Institute of Standards and Technology (NIST) Cybersecurity Framework.
 
-The GOTHAMITE UI is designed as a professional cyber-intelligence workstation, not a generic SaaS dashboard. The investigation journey is operationally aligned with the **NIST CSF**:
+<table>
+  <tr>
+    <td width="20%"><b>IDENTIFY</b></td>
+    <td>Asset and entity discovery, threat surface mapping, and digital identity resolution queues.</td>
+  </tr>
+  <tr>
+    <td><b>DETECT</b></td>
+    <td>Continuous intelligence collection, source health monitoring, and intelligence-driven alerts.</td>
+  </tr>
+  <tr>
+    <td><b>PROTECT</b></td>
+    <td>Risk prioritization, exposure assessment, and high-value entity identification.</td>
+  </tr>
+  <tr>
+    <td><b>RESPOND</b></td>
+    <td>3D visual analysis of resolved identities, infrastructure sharing, and chronological timeline construction.</td>
+  </tr>
+  <tr>
+    <td><b>RECOVER</b></td>
+    <td>Generation of comprehensive intelligence dossiers preserving evidence provenance and investigation history.</td>
+  </tr>
+</table>
 
-* **[IDENTIFY] 01 — DISCOVER:** Asset and entity discovery, threat surface mapping, and digital identity resolution queues.
-* **[DETECT] 02 — COLLECT:** Continuous intelligence collection, source health monitoring, and intelligence-driven alerts (e.g., infrastructure changes, new credential exposures).
-* **[RESPOND] 03 — CORRELATE (Entity Graph):** 3D visual analysis of resolved identities, infrastructure sharing, and interactive relationship investigation.
-* **[RESPOND] 04 — ANALYZE (Timeline):** Chronological timeline construction bridging events across multiple disparate sources.
-* **[PROTECT] 05 — ASSESS (Risk Engine):** Risk prioritization, exposure assessment, and high-value entity identification.
-* **[RECOVER] 06 — INVESTIGATE (Dossier):** Generation of comprehensive intelligence dossiers preserving evidence provenance and investigation history for incident reporting.
+<br>
 
----
+## Core Capabilities
 
-## 🚀 Getting Started
+<b>Transparent Cross-Source Correlation</b><br>
+Unlike black-box AI platforms, GOTHAMITE provides explainable linkage. Every relationship in the 3D entity graph is backed by a specific evidence node (e.g., matching PGP signatures across two distinct marketplaces) and assigned a confidence score.
 
-### Prerequisites
-- Docker and Docker Compose
-- Python 3.11+ (for local development)
+<b>Investigation Timeline Construction</b><br>
+Events from completely disparate sources are merged into a single chronological timeline, allowing analysts to trace the evolution of a threat actor's infrastructure from profile creation to credential exposure.
 
-### Deployment
-GOTHAMITE utilizes a containerized microservice architecture.
+<b>Automated Dossier Generation</b><br>
+The platform compiles all collected artifacts, resolved identities, correlated aliases, and risk assessments into a single actionable report ready for incident response teams.
 
-1. **Start the Backend API & Frontend Workstation:**
-   `ash
-   cd gothamite
-   docker compose up --build -d
-   `
-   The analyst workstation will be available at http://localhost:8501.
+<br>
 
-2. **Start the Dark Web Sandbox (Synthetic Intelligence Sources):**
-   `ash
-   cd darkweb-sandbox/mock_sites
-   docker compose -f docker-compose.sites.yml up -d
-   `
+## Installation and Deployment
 
-3. **Run the Autonomous Intelligence Collector:**
-   `ash
-   cd darkweb-sandbox
-   python bridge_collector.py
-   `
-   *This script simulates the intelligence pipeline by scraping the mock .onion sites, extracting entities, and pushing them to the GOTHAMITE ingest API.*
+GOTHAMITE utilizes a containerized microservice architecture, allowing for isolated and reproducible deployments.
 
----
+<b>Prerequisites</b><br>
+Ensure Docker and Docker Compose are installed on your host system. Python 3.11+ is recommended if developing locally.
 
-## 🔬 Demonstration Scenario
+<b>Deploying the Workstation</b><br>
+Navigate to the primary application directory and initialize the containers. The analyst workstation will be available at http://localhost:8501.
 
-The included synthetic dataset provides a highly deterministic investigation narrative for demonstrations:
+`ash
+cd gothamite
+docker compose up --build -d
+`
 
-1. **Discover:** Search for the entity 
+<b>Initializing Synthetic Intelligence Sources</b><br>
+For demonstration and testing purposes, the platform includes a sandbox of simulated intelligence sources.
+
+`ash
+cd darkweb-sandbox/mock_sites
+docker compose -f docker-compose.sites.yml up -d
+`
+
+<b>Running the Autonomous Collector</b><br>
+Execute the collection script to simulate the intelligence pipeline scraping the mock .onion sites, extracting entities, and pushing them to the GOTHAMITE ingest API.
+
+`ash
+cd darkweb-sandbox
+python bridge_collector.py
+`
+
+<br>
+
+## Demonstration Scenario
+
+The included synthetic dataset provides a highly deterministic investigation narrative, ideal for presentations or capability demonstrations.
+
+1. <b>Discover:</b> Search for the entity 
 ightjar.
-2. **Collect:** Observe that 
+2. <b>Collect:</b> Observe that 
 ightjar operates on orum-gamma.
-3. **Correlate:** The engine identifies a shared PGP fingerprint, linking 
+3. <b>Correlate:</b> The engine identifies a shared PGP fingerprint, linking 
 ightjar to the known threat actor en0m.
-4. **Graph:** The 3D entity graph visually maps this connection, highlighting the "HIGH" confidence score due to the deterministic key match.
-5. **Timeline:** The chronological view reveals en0m was previously active on marketplace-beta, exposing a cryptocurrency wallet.
-6. **Risk Assessment:** The entity's risk automatically elevates to **CRITICAL** due to cross-source confirmation and marketplace activity.
-7. **Report:** Generate the final Intelligence Dossier for the unified 
-ightjar / en0m identity.
+4. <b>Graph:</b> The 3D entity graph visually maps this connection, highlighting the HIGH confidence score due to the deterministic key match.
+5. <b>Timeline:</b> The chronological view reveals en0m was previously active on marketplace-beta, exposing a cryptocurrency wallet.
+6. <b>Risk Assessment:</b> The entity's risk automatically elevates to CRITICAL due to cross-source confirmation and marketplace activity.
+7. <b>Report:</b> Generate the final Intelligence Dossier for the unified identity.
 
----
-*GOTHAMITE was built for the SIH 2026 Hackathon.*
+<br>
+<div align="center">
+    <p><i>Developed for SIH 2026</i></p>
+</div>
