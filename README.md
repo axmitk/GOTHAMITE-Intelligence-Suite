@@ -21,22 +21,22 @@
 
 The GOTHAMITE platform operates on a robust data-fusion pipeline designed to minimize analyst fatigue and maximize actionable intelligence. The system continuously ingests, normalizes, and scores data from multiple external vectors.
 
-<b>SOURCE ➔ COLLECTION ➔ NORMALIZATION ➔ EXTRACTION ➔ ENRICHMENT ➔ CORRELATION ➔ ANALYSIS ➔ RISK ➔ INVESTIGATION ➔ REPORT</b>
+<b>Entity Resolution & Correlation Pipeline</b>
 
-### Data Collection Layer
-GOTHAMITE ingests intelligence through modular, autonomous collectors. It features automated Dark Web Scrapers that probe authenticated .onion forums and marketplaces, alongside a Browser Intelligence Layer that allows analysts to seamlessly capture open-web data.
-
-### Entity Resolution Engine
-The core technical differentiator of the platform. The engine performs explainable identity resolution by extracting identifiers (handles, aliases, emails, domains, PGP fingerprints, and cryptocurrency wallets). It standardizes these artifacts and connects entities using temporal proximity, shared infrastructure, and deterministic identifiers, producing a transparent confidence score.
-
-### Analytical Risk Model
-Risk is dynamically calculated as a combination of multiple intelligence signals. The analytical model directly influences entity prioritization, alert queues, and visual highlighting within the analyst workstation. 
+| Pipeline Stage | Module | Technique / Technology |
+|---|---|---|
+| **Collection** | darkweb-sandbox/bridge_collector.py | Headless autonomous scraping of authenticated .onion environments |
+| **Extraction** | ackend/services/ingest_service.py | NER, REGEX parsing for Handles, Emails, PGP Keys, and Crypto Wallets |
+| **Normalization** | ackend/api/ingest.py | Data standardization (e.g. whitespace stripping for precise PGP matching) |
+| **Correlation** | ackend/services/correlation_service.py | Cross-referencing identifiers to build confidence-scored deterministic linkage |
+| **Analysis** | rontend/views/graph_view.py | 3D visual analysis of the identity relationship graph (streamlit-agraph / 3d-force-graph) |
+| **Risk Engine** | rontend/views/investigation_view.py | Multi-factor risk scoring based on exposure, correlation strength, and activity |
 
 <br>
 
 ## NIST CSF Integration
 
-The GOTHAMITE user interface is designed as a professional cyber-intelligence workstation, not a generic dashboard. The investigation journey is operationally mapped directly to the National Institute of Standards and Technology (NIST) Cybersecurity Framework.
+The GOTHAMITE user interface is designed as a professional cyber-intelligence workstation, operationally mapping directly to the National Institute of Standards and Technology (NIST) Cybersecurity Framework to guide analysts through a disciplined investigation cycle.
 
 <table>
   <tr>
@@ -76,12 +76,22 @@ The platform compiles all collected artifacts, resolved identities, correlated a
 
 <br>
 
+## Technology Stack
+
+- **Frontend**: Streamlit + React (Custom 3D Force Graph via Three.js)
+- **Backend API**: FastAPI (Python 3.11+)
+- **Relational Store**: SQLite / PostgreSQL (SQLAlchemy ORM)
+- **Deployment**: Docker + Docker Compose (Isolated microservices)
+- **Collection**: Headless autonomous crawlers and Open-Web Browser Intelligence plugins
+
+<br>
+
 ## Installation and Deployment
 
 GOTHAMITE utilizes a containerized microservice architecture, allowing for isolated and reproducible deployments.
 
 <b>Prerequisites</b><br>
-Ensure Docker and Docker Compose are installed on your host system. Python 3.11+ is recommended if developing locally.
+Ensure Docker and Docker Compose are installed on your host system.
 
 <b>Deploying the Workstation</b><br>
 Navigate to the primary application directory and initialize the containers. The analyst workstation will be available at http://localhost:8501.
