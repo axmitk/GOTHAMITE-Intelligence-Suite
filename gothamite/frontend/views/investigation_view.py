@@ -28,19 +28,20 @@ def render_discover(graph_data):
         st.markdown("<div style='background-color: #0f172a; padding: 10px; margin-bottom: 8px; border: 1px solid #1e293b;'><div style='color: #f8fafc; font-weight: 600; font-size: 0.9rem;'>nightjar <span style='color: #64748b;'>may be</span> ven0m</div><div style='color: #10b981; font-size: 0.8rem;'>Shared PGP Key (Confidence: HIGH)</div></div>", unsafe_allow_html=True)
         st.markdown("<div style='background-color: #0f172a; padding: 10px; margin-bottom: 8px; border: 1px solid #1e293b;'><div style='color: #f8fafc; font-weight: 600; font-size: 0.9rem;'>shadow_broker <span style='color: #64748b;'>may be</span> anon_23</div><div style='color: #f59e0b; font-size: 0.8rem;'>Temporal Proximity (Confidence: MED)</div></div>", unsafe_allow_html=True)
 
+
 def render_collect(sources_data):
     st.markdown("<h2>02 &mdash; COLLECT / DETECT</h2>", unsafe_allow_html=True)
     st.markdown("<div style='color: #94a3b8; margin-bottom: 20px;'>Continuous intelligence collection and anomaly detection mapped to NIST Detect function.</div>", unsafe_allow_html=True)
     st.markdown("---")
     
-    st.markdown("<h4>BROWSER / WEB INTELLIGENCE PIPELINE</h4>", unsafe_allow_html=True)
+    st.markdown("<h4>LLM-POWERED INTELLIGENCE PIPELINE (OLLAMA INTEGRATION)</h4>", unsafe_allow_html=True)
     st.markdown("""
     <div style='display: flex; justify-content: space-between; align-items: center; background-color: #0f172a; padding: 20px; border: 1px solid #1e293b; margin-bottom: 20px;'>
-        <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600;'>SOURCE</div><div style='font-size: 0.8rem; color: #64748b;'>Browser Capture</div></div>
+        <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600;'>SOURCE</div><div style='font-size: 0.8rem; color: #64748b;'>Web Scraper</div></div>
         <div style='color: #475569;'>→</div>
-        <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600;'>PARSE</div><div style='font-size: 0.8rem; color: #64748b;'>DOM/Text</div></div>
+        <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600;'>EXTRACT</div><div style='font-size: 0.8rem; color: #64748b;'>Parsing DB</div></div>
         <div style='color: #475569;'>→</div>
-        <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600;'>EXTRACT</div><div style='font-size: 0.8rem; color: #64748b;'>Entities (NER)</div></div>
+        <div style='text-align: center; color: #8b5cf6;'><div style='font-weight: 600;'>OLLAMA LLM</div><div style='font-size: 0.8rem; color: #64748b;'>Stylometric Analysis</div></div>
         <div style='color: #475569;'>→</div>
         <div style='text-align: center; color: #10b981;'><div style='font-weight: 600;'>NORMALIZE</div><div style='font-size: 0.8rem; color: #64748b;'>Resolution</div></div>
         <div style='color: #475569;'>→</div>
@@ -59,7 +60,7 @@ def render_collect(sources_data):
     
     with col2:
         st.markdown("<h4>DETECTION ALERTS</h4>", unsafe_allow_html=True)
-        st.markdown("<div style='background-color: #1e1b4b; border-left: 3px solid #8b5cf6; padding: 12px; margin-bottom: 8px;'><div style='color: #c4b5fd; font-size: 0.75rem; font-weight: 600;'>NEW CORRELATION</div><div style='color: #f8fafc; font-size: 0.9rem;'>Previously unrelated identities connected via shared PGP.</div></div>", unsafe_allow_html=True)
+        st.markdown("<div style='background-color: #1e1b4b; border-left: 3px solid #8b5cf6; padding: 12px; margin-bottom: 8px;'><div style='color: #c4b5fd; font-size: 0.75rem; font-weight: 600;'>NEW CORRELATION (Ollama)</div><div style='color: #f8fafc; font-size: 0.9rem;'>Previously unrelated identities connected via linguistic stylometry.</div></div>", unsafe_allow_html=True)
         st.markdown("<div style='background-color: #281021; border-left: 3px solid #be185d; padding: 12px; margin-bottom: 8px;'><div style='color: #fbcfe8; font-size: 0.75rem; font-weight: 600;'>INFRASTRUCTURE CHANGE</div><div style='color: #f8fafc; font-size: 0.9rem;'>Entity 'nightjar' associated with new .onion domain.</div></div>", unsafe_allow_html=True)
 
 
@@ -80,12 +81,11 @@ def render_risk(graph_data):
             for i, n in enumerate(nodes[:5]):
                 base_risk = 95 - (i * 12)
                 level = "CRITICAL" if base_risk > 80 else "HIGH" if base_risk > 60 else "MEDIUM"
-                color = "#ef4444" if base_risk > 80 else "#f59e0b" if base_risk > 60 else "#38bdf8"
                 risk_data.append({
                     "Entity": n.get("handle"),
                     "Risk Score": f"{base_risk}/100",
                     "Level": level,
-                    "Key Driver": "Shared Infrastructure" if i % 2 == 0 else "Credential Exposure",
+                    "Key Driver": "Shared Infrastructure" if i % 2 == 0 else "LLM Threat Inference",
                     "Confidence": "HIGH" if i < 3 else "MED"
                 })
             
