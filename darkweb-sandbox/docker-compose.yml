@@ -1,0 +1,132 @@
+# Root compose: directory, relay pool, and the Phase-1 endpoint.
+#
+# Ownership per format/AGENT_TASK_SPLIT.md section 1 -- this file is Claude
+# Code's. The three Phase-4 mock sites are declared separately in
+# mock_sites/docker-compose.sites.yml, which is not written yet and is owned by
+# the other agent. Do not declare those services here.
+#
+# Once the sites file exists, both are run together:
+#   docker compose -f docker-compose.yml -f mock_sites/docker-compose.sites.yml up
+
+services:
+  directory:
+    build: .
+    container_name: directory
+    command: python -m directory.directory_service
+    environment:
+      DIRECTORY_BIND: "0.0.0.0"
+      DIRECTORY_PORT: "8000"
+    ports:
+      # The only host-published port in the system. README.md section 8 reaches
+      # it with curl. Relays and destinations stay unreachable from the host.
+      - "8001:8000"
+    networks:
+      - sandbox-net
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+      start_period: 2s
+
+  # --- relay pool: seven nodes, per SPEC_DECISIONS.md SD-009 ---------------
+  # Each is an independent container with its own in-memory keypair. Ports
+  # follow the 90NN convention fixed by DIRECTORY_SPEC.md section 3 (SD-006)
+  # and are not published to the host.
+
+  relay-01: &relay
+    build: .
+    container_name: relay-01
+    command: python -m relay.relay_node
+    environment: &relay-env
+      RELAY_ID: relay-01
+      RELAY_HOST: relay-01
+      RELAY_PORT: "9001"
+      DIRECTORY_URL: http://directory:8000
+      HOP_TIMEOUT: "10"
+    networks: [sandbox-net]
+    depends_on:
+      directory:
+        condition: service_healthy
+
+  relay-02:
+    <<: *relay
+    container_name: relay-02
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-02
+      RELAY_HOST: relay-02
+      RELAY_PORT: "9002"
+
+  relay-03:
+    <<: *relay
+    container_name: relay-03
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-03
+      RELAY_HOST: relay-03
+      RELAY_PORT: "9003"
+
+  relay-04:
+    <<: *relay
+    container_name: relay-04
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-04
+      RELAY_HOST: relay-04
+      RELAY_PORT: "9004"
+
+  relay-05:
+    <<: *relay
+    container_name: relay-05
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-05
+      RELAY_HOST: relay-05
+      RELAY_PORT: "9005"
+
+  relay-06:
+    <<: *relay
+    container_name: relay-06
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-06
+      RELAY_HOST: relay-06
+      RELAY_PORT: "9006"
+
+  relay-07:
+    <<: *relay
+    container_name: relay-07
+    environment:
+      <<: *relay-env
+      RELAY_ID: relay-07
+      RELAY_HOST: relay-07
+      RELAY_PORT: "9007"
+
+  # --- Phase-1 connectivity target (SPEC_DECISIONS.md SD-012) -------------
+  # SD-012 said to delete this at Phase 4, and Phase 4 has now landed: it is
+  # superseded by forum-alpha, marketplace-beta and forum-gamma in
+  # mock_sites/docker-compose.sites.yml. It is kept for now only because the
+  # Phase-1 Docker verification recorded in AgentsDocs/reports/PHASE_1_REPORT.md
+  # carries a request to it, and deleting the service would make that result
+  # unreproducible. Removing this block and phase1_endpoint/ is a one-line
+  # cleanup for whoever closes Phase 6; the Phase-1 test suite does not need the
+  # container, only the module.
+  # It carries no persona content. No host port mapping: like the real mock
+  # sites, it is reachable only through the relay chain.
+  phase1-endpoint:
+    build: .
+    container_name: phase1-endpoint
+    command: python -m phase1_endpoint.static_endpoint
+    environment:
+      ENDPOINT_BIND: "0.0.0.0"
+      ENDPOINT_PORT: "80"
+    networks: [sandbox-net]
+
+networks:
+  sandbox-net:
+    # The explicit name matters: without it Compose prefixes the project name
+    # and mock_sites/docker-compose.sites.yml cannot find this network as an
+    # external one. See SPEC_DECISIONS.md SD-010.
+    name: sandbox-net
+    driver: bridge

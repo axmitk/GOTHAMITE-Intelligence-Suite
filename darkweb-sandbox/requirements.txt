@@ -1,0 +1,13 @@
+# Phase 1 runtime dependencies.
+#
+# cryptography is the only third-party package this phase uses. It is mandated
+# by name in AgentsDocs/RELAY_PROTOCOL.md section 2, AgentsDocs/MASTER_CONTEXT.md
+# section 5 rule 2, and README.md section 8.
+#
+# Everything else -- the HTTP servers, the client, the tests -- is standard
+# library, so no dependency outside the specs had to be introduced. See
+# AgentsDocs/SPEC_DECISIONS.md SD-005.
+#
+# requests and beautifulsoup4 appear in README.md section 8. They are Phase-5
+# scraper dependencies and are deliberately NOT installed yet.
+cryptography>=42,<47

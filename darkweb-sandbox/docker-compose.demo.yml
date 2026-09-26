@@ -1,0 +1,27 @@
+services:
+  demo-viewer:
+    build: .
+    container_name: demo-viewer
+    command: python -m scripts.demo_viewer
+    environment:
+      # Bind to 0.0.0.0 inside the container so it can be reached via port mapping
+      VIEWER_BIND: "0.0.0.0"
+      VIEWER_PORT: "8080"
+      DIRECTORY_URL: "http://directory:8000"
+    ports:
+      # Bind to localhost on the host to keep the viewer clearly demo-only
+      # and not publicly exposed.
+      - "127.0.0.1:8080:8080"
+    networks:
+      - sandbox-net
+    depends_on:
+      directory:
+        condition: service_healthy
+    volumes:
+      # Mount the scripts dir so we don't need to rebuild the image
+      - ./scripts:/app/scripts:ro
+
+networks:
+  sandbox-net:
+    external: true
+    name: sandbox-net
