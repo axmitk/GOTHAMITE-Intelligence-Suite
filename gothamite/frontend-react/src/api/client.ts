@@ -8,6 +8,7 @@ import type {
   PersonaDossier,
   RelationshipStatus,
 } from '../types/api';
+import { getSession } from '../workbench/api';
 
 /**
  * GOTHAMITE Typed API Client
@@ -41,6 +42,10 @@ export class ApiError extends Error {
 
 async function request<T>(url: string, options: RequestInit = {}): Promise<T> {
   const headers = new Headers(options.headers || {});
+  if (isBrowser && url.includes('/api/v1/')) {
+    const session = await getSession();
+    headers.set('X-CSRF-Token', session.csrf);
+  }
   if (!headers.has('Accept')) {
     headers.set('Accept', 'application/json');
   }

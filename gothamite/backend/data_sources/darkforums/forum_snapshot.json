@@ -1,0 +1,6653 @@
+{
+ "threads": [
+  {
+   "thread_id": "423",
+   "title": "Battlefy 80K",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-03-29T19:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "3742",
+     "post_number": "#1",
+     "post_date": "2023-03-29T19:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": "It was leaked in 2016. It contains nearly 90,000 users' personal information Please pay the required points to unlock the content.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "f39d64459fd3df32bfe939bfd1e240b7dc573f2b8dbb9d9ead5e12fbcb1b5653",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "568",
+   "title": "Database Leaked paddlesportsdesign.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-06-04T01:07:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "6047",
+     "post_number": "#1",
+     "post_date": "2023-06-04T01:07:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "edb217e61bbfc9c8888fd608425ccd46b918688ed531c502bbc9a094376eceb4",
+     "entities": {
+      "domain": [
+       "paddlesportsdesign.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "paddlesportsdesign.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "594",
+   "title": "Hosting.danwin1210.de",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-06-08T14:38:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "6281",
+     "post_number": "#1",
+     "post_date": "2023-06-08T14:38:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "0ca7cabf4c0a587590416bc630466a8c547aec4a08f464212b492f8ed20ca9d1",
+     "entities": {
+      "domain": [
+       "danwin1210.de"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "6282",
+     "post_number": "#2",
+     "post_date": "2023-06-08T14:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for sharing this one",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "8a6de8eb9d4a8f73d5bc1b0bd1112a13b1560c008b6fb5c5594d0e7a7e8a5a76",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "9570",
+     "post_number": "#4",
+     "post_date": "2023-07-20T16:18:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Thanks for sharing",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "774c585240010fb4ee62b03300dafe5f2941b3750586886a1cdc43a5d97df136",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "danwin1210.de"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "667",
+   "title": "USA OakBend Hospital 2022",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-06-20T06:36:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "7095",
+     "post_number": "#1",
+     "post_date": "2023-06-20T06:36:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "a45b31c90f32184c15694be53b5ef35cb5981796607314b74c5ac472502035d9",
+     "entities": {
+      "domain": [
+       "oakbendmedcenter.org"
+      ],
+      "country": [
+       "United States"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "8799",
+     "post_number": "#4",
+     "post_date": "2023-07-12T01:13:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "7240ac54b908ade38bc3e57c89c3d8a5a0f700b86de198579fd750a24ed7b5e2",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "9152",
+     "post_number": "#9",
+     "post_date": "2023-07-16T06:21:00Z",
+     "post_date_basis": "source",
+     "excerpt": "i want ot sfejjk frbh",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "4eb274b80b4ef3f4c3792e1e9c83f742344411355397f33484c8fb8eaef44158",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "10436",
+     "post_number": "#12",
+     "post_date": "2023-07-28T21:36:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "35fc1e5203d7e9b9fc6bac42ed0cbecbdb39b60818c15100b8006698ab84fb85",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "oakbendmedcenter.org"
+    ],
+    "country": [
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "876",
+   "title": "UCHealth.org Database, Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-07-28T21:14:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "10432",
+     "post_number": "#1",
+     "post_date": "2023-07-28T21:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "empty"
+     ],
+     "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "uchealth.org"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "911",
+   "title": "The Grid | sgpgrid.com / gridapp.io - [1,816,534 Records]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-01T09:26:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "10792",
+     "post_number": "#1",
+     "post_date": "2023-08-01T09:26:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "empty"
+     ],
+     "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "gridapp.io",
+     "sgpgrid.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "916",
+   "title": "30k Companium",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-01T18:26:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "10838",
+     "post_number": "#1",
+     "post_date": "2023-08-01T18:26:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "81657eaca5f65f7d4e50ff1af595e694a38087a3edf3db37c7bc818cb85a5c0f",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "918",
+   "title": "Website - cutm.ac.in",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-02T01:25:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "10857",
+     "post_number": "#1",
+     "post_date": "2023-08-02T01:25:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "a93661230d7fdf14631f896e3a72b28dd7bb738b4ee87ae3f591280a43478435",
+     "entities": {
+      "domain": [
+       "cutm.ac.in"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "cutm.ac.in"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "923",
+   "title": "sprongo.com database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-03T10:22:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11028",
+     "post_number": "#1",
+     "post_date": "2023-08-03T10:22:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "75f081ebf9ae4aadfe9430b75ca32b0c30ba98d33513d0c098afe24f1165efeb",
+     "entities": {
+      "domain": [
+       "sprongo.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "22661",
+     "post_number": "#2",
+     "post_date": "2023-12-09T21:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": "already have this database, thanks.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "9ea8656752941f3129a13546d982d1990048752a862792b232599888b29e029e",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "sprongo.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "924",
+   "title": "podrygka.ru | sql Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-03T12:46:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11039",
+     "post_number": "#1",
+     "post_date": "2023-08-03T12:46:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "f6829d8fcf79f8180db2a3d775a9c8f385a685febaaa055c3c08db140e33213e",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "podrygka.ru"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "931",
+   "title": "lukoil.ru leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-04T01:49:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11105",
+     "post_number": "#1",
+     "post_date": "2023-08-04T01:49:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "58c74554c5a73e408d8b8da86af02ca92fd8373309f60f1cf1e09711ebd39dc5",
+     "entities": {
+      "domain": [
+       "lukoil.ru"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "lukoil.ru"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "933",
+   "title": "Database Leaked carsworld.id",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-04T17:54:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11177",
+     "post_number": "#1",
+     "post_date": "2023-08-04T17:54:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "111d1d20d627a7d8ae0d15c9e4fe59bee5d02d05afb34195a14304b8d4e3bce1",
+     "entities": {
+      "domain": [
+       "carsworld.id"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "carsworld.id"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "934",
+   "title": "Ukraine-database of stolen vehicles",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-04T19:01:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11185",
+     "post_number": "#1",
+     "post_date": "2023-08-04T19:01:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Ukraine-database of stolen vehicles Download Link : Please pay the required points to unlock the content.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "f74f1b7a1d557d924b492160cfe4c0cdf1dd9d5cf012b89eba6c184205282fc0",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Ukraine"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "11453",
+     "post_number": "#3",
+     "post_date": "2023-08-07T13:41:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for sharing",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "93f3dfdcd8e60dd63672d8c87b820927b6f9496d487a3802f29fcb4fbcedd8a6",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Ukraine"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "935",
+   "title": "Cl0p starts to publish data on torrents",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-04T22:55:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11200",
+     "post_number": "#1",
+     "post_date": "2023-08-04T22:55:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "3b371b617b8f5e549c372cf2e07cd3c6a054968730b1a1049d29bc3ee1afabbc",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "939",
+   "title": "Website - collectreward.co",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-06T13:26:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11305",
+     "post_number": "#1",
+     "post_date": "2023-08-06T13:26:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "credential or secret reference",
+      "encoded blob or key material"
+     ],
+     "content_sha256": "0e7a72747f56c89eed230ad5f8b16c3aa12ddf0f230da9a1ba2cbb65f8140f8e",
+     "entities": {
+      "domain": [
+       "collectreward.co"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "collectreward.co"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "954",
+   "title": "Drivesure.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-08T01:01:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11538",
+     "post_number": "#1",
+     "post_date": "2023-08-08T01:01:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "0008b74c204cce30fea2adb55d4fa53732f5d274c088fe751fb998d228c93a1d",
+     "entities": {
+      "domain": [
+       "drivesure.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "drivesure.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "965",
+   "title": "blankmediagames.com [redacted] leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-08T23:39:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11626",
+     "post_number": "#1",
+     "post_date": "2023-08-08T23:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "5cc35b1c71287c775c1720983f540f55c6db361504655c580fc66d03178d80a4",
+     "entities": {
+      "domain": [
+       "9dmimh7womgfqt41ui50xo8vn.ojuj",
+       "9ukhi9t09ylanzs4zpzsp2c1.wapt",
+       "blankmediagames.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "9dmimh7womgfqt41ui50xo8vn.ojuj",
+     "9ukhi9t09ylanzs4zpzsp2c1.wapt",
+     "blankmediagames.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "968",
+   "title": "outletaccessori.it",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-09T11:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11653",
+     "post_number": "#1",
+     "post_date": "2023-08-09T11:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "3655dfff8e531347f1a476b36b3a8d30ea861b20a9ab516052f48a2feee147e1",
+     "entities": {
+      "domain": [
+       "outletaccessori.it",
+       "sig.ra"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "outletaccessori.it",
+     "sig.ra"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "969",
+   "title": "elbahavacilik.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-09T11:37:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11654",
+     "post_number": "#1",
+     "post_date": "2023-08-09T11:37:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "20f52f3cc16d8807406eb4af149b040a1fcddf1578b19f1bb7205c5572d1bb28",
+     "entities": {
+      "domain": [
+       "elbahavacilik.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "elbahavacilik.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "970",
+   "title": "naartjielegal.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-09T11:38:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11655",
+     "post_number": "#1",
+     "post_date": "2023-08-09T11:38:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "8b3febb3c88d54ee3221dae974ef719400bb7a9e2a2ca8bf5d1cdde48c14535f",
+     "entities": {
+      "domain": [
+       "naartjielegal.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "naartjielegal.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "971",
+   "title": "[link removed]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-09T12:32:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11657",
+     "post_number": "#1",
+     "post_date": "2023-08-09T12:32:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "da9d293909acd775a87acc5ec7d22085e8d872a5d28b77a0311faa5d1ca3db7d",
+     "entities": {
+      "domain": [
+       "etoro.com"
+      ],
+      "country": [
+       "Philippines",
+       "Russia",
+       "Ukraine"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "etoro.com"
+    ],
+    "country": [
+     "Philippines",
+     "Russia",
+     "Ukraine"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "972",
+   "title": "[redacted] database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-09T12:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11658",
+     "post_number": "#1",
+     "post_date": "2023-08-09T12:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": "not too big small company selling clothes i think",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "c6df432fda3100d26a401bf034e1f57ef265774801ee3eef145c691148cb55e8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "990",
+   "title": "Kael com db",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-10T18:14:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11812",
+     "post_number": "#1",
+     "post_date": "2023-08-10T18:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "d6e1097a6fc6e29b2be433bc3321edd7c31b8c6924ffcd56b6445391786f67bd",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "991",
+   "title": "I need [redacted] and [redacted] data",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-10T20:56:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "11824",
+     "post_number": "#1",
+     "post_date": "2023-08-10T20:56:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "9b5f80c09db1f629c5de72cac7c5a5ba50fbcccce85cf7fb40d8ecc535fb9058",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1028",
+   "title": "Website - comercio.vip",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-13T21:39:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12031",
+     "post_number": "#1",
+     "post_date": "2023-08-13T21:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "e43913c307c6e5c77ab9efb49a9c7439be6a8b2cb13af2f41607e17e84b05c88",
+     "entities": {
+      "domain": [
+       "comercio.vip"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "12135",
+     "post_number": "#2",
+     "post_date": "2023-08-14T14:30:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Amazing bro seems like u work hard for this so its so good!",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "cc35551345469279fb9292e16d908ad792eca456d9a8bef53964977a2648be2b",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "comercio.vip"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1032",
+   "title": "HUGE FBI DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-14T09:08:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12071",
+     "post_number": "#1",
+     "post_date": "2023-08-14T09:08:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "2001133269aede0f43ea4b32685153183915f3978e7fe215324b65a0def8d376",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "12125",
+     "post_number": "#2",
+     "post_date": "2023-08-14T14:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "098bb768fb6d5b818d60e054ff84203c0ac36a84c887beabd05f4403240c9bbb",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "12602",
+     "post_number": "#3",
+     "post_date": "2023-08-18T14:22:00Z",
+     "post_date_basis": "source",
+     "excerpt": "nice post, it's interesting",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "3f92591dc6a7a6a6c1df6833f3db3c10cabec4db048e9f0a6837af29dc222995",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "13401",
+     "post_number": "#4",
+     "post_date": "2023-08-23T19:57:00Z",
+     "post_date_basis": "source",
+     "excerpt": "nice post, it's interesting",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "3f92591dc6a7a6a6c1df6833f3db3c10cabec4db048e9f0a6837af29dc222995",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1035",
+   "title": "SNET.GOB.SV - LEAKED DOWNLOAD",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-14T11:55:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12104",
+     "post_number": "#1",
+     "post_date": "2023-08-14T11:55:00Z",
+     "post_date_basis": "source",
+     "excerpt": "SNET.GOB.SV - LEAKED DOWNLOAD Download Link : Please pay the required points to unlock the content.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "ecc10e1cbe7f9fe83a2ab3fc1affbb5758d163a6dd870274b1cceca109ded60d",
+     "entities": {
+      "domain": [
+       "snet.gob.sv"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "12124",
+     "post_number": "#2",
+     "post_date": "2023-08-14T14:11:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Thanks for the share, keep up the good work!",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "acffdaf09abcf81a563e2cafb520ba06d0a88eb08d41647ab8adbd12709650af",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "snet.gob.sv"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1048",
+   "title": "Website - vesicash.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-16T09:31:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12288",
+     "post_number": "#1",
+     "post_date": "2023-08-16T09:31:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference",
+      "encoded blob or key material"
+     ],
+     "content_sha256": "336209907c1124ec80aec16a44290cbe96a78b1688e07758528d54ff844afcc8",
+     "entities": {
+      "domain": [
+       "vesicash.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "12320",
+     "post_number": "#2",
+     "post_date": "2023-08-16T13:33:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "4c8fa47fa3ff032eca13df7a9d6817df6972ce7a8764172b590d3392dd6d5393",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "vesicash.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1060",
+   "title": "novoluxlighting.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-17T07:18:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12379",
+     "post_number": "#1",
+     "post_date": "2023-08-17T07:18:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "ab5d2547e6053489ba436c50c8f1d10819e3e578ff44f1e10820f0b8f4ac7afd",
+     "entities": {
+      "domain": [
+       "novoluxlighting.com",
+       "pol.famades"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "novoluxlighting.com",
+     "pol.famades"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1062",
+   "title": "Rec-INOV Database, Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-17T10:05:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12390",
+     "post_number": "#1",
+     "post_date": "2023-08-17T10:05:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "2e865c23409ffbc3ec9e8117620c12153db9e6b41bfe5ecedb7bee63f349567d",
+     "entities": {
+      "domain": [
+       "017ec400-f069-11ec-af78-9f5c7f754484.png",
+       "0e6e52a0-eec2-11ec-af78-9f5c7f754484.png",
+       "62a05acbb4512d557d6ec6b6.png",
+       "62a0d3c7190f7192b0a98cad.png",
+       "62a0f1b4190f7192b0a98d5e.png",
+       "62a0fef8190f7192b0a98d84.png",
+       "62a1bdba190f7192b0a98f05.png",
+       "62a1c27e190f7192b0a98f4b.png",
+       "62a1c9a1190f7192b0a98f81.png",
+       "62a1c9b3190f7192b0a98f89.png",
+       "62a1ca59190f7192b0a98f93.png",
+       "62a2392a190f7192b0a99070.png",
+       "62a2fed0190f7192b0a990e3.png",
+       "a7fbf.ias",
+       "n8lvj0lytp.wbkmzq"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "017ec400-f069-11ec-af78-9f5c7f754484.png",
+     "0e6e52a0-eec2-11ec-af78-9f5c7f754484.png",
+     "62a05acbb4512d557d6ec6b6.png",
+     "62a0d3c7190f7192b0a98cad.png",
+     "62a0f1b4190f7192b0a98d5e.png",
+     "62a0fef8190f7192b0a98d84.png",
+     "62a1bdba190f7192b0a98f05.png",
+     "62a1c27e190f7192b0a98f4b.png",
+     "62a1c9a1190f7192b0a98f81.png",
+     "62a1c9b3190f7192b0a98f89.png",
+     "62a1ca59190f7192b0a98f93.png",
+     "62a2392a190f7192b0a99070.png",
+     "62a2fed0190f7192b0a990e3.png",
+     "a7fbf.ias",
+     "n8lvj0lytp.wbkmzq"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1070",
+   "title": "Database lapostemobile.fr",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-17T20:37:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12483",
+     "post_number": "#1",
+     "post_date": "2023-08-17T20:37:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "6baaa4b0e5ab95840c70c6e63a282b063f8b504f7b08f258f6a7d170ba72b4cf",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "lapostemobile.fr"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1073",
+   "title": "Database Leaked justclean.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-18T18:08:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12633",
+     "post_number": "#1",
+     "post_date": "2023-08-18T18:08:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "encoded blob or key material"
+     ],
+     "content_sha256": "2f6da3ea6b6e3198aac4a96f4bd2fa0525ffa452a05f3596f4b9133ddf5df816",
+     "entities": {
+      "domain": [
+       "justclean.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "justclean.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1094",
+   "title": "SevenRooms Leaked Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-20T12:56:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12875",
+     "post_number": "#1",
+     "post_date": "2023-08-20T12:56:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "73d390ccd277571f40b8c4cb9327c9d30c0eff07f915b6794b3b6381d7a5dcf7",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14578",
+     "post_number": "#2",
+     "post_date": "2023-09-06T16:24:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thank you so much,may not too old data",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "2cfbc53576f3d34b66822dc156de4895fe1f0fabbbc9445ab29a691fefcc9ea8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1095",
+   "title": "somjai.co.th",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-20T13:39:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "12882",
+     "post_number": "#1",
+     "post_date": "2023-08-20T13:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "fef3d633d9a846828f9b3b73f3c23c848c1f25f7319218dc182396ee26a767f9",
+     "entities": {
+      "domain": [
+       "somjai.co.th"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "somjai.co.th"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1118",
+   "title": "Shanghai Citizenship Database [3,231,610]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-21T13:14:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13032",
+     "post_number": "#1",
+     "post_date": "2023-08-21T13:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "395cce0d3bb09bc68b6ceb1746efd3f30bcad8653ec73cbb99b2279fbe9ce757",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1141",
+   "title": "[redacted] [BlankMediaGames] (partially cracked) leaked July [redacted] - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-22T01:47:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13145",
+     "post_number": "#1",
+     "post_date": "2023-08-22T01:47:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "e85ecb7b13e49e76cbb55b47eab3715fadb77cf25b4c244e7b4f2e16149eabf2",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1142",
+   "title": "vines-indonesia.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-22T07:19:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13161",
+     "post_number": "#1",
+     "post_date": "2023-08-22T07:19:00Z",
+     "post_date_basis": "source",
+     "excerpt": "vines-indonesia.com date: May 2023 size: 29 mb format: sql Please pay the required points to unlock the content.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "05299950f7c1f5b752945fa4c569feb61d837a82d559d1e163197db39f467bab",
+     "entities": {
+      "domain": [
+       "vines-indonesia.com"
+      ],
+      "country": [
+       "Indonesia"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "vines-indonesia.com"
+    ],
+    "country": [
+     "Indonesia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1157",
+   "title": "237k RU Leads Full Name, Mail, Location, Phone number",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-22T16:28:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13201",
+     "post_number": "#1",
+     "post_date": "2023-08-22T16:28:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "070c60fdff9a312eaef779fd47c090d7bff1530580f6947b7a59bf0a066889ab",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1176",
+   "title": "Ferrari Data Leaked by RansomEXX - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T04:50:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13271",
+     "post_number": "#1",
+     "post_date": "2023-08-23T04:50:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "5ff8e5c249379739d36e0a01f5023d58198ca2cf77c199c5295afcfd81ffa064",
+     "entities": {
+      "domain": [
+       "file.al",
+       "tree.zip",
+       "upload.zip"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "file.al",
+     "tree.zip",
+     "upload.zip"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1178",
+   "title": "Skoda Praha Data Leaked by Play Ransomware Group",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T04:55:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13273",
+     "post_number": "#1",
+     "post_date": "2023-08-23T04:55:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "442b54e2acfaf741ad0c1a1132cd98b2ea2e942dc636feb7bbb5cc7d2ba2bc03",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1181",
+   "title": "Eatigo Database October 2018 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T06:31:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13278",
+     "post_number": "#1",
+     "post_date": "2023-08-23T06:31:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "117bf6c740a75287ae07c5c844c4eb26553a575855d0971fd588afc1068279d8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1183",
+   "title": "[redacted] - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T10:58:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13301",
+     "post_number": "#1",
+     "post_date": "2023-08-23T10:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "3f364da12b61736b7d0cf9b503f0d202757b1f6e7fab15a1dd6af5605ec944c9",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "13320",
+     "post_number": "#2",
+     "post_date": "2023-08-23T12:22:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Great thanks alot!",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "ed8c0de621bb953e55add9460f0129e1fa527ad33e2f5f800d3fdaf64f737422",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14061",
+     "post_number": "#3",
+     "post_date": "2023-08-29T23:23:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "799643e0214f49771b89f9f457e77673a1a847b38f828accfd8d85b531e8c385",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1186",
+   "title": "Help on gaining points",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T13:43:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13336",
+     "post_number": "#1",
+     "post_date": "2023-08-23T13:43:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Hi guys i'm new here, I'm still learning how to use this forum and i want to start collecting credits. Any help on how can I do that ?",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "2973b679bcb05a26b9c27afc8ed2d584f550c4bde5af9165d3dee757e3525ad8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1189",
+   "title": "AI application in cybersecurity",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T15:15:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13360",
+     "post_number": "#1",
+     "post_date": "2023-08-23T15:15:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Hey guys, what do you think of applying AI methods and solutions in the field of cyber security, In what way do you think this can benefit beginner's skills and how can it improve…",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "550ef946845d2a27fb712ba3bed700279ae57d257985be4fc43c3445c109569e",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1195",
+   "title": "UCLA.EDU Leak Data from CL0P^_- LEAKS Ransomware Group",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-23T18:36:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13393",
+     "post_number": "#1",
+     "post_date": "2023-08-23T18:36:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "7a963d038ac154cb125d31b239d3893fc836088507951776294c9799fd3b4241",
+     "entities": {
+      "domain": [
+       "ucla.edu"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "ucla.edu"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1204",
+   "title": "serviweb.nat.cu",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-24T05:41:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13429",
+     "post_number": "#1",
+     "post_date": "2023-08-24T05:41:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "1b3d0a70dc9e56566e0ee48df17fcd188f92b436751307d8809cd3c8667b5ba6",
+     "entities": {
+      "domain": [
+       "nat.cu"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "13440",
+     "post_number": "#2",
+     "post_date": "2023-08-24T11:05:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thank you so much!",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "39490a4b834db308b78ae56a2b95609dbf572ca5a63d225f967137358f057def",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "nat.cu"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1217",
+   "title": "University of Minnesota Data Leaked July 2023",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-24T21:37:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13540",
+     "post_number": "#1",
+     "post_date": "2023-08-24T21:37:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "6c1334399fad7e9d6861919b6e2d78f3e356f4f1a5003eeabb321a0544ac762d",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1246",
+   "title": "otrs.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-25T22:36:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13647",
+     "post_number": "#1",
+     "post_date": "2023-08-25T22:36:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Database Leaked otrs.com year: 2020 Format - .SQL size 3gb All Rows - 1kk+ Website - otrs.com SAMPLE: Please pay the required points to unlock the content.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "2b12ddc226b315f980794d1b4ac40f8d480e36dc8888f022abcf916595666514",
+     "entities": {
+      "domain": [
+       "otrs.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "otrs.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1289",
+   "title": "crsorgi.gov.in",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-28T23:12:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13936",
+     "post_number": "#1",
+     "post_date": "2023-08-28T23:12:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "4171c046cf607ac9e57bbdd8e9c9e15d77140955bd8a78642b8cbd54f2c84304",
+     "entities": {
+      "domain": [
+       "crsorgi.gov.in"
+      ],
+      "country": [
+       "India"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14106",
+     "post_number": "#4",
+     "post_date": "2023-08-30T16:20:00Z",
+     "post_date_basis": "source",
+     "excerpt": "such a great leak",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "1b09261b57a272c2b54ccc86a8124617e63ef03f950a29f565d81d35751a97f1",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14480",
+     "post_number": "#6",
+     "post_date": "2023-09-05T15:04:00Z",
+     "post_date_basis": "source",
+     "excerpt": "THANKS FOR THR SHARE!",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "1dedab3db47a3c532b3db59334c25e9ed5f439b15388a501df3df41e0c86d5f7",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "17741",
+     "post_number": "#7",
+     "post_date": "2023-10-19T13:50:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Thanks for sharing",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "774c585240010fb4ee62b03300dafe5f2941b3750586886a1cdc43a5d97df136",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "19092",
+     "post_number": "#9",
+     "post_date": "2023-11-04T09:21:00Z",
+     "post_date_basis": "source",
+     "excerpt": "file not found please resolve this bro.",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "4c344154612a17e0f1c992192350331d7c48a4149076ee0c3df13a1389429fcc",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "24121",
+     "post_number": "#11",
+     "post_date": "2024-05-24T20:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thats great leak",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "5d1d2f3985709c3df70d2894059ca422866e6218c4d3ee21445765beca23a610",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "crsorgi.gov.in"
+    ],
+    "country": [
+     "India"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1296",
+   "title": "[redacted] Medical Data Leaked August 2023 by Rhysida Ransomware Group",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-29T02:57:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13953",
+     "post_number": "#1",
+     "post_date": "2023-08-29T02:57:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "b985cc81b4586a61249fa790df60a0b168971290fe7005111cb13c6d946eb34b",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1298",
+   "title": "resultplan.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-29T10:13:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "13981",
+     "post_number": "#1",
+     "post_date": "2023-08-29T10:13:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "01812e228bf46d9bbf5195660b5c4e4f39c21eeba4dde1c9c48ca429ef546018",
+     "entities": {
+      "domain": [
+       "resultplan.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "resultplan.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1310",
+   "title": "Tucson Unified School District Data Leaked February 2023 by Royal Ransomware Group",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-29T20:49:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14050",
+     "post_number": "#1",
+     "post_date": "2023-08-29T20:49:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "591bbe3c0ef2e201350a2d21b5092975eaff4a657986a465847ae7c928f43aed",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1322",
+   "title": "[redacted] Verifications.io Database Leaked February [redacted] (250 [redacted]) - Free Downloa",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-30T15:36:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14104",
+     "post_number": "#1",
+     "post_date": "2023-08-30T15:36:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "35a32d47fe5830b13a915b873474155be2df23fc6150008375d34e00aa94773c",
+     "entities": {
+      "domain": [
+       "verifications.io"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "verifications.io"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1324",
+   "title": "Website - vesicash.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-30T16:50:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14107",
+     "post_number": "#1",
+     "post_date": "2023-08-30T16:50:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "395cce0d3bb09bc68b6ceb1746efd3f30bcad8653ec73cbb99b2279fbe9ce757",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "vesicash.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1337",
+   "title": "Clf09.com ( ) Database Leaked July 2022 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-08-31T04:18:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14140",
+     "post_number": "#1",
+     "post_date": "2023-08-31T04:18:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "7588329454e526dd379a7f97ff7764d63bf6eee3beade7028af7e20770f30b2c",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "clf09.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1362",
+   "title": "AUDI USA Database Leaked August [redacted] - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-01T22:25:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14248",
+     "post_number": "#1",
+     "post_date": "2023-09-01T22:25:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "81c759e7bd75724e58d73c49562ed212dfae3305a06a7e2ce9d8464977997594",
+     "entities": {
+      "domain": [],
+      "country": [
+       "United States"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14293",
+     "post_number": "#2",
+     "post_date": "2023-09-02T23:19:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "17ad78814d87aa1510be0c3de16763f07b6e0ed9e7ca58e378afa39f23ac3f16",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1383",
+   "title": "Deezer Full Database Leaked 22 April [redacted] - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-03T04:45:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14311",
+     "post_number": "#1",
+     "post_date": "2023-09-03T04:45:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "91e7d3d87e56824b037ddde5b9c9bc4c0d250c976b91b7dc34431f618177b777",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1420",
+   "title": "2,844 Separate Data Breaches leaked February 2018 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-05T15:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14481",
+     "post_number": "#1",
+     "post_date": "2023-09-05T15:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "0c1bb429c2bb2455337adc4532182aa6339dd4a8a31a2c933ee18b5e83b4aadb",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1421",
+   "title": "2,844 Separate Data Breaches leaked February 2018 - Full Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-05T15:39:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14482",
+     "post_number": "#1",
+     "post_date": "2023-09-05T15:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "d184d78db2728a285d49ddda661a6ca71f9474c8d300a1aed2d09d55d4ebd5da",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1422",
+   "title": "Houzz.com database leaked mid-2018 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-05T15:44:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14483",
+     "post_number": "#1",
+     "post_date": "2023-09-05T15:44:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "a15b992f8b9df6e8210fca702bfe721bb3c6e5cd47cb8ab0187db735d989b736",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "houzz.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1466",
+   "title": "cgcircuit.com database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-09T02:34:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14741",
+     "post_number": "#1",
+     "post_date": "2023-09-09T02:34:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "02bc28b2d4a8ab9fa6446dcbdb49953d70a5464689449319575f1e6e4a6cd0bc",
+     "entities": {
+      "domain": [
+       "alfred.winters",
+       "andreas.jablonka",
+       "cgcircuit.com",
+       "david.debs",
+       "ed.reyes",
+       "frederik.klien",
+       "gleb.slivko",
+       "igorj.sergejev",
+       "kishore.guntuku",
+       "mehdi.farrokhtala",
+       "robert.reynolds",
+       "ryan.fitzgerald",
+       "samuel.barrett",
+       "simon.moody",
+       "urzua.lagos",
+       "yousuke.nakashima"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14870",
+     "post_number": "#3",
+     "post_date": "2023-09-11T13:52:00Z",
+     "post_date_basis": "source",
+     "excerpt": "really nice,thankyouooo",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "3a03f480433adacc976472064f9f830b008f6a9c0691670635835b72858f9051",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14915",
+     "post_number": "#4",
+     "post_date": "2023-09-12T18:55:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for sharing",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "93f3dfdcd8e60dd63672d8c87b820927b6f9496d487a3802f29fcb4fbcedd8a6",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "14946",
+     "post_number": "#5",
+     "post_date": "2023-09-13T12:38:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for sharing",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "93f3dfdcd8e60dd63672d8c87b820927b6f9496d487a3802f29fcb4fbcedd8a6",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "alfred.winters",
+     "andreas.jablonka",
+     "cgcircuit.com",
+     "david.debs",
+     "ed.reyes",
+     "frederik.klien",
+     "gleb.slivko",
+     "igorj.sergejev",
+     "kishore.guntuku",
+     "mehdi.farrokhtala",
+     "robert.reynolds",
+     "ryan.fitzgerald",
+     "samuel.barrett",
+     "simon.moody",
+     "urzua.lagos",
+     "yousuke.nakashima"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1481",
+   "title": "HostAfrica.co.za leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-10T12:02:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14791",
+     "post_number": "#1",
+     "post_date": "2023-09-10T12:02:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "40a4b0b33bba40c8dd2979a74d7b3d13fab639f63bf3eb6e6da2567620d83280",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "hostafrica.co.za"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1514",
+   "title": "bcss.org.uk",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-12T15:13:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14910",
+     "post_number": "#1",
+     "post_date": "2023-09-12T15:13:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "6c0ebef131ea189c460b97a9d8cf1efa0e180d8a01bf10902bb1096a9452751a",
+     "entities": {
+      "domain": [
+       "bcss.org.uk",
+       "search.php"
+      ],
+      "country": [
+       "United Kingdom"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "bcss.org.uk",
+     "search.php"
+    ],
+    "country": [
+     "United Kingdom"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1521",
+   "title": "Wallsystem.catalogo 2.3K",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-13T01:39:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14929",
+     "post_number": "#1",
+     "post_date": "2023-09-13T01:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "167d78fa85903e64aa87f044b556d4713b25ee8829adc0cf08e550918d6371d6",
+     "entities": {
+      "domain": [
+       "wallsystem.com.br"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "wallsystem.catalogo",
+     "wallsystem.com.br"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1531",
+   "title": "[3 Million] Palestine Citizenship Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-13T14:50:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14962",
+     "post_number": "#1",
+     "post_date": "2023-09-13T14:50:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "cc70414b293736ab258febfe7d115a527c387a523f3107223a95625364ec4ccb",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1535",
+   "title": "Wakanim database Leaked August 2022 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-13T17:53:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14985",
+     "post_number": "#1",
+     "post_date": "2023-09-13T17:53:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "130a35ca1dc812b197838452d25b3a594b7df989d5e3dd7eebe2f80141a2c589",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1536",
+   "title": "Dymocks Database Leaked September 2023 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-13T18:38:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "14990",
+     "post_number": "#1",
+     "post_date": "2023-09-13T18:38:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "a7f0abde23774863bfbfd699cfef6cef09f072d886668652ff94510f9ca4e455",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1657",
+   "title": "easypuck.co.uk - easypuck_store.customer_backup 3.9k",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-20T03:25:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "15418",
+     "post_number": "#1",
+     "post_date": "2023-09-20T03:25:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "7e84b048c4ed6ec04b4a286ba3a43c1f895df327ed52ba813e203684966b094f",
+     "entities": {
+      "domain": [
+       "easypuck.co.uk",
+       "mysqlidriver.php"
+      ],
+      "country": [
+       "United Kingdom"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "16325",
+     "post_number": "#2",
+     "post_date": "2023-10-05T10:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks alot mate",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "cb1e8cc52079dc6366ab21ede2142b3aa86f7a439949f472307b9f2d25f54917",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "16339",
+     "post_number": "#3",
+     "post_date": "2023-10-05T13:12:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for share appreciate",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "ff14a4c24656a8f5f31910c65fd685b8a59b9d77fe4fe21feeecbc5d52377377",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "31016",
+     "post_number": "#8",
+     "post_date": "2024-11-13T02:21:00Z",
+     "post_date_basis": "source",
+     "excerpt": "M., ,M , KBJKBKJBKJB M., ,M , KBJKBKJBKJB",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "73b456812c4edc0317fe462cbff0b0818f4b5ca36b9b1b45d3877c2d3b1f97eb",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "easypuck.co.uk",
+     "mysqlidriver.php"
+    ],
+    "country": [
+     "United Kingdom"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1710",
+   "title": "CoinTracker Database Leaked July 2022 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-22T03:57:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "15579",
+     "post_number": "#1",
+     "post_date": "2023-09-22T03:57:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "cb29c87be5aacee7beadb863b187c9f0bcdcdea11c88b58318a3673834e3feb1",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1902",
+   "title": "94M US evite.com [redacted] 2013",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-09-30T20:18:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "16113",
+     "post_number": "#1",
+     "post_date": "2023-09-30T20:18:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Download:",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "7502fd33d5246f2a210375c526dcc5dccabfd9046994f3df4208ee58b987c20d",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "evite.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "1955",
+   "title": "qipim.cz",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-10-04T17:23:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "16280",
+     "post_number": "#1",
+     "post_date": "2023-10-04T17:23:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "8927f2ac5a952ae7e95be3886646044bb3de16fac62844cad7ff4215df337df7",
+     "entities": {
+      "domain": [
+       "qipim.cz"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "qipim.cz"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "2399",
+   "title": "Leaked Email Project - Searchable - 000Webhost + 5 Million gmail + nulled",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-11-03T08:45:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "19025",
+     "post_number": "#1",
+     "post_date": "2023-11-03T08:45:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "31e76f0bed9cc35eb4ea58fdec6b9cf20bce4e59f24d67fee04132d5ff68503c",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "2418",
+   "title": "ReverbNation Leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-11-04T23:34:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "19149",
+     "post_number": "#1",
+     "post_date": "2023-11-04T23:34:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "16a664e4337b67e04a2137ae32716187cce75a1042c364d6dbb8efc65d4de3a8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "2734",
+   "title": "gtrkoka.ru leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-11-21T13:58:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "20970",
+     "post_number": "#1",
+     "post_date": "2023-11-21T13:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "3a77d45c4818dd166b20fb0cf1ee1ec0d99c8fc6277752589a0e56ec335c5c35",
+     "entities": {
+      "domain": [
+       "gtrkoka.ru"
+      ],
+      "country": [
+       "Russia"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "gtrkoka.ru"
+    ],
+    "country": [
+     "Russia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "2881",
+   "title": "[redacted] for [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-11-30T04:45:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "21812",
+     "post_number": "#1",
+     "post_date": "2023-11-30T04:45:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "credential or secret reference"
+     ],
+     "content_sha256": "f3ea838e17beeac992780f94b3e90e5e9ff880c02d939cb1e61652eda1a189e8",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "2882",
+   "title": "Gmail israel 1.2 miliar database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2023-11-30T06:30:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "21820",
+     "post_number": "#1",
+     "post_date": "2023-11-30T06:30:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "b9b33f73da81efedd472f69c289a035023ec9b504c4dbf800df4146345c6fc79",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "21923",
+     "post_number": "#2",
+     "post_date": "2023-12-01T09:39:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "a117588b694c2988006496a238254f67065336b22cdd3dc2ed7658fbc016086d",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "22206",
+     "post_number": "#3",
+     "post_date": "2023-12-04T18:40:00Z",
+     "post_date_basis": "source",
+     "excerpt": "please send file",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "88859f041edfbddd8be8931c912579f092fa2ebd5421e3826f3d1b4622dbffb2",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Israel"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "3378",
+   "title": "amusedcars.net",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-06-04T09:03:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "24779",
+     "post_number": "#1",
+     "post_date": "2024-06-04T09:03:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "a1f115372e386997d7cc357c6c64d58488fd821bc04070adead12a60b360ce4a",
+     "entities": {
+      "domain": [
+       "amusedcars.net"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "amusedcars.net"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "3585",
+   "title": "Wiseloaded.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-06-30T17:21:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "26028",
+     "post_number": "#1",
+     "post_date": "2024-06-30T17:21:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "16f2044e59f4efbc12d3163ddb1ef70b398735345ef4259321ce38e6e127d83f",
+     "entities": {
+      "domain": [
+       "wiseloaded.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "wiseloaded.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "3773",
+   "title": "MEGA LEAKED EMAIL:[redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-07-26T08:18:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "27048",
+     "post_number": "#1",
+     "post_date": "2024-07-26T08:18:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Link:",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "aecc16344911befc3b121e4e51cdaaba7aa2d37bb4c2c736517ed3a89180808c",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "3906",
+   "title": "Italy population base",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-08-08T12:43:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "27636",
+     "post_number": "#1",
+     "post_date": "2024-08-08T12:43:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "629174f5ca77ce0872873703a1a9322512c173c3d66eb20dc4f70131a65115ae",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Italy"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4050",
+   "title": "National Insurance of Israel (btl.gov.il) Leaked Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-08-25T23:00:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "28296",
+     "post_number": "#1",
+     "post_date": "2024-08-25T23:00:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "e6956b28ef35b78b4b181008bc9be60140217e69fde9446137970d44efbefb77",
+     "entities": {
+      "domain": [
+       "btl.gov.il"
+      ],
+      "country": [
+       "Israel"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "btl.gov.il"
+    ],
+    "country": [
+     "Israel"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4061",
+   "title": "The Supreme Court of the Philippines Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-08-27T22:54:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "28349",
+     "post_number": "#1",
+     "post_date": "2024-08-27T22:54:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "9dcdd43a27c4182e59b5809b151acc01aa8a944b827dc7684bda9f3e29d0307e",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Philippines"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Philippines"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4164",
+   "title": "[redacted] - Leaked, Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-09-15T10:40:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "28867",
+     "post_number": "#1",
+     "post_date": "2024-09-15T10:40:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "4376e3d858b9dc7d803602ba0747e4a4c40828804bfdd1594bba2592eeba273e",
+     "entities": {
+      "domain": [],
+      "country": [
+       "United Kingdom"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United Kingdom"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4232",
+   "title": "Oracle Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-09-22T11:49:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29113",
+     "post_number": "#1",
+     "post_date": "2024-09-22T11:49:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "120f189a15629bb9813ced8768ad00dd71e7b01869c570bf8641fb86644ae356",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "29174",
+     "post_number": "#3",
+     "post_date": "2024-09-24T16:04:00Z",
+     "post_date_basis": "source",
+     "excerpt": "thanks for this breach",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "1e7a84e8eb437271d530af439f7917a0748bf103b52b457bea89859af640de84",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4241",
+   "title": "Tiendup Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-09-23T11:41:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29126",
+     "post_number": "#1",
+     "post_date": "2024-09-23T11:41:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "bbd88af84a910dd1b13e93f772960281ed30755a2a780c3b703ea9a667c3140a",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4246",
+   "title": "Ministry of Education, Culture, Research and Technology Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-09-24T00:24:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29160",
+     "post_number": "#1",
+     "post_date": "2024-09-24T00:24:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "308a3a14cb463c1d83f628c055a89f0c6bd81127dd1c6709952e470292c7a08a",
+     "entities": {
+      "domain": [
+       "kec.kandangan",
+       "kel.kandangan",
+       "s.parman"
+      ],
+      "country": [
+       "Indonesia"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "kec.kandangan",
+     "kel.kandangan",
+     "s.parman"
+    ],
+    "country": [
+     "Indonesia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4279",
+   "title": "BlinkAI Automotive Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-09-29T11:03:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29339",
+     "post_number": "#1",
+     "post_date": "2024-09-29T11:03:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "61ad60fc324a6f6a8f81a2fe8d92943577fc1b3673c8e782000321801ce08ad2",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4298",
+   "title": "ARL Pakistan Oil Refinery Leaked Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-01T21:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29404",
+     "post_number": "#1",
+     "post_date": "2024-10-01T21:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "dbc1e9072bc994b300876dfd57cc481a6168f2b90a7bdaf8a06d881d07bb1148",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Pakistan"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Pakistan"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4372",
+   "title": "cheryomushki.ru Leak 2023",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-12T01:58:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29623",
+     "post_number": "#1",
+     "post_date": "2024-10-12T01:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "credential or secret reference"
+     ],
+     "content_sha256": "9a77abf99bc39924611e5e86924f10373fde93b55577fb13b38ebab5d6bea134",
+     "entities": {
+      "domain": [
+       "cheryomushki.ru"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "cheryomushki.ru"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4389",
+   "title": "2 [redacted] by [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-14T08:29:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29715",
+     "post_number": "#1",
+     "post_date": "2024-10-14T08:29:00Z",
+     "post_date_basis": "source",
+     "excerpt": "SITE 1: DOWNLOAD DATABASE: SITE 2: DOWNLOAD DATABASE:",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "142d071a260e45b4bcb18e2f43569dfdca6ed6f2ae80e668a8f81e32dc8c1732",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4390",
+   "title": "[redacted] [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-14T13:31:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29723",
+     "post_number": "#1",
+     "post_date": "2024-10-14T13:31:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data",
+      "financial account number"
+     ],
+     "content_sha256": "fc228a6785a383f6ece61c90ab7305efaf5be04f2d7265d80433fbe7733b5a13",
+     "entities": {
+      "domain": [
+       "pp.iai",
+       "s.far",
+       "s.farm"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "pp.iai",
+     "s.far",
+     "s.farm"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4418",
+   "title": "Government College of women [redacted] database leaked by DXPLOIT",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-19T08:32:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "29922",
+     "post_number": "#1",
+     "post_date": "2024-10-19T08:32:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "2a7913d8ea27497d82c70282d5e627398ddc40d24c2bbc60b99bc4519f026e6a",
+     "entities": {
+      "domain": [],
+      "country": [
+       "India"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "India"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4435",
+   "title": "DATA UKM PEKALONGAN",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-22T22:49:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30013",
+     "post_number": "#1",
+     "post_date": "2024-10-22T22:49:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "4588039ab9f6338f84c8ec8bb10ec178efe81adf8538230358b2494750800635",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4461",
+   "title": "LoyLap Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-10-26T11:46:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30143",
+     "post_number": "#1",
+     "post_date": "2024-10-26T11:46:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "11254716b21b1f895efc267af28c77e65ac9ead0f335217bf2f493840eea791d",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4530",
+   "title": "Twitter Full Database Leak - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-01T06:52:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30390",
+     "post_number": "#1",
+     "post_date": "2024-11-01T06:52:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "292d39662286199bbec1c03bea7fa7516a1af590aabe63260dcd20e6004d310f",
+     "entities": {
+      "domain": [
+       "databases.today"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "databases.today"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4541",
+   "title": "Ensinio Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-01T16:41:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30407",
+     "post_number": "#1",
+     "post_date": "2024-11-01T16:41:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "8bac6ed066629aac89d152e962e0b7afe7bcd1ea82939a3cfaf6e61f101aefb9",
+     "entities": {
+      "domain": [
+       "allp.home",
+       "ensinio.system"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "allp.home",
+     "ensinio.system"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4571",
+   "title": "WineAlign Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-03T10:57:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30517",
+     "post_number": "#1",
+     "post_date": "2024-11-03T10:57:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "c4c0f30e85ada5831dc256282ecb7a182b34764d1ee1ada025795428ab23a65a",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4582",
+   "title": "Teespring database leaked April 2020 - Free Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-04T05:31:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30552",
+     "post_number": "#1",
+     "post_date": "2024-11-04T05:31:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "18e77c1a048c4282a5a97321f4a1f70d31d6592bc75ceb34148ef4d3c857b44b",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4605",
+   "title": "[redacted] Course Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-05T12:59:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30608",
+     "post_number": "#1",
+     "post_date": "2024-11-05T12:59:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "2971e7c0855f99f39352525657efecdda383232fb073f87d28a394bfc83e9681",
+     "entities": {
+      "domain": [],
+      "country": [
+       "United States"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4610",
+   "title": "Twitter (200M) and Twitter (200M) CSV - For Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-05T15:37:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30626",
+     "post_number": "#1",
+     "post_date": "2024-11-05T15:37:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "74c23a401299579cda556adf214b320758c356f5e4280a529b4a489ab4ef8a25",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4630",
+   "title": "gfm-uk.com",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-06T09:14:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30678",
+     "post_number": "#1",
+     "post_date": "2024-11-06T09:14:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "dfc455ea6f964585b81a1390234ddeb6b30fd3bde8af1d058146526a75080ea9",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "30850",
+     "post_number": "#2",
+     "post_date": "2024-11-09T17:29:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "84d171426d8eab52c90753e2e7b2f75912bbd1cee640096271891eb30f3ad81b",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "31086",
+     "post_number": "#3",
+     "post_date": "2024-11-14T02:44:00Z",
+     "post_date_basis": "source",
+     "excerpt": "THANK YOU SO MUCH",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "96a8e90fda92e4277fe3f0ccb1cd0b620556e536777f7c664afce708b9aba7a2",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    },
+    {
+     "post_id": "31095",
+     "post_number": "#4",
+     "post_date": "2024-11-14T10:09:00Z",
+     "post_date_basis": "source",
+     "excerpt": "Bruh, GFM out here spillin tea like it's happy hour",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "2f4a6f0532b7285a2efaf7e22f1174ce197f98a1e908ec04a0dfdf44fa07dadd",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "gfm-uk.com"
+    ],
+    "country": [
+     "United Kingdom"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4695",
+   "title": "Appleton Harley-Davidson Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-10T22:22:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30907",
+     "post_number": "#1",
+     "post_date": "2024-11-10T22:22:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "4143853fb3afaae409b620f8fc4b6e0ad0b8e92932a9f686bdd5134ba9238de0",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4706",
+   "title": "Tibber.com Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-11T22:16:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30944",
+     "post_number": "#1",
+     "post_date": "2024-11-11T22:16:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "fce451c7b2ed7dfa4284e1817e72938340c06bef9af77bd3b21db276a266ad64",
+     "entities": {
+      "domain": [
+       "tibber.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "tibber.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4719",
+   "title": "Delta.com DeltaAirlines Employee Leaked Data",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-12T11:52:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30974",
+     "post_number": "#1",
+     "post_date": "2024-11-12T11:52:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "5c73ffb2e9a5707b0527929954f9beb1397e672f9579ebe09ee92f5cc01214a2",
+     "entities": {
+      "domain": [
+       "delta.com",
+       "employeedirectory.csv",
+       "hierarchy.csv",
+       "jll.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "delta.com",
+     "employeedirectory.csv",
+     "hierarchy.csv",
+     "jll.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4720",
+   "title": "Lenovo.com Employee Leaked Data",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-12T11:56:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30975",
+     "post_number": "#1",
+     "post_date": "2024-11-12T11:56:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "e664a0818da33f435cb8a0fd310419dff6d85c8ba71517a6d9d90a145688e832",
+     "entities": {
+      "domain": [
+       "jll.com",
+       "lenovo.com"
+      ],
+      "country": [
+       "China"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "jll.com",
+     "lenovo.com"
+    ],
+    "country": [
+     "China"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4721",
+   "title": "HP.com Employees Leaked Data",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-12T12:00:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30977",
+     "post_number": "#1",
+     "post_date": "2024-11-12T12:00:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "608845c24d02c3c20aff11c38980085f457a5b1de4182cdfc150a68d739b443b",
+     "entities": {
+      "domain": [
+       "hp.com",
+       "jll.com"
+      ],
+      "country": [
+       "France"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "hp.com",
+     "jll.com"
+    ],
+    "country": [
+     "France"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4722",
+   "title": "McDonalds Employee Leaked Data",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-12T12:04:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "30978",
+     "post_number": "#1",
+     "post_date": "2024-11-12T12:04:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "9e440703b8efc121159f575f5402eb08e1109da4f5e2d2a2b8987253711553fc",
+     "entities": {
+      "domain": [
+       "jll.com",
+       "mcd.com"
+      ],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "jll.com",
+     "mcd.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4774",
+   "title": "PoinCampus Database - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-15T10:04:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "31145",
+     "post_number": "#1",
+     "post_date": "2024-11-15T10:04:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "217f4db610fed081256dd2fffb58deab8f094d8bdee95df8590684f4d3b08fc0",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4851",
+   "title": "ZonBase Data Breach - Leaked, Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-17T21:54:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "31302",
+     "post_number": "#1",
+     "post_date": "2024-11-17T21:54:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data",
+      "encoded blob or key material"
+     ],
+     "content_sha256": "5f1d44beb2a517d647a3c60c2245aca87457382a0eb29195bda01d959c8d2c79",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4852",
+   "title": "Ford Motor Company, Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-17T22:01:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "31303",
+     "post_number": "#1",
+     "post_date": "2024-11-17T22:01:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contact detail (phone-like number)",
+      "contains redacted personal data"
+     ],
+     "content_sha256": "b4909f4d2056e49a06414cc539695ace76406af221e0a7a55ca13ec966e18b94",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Spain",
+       "United States"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Spain",
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "4872",
+   "title": "[redacted] | www.avivenergy.co.il Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-11-18T17:29:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "31337",
+     "post_number": "#1",
+     "post_date": "2024-11-18T17:29:00Z",
+     "post_date_basis": "source",
+     "excerpt": "DL:",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "0a9f97dd11bbba480f0d38b5a12fa79fb2a7f096ed205ecaf1c3c9447b72b4c1",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "avivenergy.co.il"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5800",
+   "title": "FREE LEAKS PTI.AGENCY",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-26T20:35:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33562",
+     "post_number": "#1",
+     "post_date": "2024-12-26T20:35:00Z",
+     "post_date_basis": "source",
+     "excerpt": "FILE HERE",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "c60375e63977e9bf70a2d4864f1c4a10fdbcb4e7476456142411519c14b63e7e",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "pti.agency"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5808",
+   "title": "wefix.tn LEAKS DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-27T01:41:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33577",
+     "post_number": "#1",
+     "post_date": "2024-12-27T01:41:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "credential or secret reference"
+     ],
+     "content_sha256": "29ba38151aa0e3666f9ef4af78451ccdd7fc83ef40aeb43a5477840e39d6cffa",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "wefix.tn"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5811",
+   "title": "2K [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-27T02:13:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33581",
+     "post_number": "#1",
+     "post_date": "2024-12-27T02:13:00Z",
+     "post_date_basis": "source",
+     "excerpt": "click HERE NIGGER NATO",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "c8d06ec2044fe0a7a5d252e0bd12dc2748602e81e8e4fc2268b9bbf9d48ba2ab",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5812",
+   "title": "M&T BANK TRASH LEAKS",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-27T02:17:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33582",
+     "post_number": "#1",
+     "post_date": "2024-12-27T02:17:00Z",
+     "post_date_basis": "source",
+     "excerpt": "THIS IS TRASH FILE DON'T CLICK",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "1469f8cd327d636ee52d8c86962cc06e82108418b85d79504edca0dc604af799",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5981",
+   "title": "LEAK BY [redacted] FUCK YOU mahkamah agung",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-30T15:09:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33893",
+     "post_number": "#1",
+     "post_date": "2024-12-30T15:09:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "9749ed2f02c5d16d4a3e96f8c6bc238f0f3ecc81c6e16bf6c2163070b921a902",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Indonesia"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "Indonesia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5988",
+   "title": "Target: [link removed] Universitas Persada Indonesia",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-30T18:58:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33910",
+     "post_number": "#1",
+     "post_date": "2024-12-30T18:58:00Z",
+     "post_date_basis": "source",
+     "excerpt": null,
+     "suppressed": true,
+     "suppression_reasons": [
+      "contains redacted personal data"
+     ],
+     "content_sha256": "140621e86ebfe5cca7f9db4bf96c20c5f95494f20f71419a67af5550600c1ba2",
+     "entities": {
+      "domain": [],
+      "country": [
+       "Indonesia"
+      ],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [
+     "yai.ac.id"
+    ],
+    "country": [
+     "Indonesia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "5993",
+   "title": "1 MILLION EMAIL UK FREE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": "2024-12-30T19:38:00Z",
+   "date_basis": "source",
+   "posts": [
+    {
+     "post_id": "33915",
+     "post_number": "#1",
+     "post_date": "2024-12-30T19:38:00Z",
+     "post_date_basis": "source",
+     "excerpt": "LINK",
+     "suppressed": false,
+     "suppression_reasons": [],
+     "content_sha256": "e26ef19029cc92e234d9457823ca0811b92db9ce9dbf8db99c0fdd75d11338f0",
+     "entities": {
+      "domain": [],
+      "country": [],
+      "cve": [],
+      "cwe": [],
+      "attack_technique": []
+     }
+    }
+   ],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United Kingdom"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20498",
+   "title": "[redacted] Breach Will only sell Once.",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20499",
+   "title": "[redacted] Breach Will only sell Once.",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20500",
+   "title": "[redacted] 1 Buyer Only.",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20501",
+   "title": "[redacted] 1 Buyer Only.",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20522",
+   "title": "gov.il 4.2 GB of data [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20523",
+   "title": "gov.il 4.2 GB of data [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20531",
+   "title": "[redacted] / bitbox.swiss / [redacted] / UsersDB / 20k / 2022",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "bitbox.swiss"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20532",
+   "title": "[ INDONESIAN ] SILABU-KALIMARAU.COM",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "silabu-kalimarau.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20533",
+   "title": "[ INDONESIAN ] SILABU-KALIMARAU.COM",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "silabu-kalimarau.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20534",
+   "title": "[ INDONESIA ] SILABU-KALIMARAU.COM",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "silabu-kalimarau.com"
+    ],
+    "country": [
+     "Indonesia"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20538",
+   "title": "[redacted] / bitbox.swiss / [redacted] / UsersDB / 20k / 2022",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "bitbox.swiss"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20545",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20547",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20548",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20549",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20550",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20572",
+   "title": "[redacted]|USA|COMBOLISTS|DATABASES",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20620",
+   "title": "eazydata.ai Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20621",
+   "title": "eazydata.ai Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20622",
+   "title": "eazydata.ai Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20623",
+   "title": "eazydata.ai Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20624",
+   "title": "eazydata.ai Leaked - Download!",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20675",
+   "title": "Database of [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20677",
+   "title": "Database of [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20699",
+   "title": "eazydata.ai Database leaked -Download",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "eazydata.ai"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20704",
+   "title": "2.14 MILLION PEKANBARU.GO.ID POPULATION DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "pekanbaru.go.id"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20705",
+   "title": "BEKASI [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20706",
+   "title": "BEKASI [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20707",
+   "title": "BEKASI [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20708",
+   "title": "BEKASI [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20709",
+   "title": "BEKASI [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20719",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20720",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20725",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20728",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20730",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20731",
+   "title": "dashboard.mhpolice.in Database complete",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "mhpolice.in"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20732",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20733",
+   "title": "dashboard.mhpolice.in Database Complete",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "mhpolice.in"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20734",
+   "title": "dashboard.mhpolice.in Database Complete",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "mhpolice.in"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20735",
+   "title": "dashboard.mhpolice.in Database complete",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "mhpolice.in"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20741",
+   "title": "Hacked Governmental One Stop Shop Center",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20743",
+   "title": "Hacked Governmental One Stop Shop Center",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20747",
+   "title": "Hacked Governmental One Stop Shop Center",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20748",
+   "title": "Canadian Registration System Database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20768",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20770",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20773",
+   "title": "DATA FROM SATUDATA CITY OF DEPOK",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20792",
+   "title": "castandcrew.com leak",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "castandcrew.com"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20794",
+   "title": "php echo \"Hello\";?",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20795",
+   "title": "\"''>'\"<?php echo \"Hello\";?",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20796",
+   "title": "[redacted], anyone wants 3k users accounts from this forum with VIP, GOD membership, i hav",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20799",
+   "title": "Hached Ministry of [redacted], [redacted] and [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20800",
+   "title": "Hached Ministry of [redacted], [redacted] and [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20801",
+   "title": "Hached Ministry of [redacted], [redacted] and [redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20807",
+   "title": "Hello i think i broke something on my [redacted], and admin can assist me with that plea",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20808",
+   "title": "Hello i think i broke something on my [redacted], and admin can assist me with that plea",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20829",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20830",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20831",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20832",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20834",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20835",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20836",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20837",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20838",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20839",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20840",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20841",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20842",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20843",
+   "title": "[redacted] & ORDER DATABASE",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20892",
+   "title": "Tea app leaked database (magnet)",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20893",
+   "title": "Tea app leaked database (magnet)",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20900",
+   "title": "Us 200000 Driver License Available with ssn",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20901",
+   "title": "Us 200000 Driver License Available with ssn",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20910",
+   "title": "rapy.pl database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "rapy.pl"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20913",
+   "title": "rapy.pl database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "rapy.pl"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20914",
+   "title": "rapy.pl database",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "rapy.pl"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20915",
+   "title": "rapy.pl",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "rapy.pl"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20918",
+   "title": "rapy.pl",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [
+     "rapy.pl"
+    ],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20936",
+   "title": "[redacted] FEDERATION OF HOLY HOUSES AND PHILANTHROPIC HOSPITALS OF MINAS GERAIS",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  },
+  {
+   "thread_id": "20954",
+   "title": "COMBO & URLS USA EUROPE DATABASES COMBOLISTS MAIL:[redacted]",
+   "category": "Leaks",
+   "forum_name": "Databases",
+   "date_posted": null,
+   "date_basis": "relative or unparseable in source",
+   "posts": [],
+   "entities": {
+    "domain": [],
+    "country": [
+     "United States"
+    ],
+    "cve": [],
+    "cwe": [],
+    "attack_technique": []
+   }
+  }
+ ]
+}

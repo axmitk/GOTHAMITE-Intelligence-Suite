@@ -4,7 +4,7 @@ import streamlit as st
 from frontend.api_client import get_all_personas, get_graph, get_sources_metrics
 
 def render_export():
-    st.markdown("<h3 style='color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px;'>DATA EXPORT</h3>", unsafe_allow_html=True)
+    st.html("<h3 style='color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px;'>DATA EXPORT</h3>")
     
     personas = get_all_personas()
     graph_data = get_graph()

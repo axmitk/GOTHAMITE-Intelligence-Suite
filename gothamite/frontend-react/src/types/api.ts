@@ -64,7 +64,8 @@ export type EvidenceSignalType =
   | 'shared_wallet'
   | 'handle_similarity'
   | 'temporal_succession'
-  | 'activity_overlap_conflict';
+  | 'activity_overlap_conflict'
+  | 'lexical_similarity';
 
 export type EvidenceDirection = 'supporting' | 'contradicting';
 

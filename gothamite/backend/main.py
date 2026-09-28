@@ -11,6 +11,9 @@ from backend.api.graph import router as graph_router
 from backend.api.entities import router as entities_router
 from backend.api.artifacts import router as artifacts_router
 from backend.api.export import router as export_router
+from backend.api.workbench import router as workbench_router, session_router
+from backend.services.workbench_security import ORIGINS
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 
 @asynccontextmanager
@@ -30,11 +33,12 @@ app = FastAPI(
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=sorted(ORIGINS),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1", "testserver"])
 
 
 @app.exception_handler(RequestValidationError)
@@ -62,6 +66,8 @@ app.include_router(graph_router, prefix="/api/v1")
 app.include_router(entities_router, prefix="/api/v1")
 app.include_router(artifacts_router, prefix="/api/v1")
 app.include_router(export_router, prefix="/api/v1")
+app.include_router(session_router, prefix="/api/v1")
+app.include_router(workbench_router, prefix="/api/v1")
 
 
 @app.get("/health", tags=["Health"])

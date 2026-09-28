@@ -104,7 +104,7 @@ export const EvidenceInspector: React.FC<EvidenceInspectorProps> = ({
           <div className="flex items-center justify-between">
             <ScoreBadge score={selectedEdge.score} size="lg" showLabel={true} />
             <span className="text-[11px] font-mono text-text-tertiary">
-              {selectedEdge.evidence.length} Verifiable Signals
+              {selectedEdge.evidence.length} weighted evidence rows
             </span>
           </div>
         </div>
@@ -335,7 +335,7 @@ export const EvidenceInspector: React.FC<EvidenceInspectorProps> = ({
             onClick={() => navigate(`/dossier/${selectedNode.id}`)}
             className="flex items-center gap-1.5 text-xs text-accent-primary hover:text-accent-cyan font-mono"
           >
-            <span>Open Complete Actor Dossier</span>
+            <span>Open persona dossier</span>
             <ArrowRight size={13} />
           </button>
         </div>

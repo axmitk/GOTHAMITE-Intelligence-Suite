@@ -338,7 +338,8 @@ class CorrelationService:
                 "note": f"Activity overlap conflict: concurrent activity between {overlap_start.strftime('%Y-%m-%d')} and {overlap_end.strftime('%Y-%m-%d')} with no cryptographic identity verification",
             })
 
-        # Signal 6: AI Stylometric Behavioral Match (+0.25)
+        # Signal 6: Lexical similarity (+0.25). Bag-of-words term-frequency cosine between
+        # the first artifact of each persona. Deterministic; not a trained or AI model.
         try:
             from backend.services.stylometry import compute_stylometric_similarity
             from backend.models.entities import Artifact
@@ -354,11 +355,11 @@ class CorrelationService:
                     similarity = compute_stylometric_similarity(a1.raw_content, a2.raw_content)
                     if similarity >= 0.85:
                         signals.append({
-                            "signal_type": "ai_stylometric_match",
+                            "signal_type": "lexical_similarity",
                             "direction": "supporting",
                             "weight": 0.25,
                             "artifact_id": successor_artifact_id,
-                            "note": f"AI Stylometry Match: Cosine linguistic similarity score of {similarity:.2f} > 0.85 threshold.",
+                            "note": f"Lexical similarity: term-frequency cosine {similarity:.2f} >= 0.85 threshold (bag-of-words; corroborating only).",
                         })
         except Exception as e:
             pass

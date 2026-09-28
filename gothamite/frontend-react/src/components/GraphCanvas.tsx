@@ -264,13 +264,13 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         </div>
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5 text-text-secondary">
-            <span className="w-2 h-2 rounded-full bg-[#3498db]" /> forum-alpha
+            <span className="w-2 h-2 rounded-full bg-[#9eb9c9]" /> forum-alpha
           </span>
           <span className="flex items-center gap-1.5 text-text-secondary">
-            <span className="w-2 h-2 rounded-full bg-[#e67e22]" /> marketplace-beta
+            <span className="w-2 h-2 rounded-full bg-[#c9ad86]" /> marketplace-beta
           </span>
           <span className="flex items-center gap-1.5 text-text-secondary">
-            <span className="w-2 h-2 rounded-full bg-[#2ecc71]" /> forum-gamma
+            <span className="w-2 h-2 rounded-full bg-[#add0c1]" /> forum-gamma
           </span>
         </div>
         <div className="text-[10px] uppercase font-semibold text-text-tertiary tracking-wider pt-1 border-t border-border/50">
@@ -281,7 +281,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
             <svg width="18" height="6">
               <line x1="0" y1="3" x2="18" y2="3" stroke="#3B82F6" strokeWidth="2" />
             </svg>
-            Same Actor
+            Candidate same actor
           </span>
           <span className="flex items-center gap-1.5">
             <svg width="18" height="6">

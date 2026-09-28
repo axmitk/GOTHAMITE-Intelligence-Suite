@@ -266,7 +266,7 @@ export const Overview: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-5">
         <div>
           <h1 className="text-xl font-display font-bold text-text-primary tracking-wide">
-            Overview
+            Correlation overview
           </h1>
         </div>
 
@@ -292,12 +292,12 @@ export const Overview: React.FC = () => {
             {correlating ? (
               <>
                 <Loader2 size={14} className="animate-spin" />
-                <span>Running Correlation Pass...</span>
+                <span>Running correlation pass…</span>
               </>
             ) : (
               <>
                 <Play size={14} className="fill-current" />
-                <span>Run Correlation Pass</span>
+                <span>Run correlation pass</span>
               </>
             )}
           </button>
@@ -419,7 +419,7 @@ export const Overview: React.FC = () => {
         {/* Card 1: Artifacts */}
         <div className="p-5 rounded-lg bg-surface flex flex-col justify-between transition-colors">
           <span className="text-xs uppercase font-mono tracking-wider text-text-tertiary">
-            Immutable Artifacts
+            Collected Artifacts
           </span>
           <div className="mt-3">
             {loading ? (
@@ -430,7 +430,7 @@ export const Overview: React.FC = () => {
               </div>
             )}
             <p className="text-[11px] text-text-tertiary mt-1">
-              Raw scraped posts & listings
+              Synthetic posts and listings, SHA-256 hashed
             </p>
           </div>
         </div>
@@ -449,7 +449,7 @@ export const Overview: React.FC = () => {
               </div>
             )}
             <p className="text-[11px] text-text-tertiary mt-1">
-              Unique profiles recorded
+              One persona per handle per source
             </p>
           </div>
         </div>
@@ -468,7 +468,7 @@ export const Overview: React.FC = () => {
               </div>
             )}
             <p className="text-[11px] text-text-tertiary mt-1">
-              Keys, wallets, and handles
+              PGP fingerprints, wallets and handles
             </p>
           </div>
         </div>
@@ -476,7 +476,7 @@ export const Overview: React.FC = () => {
         {/* Card 4: Correlated Relationships */}
         <div className="p-5 rounded-lg bg-surface flex flex-col justify-between transition-colors">
           <span className="text-xs uppercase font-mono tracking-wider text-text-tertiary">
-            Active Linkages
+            Candidate Linkages
           </span>
           <div className="mt-3">
             {loading ? (
@@ -487,7 +487,7 @@ export const Overview: React.FC = () => {
               </div>
             )}
             <p className="text-[11px] text-text-tertiary mt-1">
-              Cross-source linkages
+              Evidence-backed, cross-source
             </p>
           </div>
         </div>
@@ -500,7 +500,7 @@ export const Overview: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <h2 className="text-sm font-display font-semibold text-text-primary uppercase tracking-wider">
-                High-Confidence Cross-Source Attributions
+                Candidate cross-source attributions
               </h2>
               <span className="text-xs font-mono text-text-tertiary">
                 ({topRelationships.length})
@@ -511,7 +511,7 @@ export const Overview: React.FC = () => {
               onClick={() => navigate('/graph')}
               className="flex items-center gap-1 text-xs text-accent-primary hover:text-accent-cyan transition-colors"
             >
-              <span>Explore Interactive Graph</span>
+              <span>Explore correlation graph</span>
               <ArrowRight size={13} />
             </button>
           </div>
@@ -538,7 +538,7 @@ export const Overview: React.FC = () => {
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-medium bg-accent-primary text-white hover:bg-blue-600 transition-colors"
               >
                 <Play size={12} className="fill-current" />
-                <span>Run Correlation Pass</span>
+                <span>Run correlation pass</span>
               </button>
             </div>
           ) : (
@@ -618,7 +618,7 @@ export const Overview: React.FC = () => {
                         onClick={() => navigate(`/graph?edge=${rel.relationship_id}`)}
                         className="flex items-center gap-1 text-accent-primary hover:text-accent-cyan transition-colors text-xs font-mono font-medium"
                       >
-                        <span>Inspect in Graph</span>
+                        <span>Inspect in graph</span>
                         <ArrowRight size={12} />
                       </button>
                     </div>
@@ -633,10 +633,10 @@ export const Overview: React.FC = () => {
         <div className="lg:col-span-5 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-display font-semibold text-text-primary uppercase tracking-wider">
-              Monitored Dark Web Sources
+              Synthetic source fixtures
             </h2>
             <span className="text-xs font-mono text-text-tertiary">
-              3 Monitored Nodes
+              {sourcesMetrics.length} sources
             </span>
           </div>
 
@@ -650,16 +650,12 @@ export const Overview: React.FC = () => {
                       · {source.type}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs font-mono">
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        source.status === 'up' ? 'bg-emerald-400' : 'bg-red-400'
-                      }`}
-                    />
-                    <span className="text-text-secondary text-[11px]">
-                      {source.status}
-                    </span>
-                  </div>
+                  <span
+                    className="text-text-tertiary text-[10px] font-mono uppercase"
+                    title="Exercise fixture loaded from the synthetic corpus; no live connector"
+                  >
+                    Simulated collection
+                  </span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-xs font-mono pt-1 text-text-tertiary">
@@ -678,7 +674,7 @@ export const Overview: React.FC = () => {
                 </div>
 
                 <div className="text-[10px] font-mono text-text-tertiary pt-1 flex justify-between">
-                  <span>Last Ingest:</span>
+                  <span>Last ingestion</span>
                   <span>{new Date(source.last_scan).toLocaleDateString()}</span>
                 </div>
               </div>
@@ -689,7 +685,7 @@ export const Overview: React.FC = () => {
           <div className="p-4 rounded-lg bg-surface space-y-2 text-xs">
             <div className="flex items-center gap-2 text-text-primary font-semibold">
               <Shield size={14} className="text-accent-primary" />
-              <span>Attribution Safety & Integrity</span>
+              <span>Attribution safety and integrity</span>
             </div>
             <ul className="space-y-1 text-text-secondary text-[11px] leading-relaxed list-disc list-inside">
               <li>

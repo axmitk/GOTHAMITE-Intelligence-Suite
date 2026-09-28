@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "node scripts/verify_workbench.mjs",
+    "format:workbench": "prettier --write src/workbench scripts/verify_workbench.mjs"
   },
   "dependencies": {
     "d3-force": "^3.0.0",
@@ -17,15 +19,19 @@
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
+    "@oxlint/binding-win32-x64-msvc": "^1.82.0",
+    "@rolldown/binding-win32-x64-msvc": "^1.2.8",
     "@types/d3-force": "^3.0.10",
     "@types/node": "^24.13.3",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^6.1.1",
     "autoprefixer": "^10.5.6",
+    "node": "^22.22.0",
     "oxlint": "^1.81.0",
     "playwright": "^1.63.0",
     "postcss": "^8.5.28",
+    "prettier": "3.6.2",
     "tailwindcss": "^3.4.19",
     "tsx": "^4.23.13",
     "typescript": "~6.0.2",

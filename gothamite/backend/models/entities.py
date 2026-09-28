@@ -25,7 +25,7 @@ def utc_now() -> datetime:
 
 
 class Source(Base):
-    """Monitored dark web marketplace or forum source."""
+    """Dark-web marketplace or forum source (a synthetic fixture in this prototype)."""
     __tablename__ = "sources"
 
     source_id = Column(String(64), primary_key=True)  # e.g., 'forum-alpha'

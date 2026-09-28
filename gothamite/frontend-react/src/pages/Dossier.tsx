@@ -148,7 +148,7 @@ export const Dossier: React.FC = () => {
 
         {/* Persona Select Dropdown */}
         <div className="flex items-center gap-3">
-          <label className="text-xs font-mono text-text-tertiary">Select Actor:</label>
+          <label className="text-xs font-mono text-text-tertiary">Persona:</label>
           <select
             value={personaId || ''}
             onChange={(e) => handleSelectPersona(e.target.value)}

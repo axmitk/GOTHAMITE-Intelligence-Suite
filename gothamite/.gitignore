@@ -16,6 +16,7 @@ __pycache__/
 
 # Environment
 .env
+.local/
 
 # OS files
 .DS_Store
