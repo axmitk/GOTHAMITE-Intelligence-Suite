@@ -17,6 +17,10 @@ async def demo_lifespan(app):
     init_db()
     with SessionLocal() as db:
         seed_workbench(db)
+        from backend.services.workbench_library import seed_library
+        seed_library(db)  # synthetic case library; before import so exact-IP correlation can see it
+        from backend.data_sources.importer import import_datasets
+        import_datasets(db)  # offline bundled snapshots only; idempotent
         from backend.models.entities import Persona
         if not db.query(Persona).first():
             from scripts.seed_demo import seed_database

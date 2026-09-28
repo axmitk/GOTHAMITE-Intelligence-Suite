@@ -12,7 +12,7 @@ Generated from the saved investigation trail. Observations, interpretation and a
 
 Status: CONTAINMENT | Analyst: Demo analyst | Severity: critical
 
-Created: 2026-09-28T09:00:00Z | Updated: 2026-09-28T10:28:37.377676Z | Version: 5
+Created: 2026-09-28T09:00:00Z | Updated: 2026-09-28T18:39:39.504474Z | Version: 5
 
 
 
@@ -28,9 +28,19 @@ Response: 1 of 7 recommendations reviewed (1 simulated, 0 rejected). Case stage:
 
 ## Observed evidence (synthetic)
 
+### Evidence sources
+
+Dataset-derived evidence and synthetic demonstration evidence are listed separately.
+
+- Synthetic demonstration evidence: 6 observation(s) from the GOTHAMITE exercise seed.
+
+
+
 ### OBS-DNS-001 — DNS resolution: glass-harbor-sync.example
 
 2026-09-28T08:35:00Z | Synthetic DNS | confidence annotation: 0.9
+
+Provenance: Synthetic demonstration evidence
 
 EXERCISE DNS: glass-harbor-sync.example resolves to 203.0.113.42. This is a generated observation, not a network lookup.
 
@@ -42,6 +52,8 @@ SHA-256: 086e1b99cdabe3207fff482863944c73c8c021605f2eadcc307c5bf426a11541
 
 2026-09-28T08:38:00Z | Synthetic intelligence / CMDB | confidence annotation: 0.7
 
+Provenance: Synthetic demonstration evidence
+
 EXERCISE: Grey Moth is the fictional cluster assigned to Glass Harbor; SableLoader is its sample label. FIN-GW-01 is owned by the named service team. These associations are scenario context, not proof of actor identity.
 
 SHA-256: dadc32f8ab6ad883a026f848d6b4e521a2553664b8d6ac7ec553b88823b45478
@@ -51,6 +63,8 @@ SHA-256: dadc32f8ab6ad883a026f848d6b4e521a2553664b8d6ac7ec553b88823b45478
 ### EV-1-NETWORK — Repeated outbound connections
 
 2026-09-28T08:42:00Z | Synthetic network sensor | confidence annotation: 0.94
+
+Provenance: Synthetic demonstration evidence
 
 EXERCISE sensor: FIN-GW-01 connected to 203.0.113.42 via glass-harbor-sync.example. 14 connections at 60-second intervals; review potential beaconing.
 
@@ -62,6 +76,8 @@ SHA-256: ae9aeba746031c216c13fd715f45ba752e793d67b3d91ea7016de5a09424db68
 
 2026-09-28T08:44:00Z | Synthetic reputation feed | confidence annotation: 0.9
 
+Provenance: Synthetic demonstration evidence
+
 EXERCISE feed marks glass-harbor-sync.example and 203.0.113.42 as malicious based on the synthetic campaign fixture. No external reputation service was queried.
 
 SHA-256: 447947dfb69b30624131874aac92782840daba5a23f00db939f9fc6b80197bdc
@@ -72,6 +88,8 @@ SHA-256: 447947dfb69b30624131874aac92782840daba5a23f00db939f9fc6b80197bdc
 
 2026-09-28T08:51:00Z | Synthetic EDR | confidence annotation: 0.96
 
+Provenance: Synthetic demonstration evidence
+
 EXERCISE EDR: b9523b207b7122270a8351adec7d86e567b8585a5eacebe5d25449c510e7f75b observed on FIN-GW-01; the exercise catalog associates this hash with SableLoader. A hash match alone does not prove execution or data loss.
 
 SHA-256: f76888099585b504bcd1dcbfcdaf8058374978a0003df6632d0f95ef71cfa1f8
@@ -81,6 +99,8 @@ SHA-256: f76888099585b504bcd1dcbfcdaf8058374978a0003df6632d0f95ef71cfa1f8
 ### EV-1-EXPOSURE — Unverified service identity exposure
 
 2026-09-28T08:56:00Z | Synthetic exposure bulletin | confidence annotation: 0.6
+
+Provenance: Synthetic demonstration evidence
 
 EXERCISE bulletin references svc-1@meridian.example alongside glass-harbor-sync.example. This is a source claim; credential validity and account compromise are not established.
 
@@ -184,11 +204,11 @@ Simulated response does not validate recovery of real systems.
 
 100/100 — critical
 
-risk-v1: sum of evidenced factors, capped at 100. Priority score, not probability. Missing evidence contributes zero.
+risk-v1.1: sum of evidenced factors, capped at 100. Priority score, not probability. Missing evidence contributes zero.
 
 Exercise baseline risk; approving a simulated action does not prove real risk reduction.
 
-- +20 Malicious reputation observation — The exercise feed flags infrastructure; this is a synthetic reputation observation. Evidence: EV-1-REPUTATION
+- +20 Malicious reputation observation — A reputation source classifies this infrastructure as malicious; see each observation's provenance. Evidence: EV-1-REPUTATION
 
 - +25 Internal sample detection — A catalogued sample hash was observed internally. Execution and exfiltration remain unproven. Evidence: EV-1-MALWARE
 
@@ -252,7 +272,7 @@ Assigned analyst: Demo analyst. Local exercise seat; not verified identity.
 
 ### Analyst conclusions and hypotheses
 
-- 2026-09-28T10:28:36.484334Z / hypothesis / Demo analyst: Validate process ancestry. &lt;img src=x onerror=alert(1)&gt;
+- 2026-09-28T18:39:38.660861Z / hypothesis / Demo analyst: Validate process ancestry. &lt;img src=x onerror=alert(1)&gt;
 
 
 
@@ -260,10 +280,10 @@ Assigned analyst: Demo analyst. Local exercise seat; not verified identity.
 
 Every case change, note, approval and simulation, in order. UTC.
 
-- 2026-09-28T10:28:36.484334Z / Demo analyst / note_added: Added hypothesis entry
+- 2026-09-28T18:39:38.660861Z / Demo analyst / note_added: Added hypothesis entry
 
-- 2026-09-28T10:28:37.238356Z / Demo analyst / response_approved: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
+- 2026-09-28T18:39:39.382020Z / Demo analyst / response_approved: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
 
-- 2026-09-28T10:28:37.306247Z / Demo analyst / response_simulated: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
+- 2026-09-28T18:39:39.445802Z / Demo analyst / response_simulated: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
 
-- 2026-09-28T10:28:37.381779Z / Demo analyst / case_updated: status: INVESTIGATING → CONTAINMENT
+- 2026-09-28T18:39:39.507562Z / Demo analyst / case_updated: status: INVESTIGATING → CONTAINMENT

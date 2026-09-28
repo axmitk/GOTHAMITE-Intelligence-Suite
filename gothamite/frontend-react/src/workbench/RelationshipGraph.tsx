@@ -19,6 +19,11 @@ const kinds = [
 const laneFor: Record<string, number> = {
   threat_actor: 0,
   darkweb_mention: 0,
+  forum_thread: 0,
+  tor_relay: 3,
+  report: 1,
+  market_listing: 2,
+  country: 4,
   campaign: 1,
   malware: 2,
   hash: 2,
@@ -75,6 +80,27 @@ function investigationPath(data: GraphData, root: string) {
   const path = paths[0] || [root];
   const ids = new Set(path);
   ids.add(root);
+  // Entities outside the exercise chain (e.g. dataset indicators) have no path;
+  // show their direct, evidence-backed relationships instead of a lone node.
+  if (!path.includes(root) || path.length < 2) {
+    const direct = data.edges.filter(
+      (e) => e.source_id === root || e.target_id === root,
+    );
+    if (direct.length) {
+      for (const e of direct)
+        ids.add(e.source_id === root ? e.target_id : e.source_id);
+      return {
+        ids: new Set(
+          [root, ...ids].filter(
+            (id) =>
+              id === root ||
+              direct.some((e) => e.source_id === id || e.target_id === id),
+          ),
+        ),
+        edges: new Set(direct.map((e) => e.id)),
+      };
+    }
+  }
   const edges = data.edges.filter((e) =>
     path.some(
       (id, i) =>
@@ -293,7 +319,12 @@ export function RelationshipGraph({
         y: 76 + counts[lane]++ * 108,
       });
     }
-    const base = Math.max(3, ...counts) * 108 + 50;
+    // Cases outside the actor → incident chain start lower in the staircase;
+    // lift the whole layout so no empty rows sit above the first node.
+    const ys = [...positions.values()].map((p) => p.y);
+    const lift = Math.max(0, Math.min(...ys) - 76);
+    for (const p of positions.values()) p.y -= lift;
+    const base = Math.max(3, ...counts) * 108 + 50 - lift;
     const kindOf = new Map(data.nodes.map((n) => [n.id, n.kind]));
     return {
       primary,

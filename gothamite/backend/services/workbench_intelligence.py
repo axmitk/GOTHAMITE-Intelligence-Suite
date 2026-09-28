@@ -3,13 +3,31 @@ from collections import deque
 from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from backend.models.workbench import IntelEntity, IntelEvidence, EvidenceEntity, IntelRelationship, IncidentCase
+from backend.models.workbench import IntelEntity, IntelEvidence, EvidenceEntity, IntelRelationship, IncidentCase, DatasetRecord
 
 INDICATOR_KINDS = ("ip", "domain", "hash", "url", "email")
 
 
 def serialize(row):
     return {c.name: getattr(row, c.name) for c in row.__table__.columns}
+
+
+_PROV_FIELDS = ("provenance_class", "dataset", "dataset_name", "dataset_version", "license", "source_url",
+                "doi", "source_record_id", "transformation_version", "imported_at", "details")
+
+
+def with_provenance(db: Session, rows: list[dict], record_type: str) -> list[dict]:
+    """Attach full dataset provenance (``dataset_record``) to serialized rows.
+    Synthetic seed rows have none and get ``None``: they are never relabelled."""
+    ids = [r["id"] for r in rows]
+    found = {}
+    if ids:
+        for rec in db.query(DatasetRecord).filter(DatasetRecord.record_type == record_type,
+                                                  DatasetRecord.record_id.in_(ids)).all():
+            found[rec.record_id] = {f: getattr(rec, f) for f in _PROV_FIELDS}
+    for r in rows:
+        r["dataset_record"] = found.get(r["id"])
+    return rows
 
 
 def require_entity(db: Session, id: str) -> IntelEntity:
@@ -109,7 +127,8 @@ def profile(db: Session, id: str):
     direct = db.query(IntelRelationship).filter(or_(IntelRelationship.source_id == id, IntelRelationship.target_id == id)).all()
     neighbor_ids = {r.target_id if r.source_id == id else r.source_id for r in direct}
     neighbors = db.query(IntelEntity).filter(IntelEntity.id.in_(neighbor_ids)).all() if neighbor_ids else []
-    return {"entity": serialize(entity), "evidence": [serialize(e) for e in evidence],
+    return {"entity": with_provenance(db, [serialize(entity)], "entity")[0],
+            "evidence": with_provenance(db, [serialize(e) for e in evidence], "evidence"),
             "neighbors": [serialize(n) for n in neighbors], "relationships": [serialize(r) for r in direct],
             "related_cases": [serialize(c) for c in related_cases],
             "next_step": "Inspect the supporting observations, follow the connected campaign, and validate scope in the related investigation." if evidence else "Insufficient evidence. Collect an observation before classifying this entity."}

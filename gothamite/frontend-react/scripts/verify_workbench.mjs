@@ -72,7 +72,24 @@ try {
     await page
       .getByRole("heading", { name: "Command center", exact: true })
       .waitFor();
-    assert.equal(await page.locator(".wb-table tbody tr").count(), 4);
+    // Four exercise cases, the dataset-backed INC-1046 review case and the
+    // six-case library (INC-1047 to INC-1052).
+    const queue = await page.locator(".wb-table tbody").innerText();
+    assert.equal(await page.locator(".wb-table tbody tr").count(), 11);
+    for (const id of [
+      "INC-1042",
+      "INC-1043",
+      "INC-1044",
+      "INC-1045",
+      "INC-1046",
+      "INC-1047",
+      "INC-1048",
+      "INC-1049",
+      "INC-1050",
+      "INC-1051",
+      "INC-1052",
+    ])
+      assert.match(queue, new RegExp(id));
     assert.match(
       await page.locator(".wb-environment").innerText(),
       /SYNTHETIC/,
@@ -111,6 +128,12 @@ try {
       .getByRole("heading", { name: "203.0.113.42", exact: true })
       .waitFor();
     assert.match(await page.locator(".wb-metadata").innerText(), /TEST-NET-3/);
+    // Adapter enrichment is present but synthetic: no live collection by default.
+    await page.locator(".wb-source-obs article").first().waitFor();
+    const sourceObs = await page.locator(".wb-source-obs").innerText();
+    assert.match(sourceObs, /HORUS/);
+    assert.match(sourceObs, /collection status: synthetic/i);
+    assert.doesNotMatch(sourceObs, /status: connected/i);
     await page.locator(".wb-evidence-row").first().click();
     await page.locator(".wb-hash").waitFor();
     await page.getByRole("button", { name: "Close evidence" }).click();
@@ -246,6 +269,7 @@ try {
     await page
       .getByRole("button", { name: "Review NIST alignment", exact: true })
       .click();
+    await page.locator(".wb-nist-basis").first().waitFor();
     assert.equal(await page.locator(".wb-nist-grid article").count(), 6);
     // Each function states its basis; detection and response cite case records.
     assert.equal(await page.locator(".wb-nist-basis").count(), 6);
@@ -411,7 +435,8 @@ try {
             await page.locator(".wb-callout").innerText(),
             /corroboration/,
           );
-          assert.equal(await page.locator(".wb-table tbody tr").count(), 4);
+          // Four exercise bulletins plus the INC-1051 library bulletin.
+          assert.equal(await page.locator(".wb-table tbody tr").count(), 5);
           await page.evaluate(() => window.scrollTo(0, 0));
           await page.screenshot({
             path: join(artifacts, "dark-web-intelligence.png"),
@@ -425,7 +450,7 @@ try {
         waitUntil: "networkidle",
       });
       await page.getByRole("button", { name: "Next", exact: true }).click();
-      await page.getByText("Page 2 of 11", { exact: true }).waitFor();
+      await page.getByText(/^Page 2 of \d+$/).waitFor();
       await page
         .getByRole("textbox", { name: "Search intelligence", exact: true })
         .fill("missing-indicator.example");
@@ -478,6 +503,179 @@ try {
       fullPage: true,
     });
   });
+  await check(
+    "Dataset-derived evidence, provenance, graph and report",
+    async () => {
+      await page.setViewportSize({ width: 1440, height: 1060 });
+      // 1-4. Search a dataset-derived indicator and inspect its provenance.
+      await page.goto(url + "/intelligence?q=claudfront.net", {
+        waitUntil: "networkidle",
+      });
+      const row = page.locator(".wb-table tbody tr").first();
+      assert.match(await row.innerText(), /claudfront\.net/);
+      assert.match(
+        await row.locator(".wb-prov").innerText(),
+        /dataset-derived/i,
+      );
+      await row.locator("a").first().click();
+      await page.getByRole("heading", { name: "claudfront.net" }).waitFor();
+      assert.match(
+        await page.locator(".wb-dataset-record").first().innerText(),
+        /CC BY 4\.0/,
+      );
+      // Each report listing stays a separate supporting observation.
+      assert.ok((await page.locator(".wb-evidence-row").count()) >= 2);
+      await page.locator(".wb-evidence-row").first().click();
+      await page.locator(".wb-drawer .wb-dataset-record").waitFor();
+      assert.match(
+        await page.locator(".wb-drawer").innerText(),
+        /Infoblox Threat Intelligence indicators/,
+      );
+      await page.getByRole("button", { name: "Close evidence" }).click();
+      // 7-8. Graph shows the indicator linked to its source reports.
+      await page
+        .getByRole("button", { name: "Relationship graph", exact: true })
+        .click();
+      await page.locator(".wb-graph-node").first().waitFor();
+      assert.ok(
+        (await page.locator("g[data-node^='DS-REPORT-']").count()) >= 2,
+      );
+      // 5-6. Forum and marketplace views over the same observation model.
+      await page.goto(url + "/dark-web?kind=forum_thread", {
+        waitUntil: "networkidle",
+      });
+      assert.ok((await page.locator(".wb-table tbody tr").count()) > 0);
+      assert.match(
+        await page.locator(".wb-table tbody").innerText(),
+        /dataset-derived/i,
+      );
+      await page
+        .getByRole("button", { name: "Marketplace listings", exact: true })
+        .click();
+      await page.waitForLoadState("networkidle");
+      await page
+        .locator(".wb-table tbody .wb-prov.reference_derived")
+        .first()
+        .waitFor();
+      assert.match(
+        await page.locator(".wb-table tbody").innerText(),
+        /reference reconstruction/i,
+      );
+      assert.doesNotMatch(
+        await page.locator(".wb-table tbody").innerText(),
+        /dataset-derived/i,
+      );
+      // 9-11. Dataset-backed case and report keep provenance.
+      await page.goto(url + "/investigations/INC-1046?view=report", {
+        waitUntil: "networkidle",
+      });
+      await page.locator(".wb-report-preview").waitFor();
+      const report = await page.locator(".wb-report-preview").innerText();
+      assert.match(report, /Dataset-derived evidence:/);
+      assert.match(report, /Evidence sources/i);
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.screenshot({
+        path: join(artifacts, "dataset-case-report.png"),
+        fullPage: false,
+      });
+      // 12. The canonical IOC is still the synthetic exercise record.
+      await page.goto(url + "/intelligence?q=203.0.113.42", {
+        waitUntil: "networkidle",
+      });
+      assert.match(
+        await page.locator(".wb-table tbody tr").first().innerText(),
+        /203\.0\.113\.42[\s\S]*synthetic/i,
+      );
+    },
+  );
+  await check(
+    "TOR-associated IOC, enrichment, graph, case and report",
+    async () => {
+      // 1. The IOC from synthetic telemetry stays synthetic in search.
+      await page.goto(url + "/intelligence?q=185.220.100.242", {
+        waitUntil: "networkidle",
+      });
+      const row = page.locator(".wb-table tbody tr").first();
+      assert.match(
+        await row.innerText(),
+        /185\.220\.100\.242[\s\S]*synthetic/i,
+      );
+      await row.locator("a").first().click();
+      await page.getByRole("heading", { name: "185.220.100.242" }).waitFor();
+      // 2. Enrichment: small text badge and a TOR infrastructure panel.
+      await page.locator(".wb-tor-context").first().waitFor();
+      assert.equal(await page.locator(".wb-heading .wb-tor").count(), 1);
+      const tor = await page.locator(".wb-tor-context").first().innerText();
+      assert.match(tor, /Exit node\s*Yes/i);
+      assert.match(tor, /Tor Project Onionoo/);
+      assert.match(tor, /2026-09-28 17:00:00 UTC/);
+      assert.doesNotMatch(
+        await page.locator("main").innerText(),
+        /live tor monitoring/i,
+      );
+      await page.screenshot({
+        path: join(artifacts, "tor-ioc-profile.png"),
+        fullPage: false,
+      });
+      // 3. Evidence: the Onionoo observation keeps its provenance.
+      const torRow = page
+        .locator(".wb-evidence-row")
+        .filter({ hasText: "TOR exit node:" })
+        .first();
+      assert.match(await torRow.innerText(), /dataset-derived/i);
+      await torRow.click();
+      await page.locator(".wb-drawer .wb-tor-context").waitFor();
+      const drawer = await page.locator(".wb-drawer").innerText();
+      assert.match(drawer, /Tor Project Onionoo relay metadata/);
+      assert.match(drawer, /CC0/);
+      await page.getByRole("button", { name: "Close evidence" }).click();
+      // 4. Case: Tor context is a low, separate risk dimension.
+      await page.goto(url + "/investigations/INC-1047?view=analysis", {
+        waitUntil: "networkidle",
+      });
+      const risk = await page.locator(".wb-risk-factors").innerText();
+      assert.match(risk, /TOR exit-node context[\s\S]*TOR context[\s\S]*\+5/i);
+      assert.doesNotMatch(risk, /Malicious reputation/);
+      // 5. Graph: IP --ASSOCIATED_WITH--> Tor relay, evidence-backed.
+      await page.goto(url + "/investigations/INC-1047?view=graph", {
+        waitUntil: "networkidle",
+      });
+      await page.locator(".wb-graph-node").first().waitFor();
+      const full = page.getByRole("button", {
+        name: "Full graph",
+        exact: true,
+      });
+      if (await full.count()) await full.click();
+      assert.ok(
+        (await page.locator("g[data-node^='DS-TOR_RELAY-']").count()) >= 1,
+      );
+      await page.screenshot({
+        path: join(artifacts, "tor-case-graph.png"),
+        fullPage: false,
+      });
+      // 6. Report: synthetic telemetry and dataset-derived Tor context stay distinct.
+      await page.goto(url + "/investigations/INC-1047?view=report", {
+        waitUntil: "networkidle",
+      });
+      await page.locator(".wb-report-preview").waitFor();
+      const report = await page.locator(".wb-report-preview").innerText();
+      assert.match(report, /Tor Project Onionoo relay metadata/);
+      assert.match(report, /Synthetic demonstration evidence/);
+      // 7. The library cases open and keep their own states.
+      for (const [id, state] of [
+        ["INC-1048", "CONTAINMENT"],
+        ["INC-1052", "CLOSED"],
+      ]) {
+        await page.goto(url + `/investigations/${id}`, {
+          waitUntil: "networkidle",
+        });
+        assert.match(
+          await page.locator("main").innerText(),
+          new RegExp(state, "i"),
+        );
+      }
+    },
+  );
   assert.deepEqual(errors, [], "Browser console/page errors");
   console.log(
     JSON.stringify(

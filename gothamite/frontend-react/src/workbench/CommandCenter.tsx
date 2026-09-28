@@ -144,13 +144,19 @@ export function CommandCenter({ listOnly = false }: { listOnly?: boolean }) {
             <div>
               <span>Indicators (IOCs)</span>
               <strong>{data.indicators}</strong>
-              <small>Synthetic IP, domain, hash, URL and email records</small>
+              <small>
+                {data.provenance
+                  ? `${data.provenance.indicators.synthetic || 0} synthetic · ${data.provenance.indicators.dataset_derived || 0} dataset-derived`
+                  : "Synthetic IP, domain, hash, URL and email records"}
+              </small>
             </div>
             <div>
               <span>Evidence-backed relationships</span>
               <strong>{data.relationships}</strong>
               <small>
-                Each cites one of {data.evidence_count} recorded observations
+                Each cites one of {data.evidence_count} observations (
+                {data.provenance?.evidence.dataset_derived || 0}{" "}
+                dataset-derived)
               </small>
             </div>
           </div>
@@ -280,9 +286,10 @@ export function CommandCenter({ listOnly = false }: { listOnly?: boolean }) {
                 ))}
               </div>
               <p className="wb-footnote">
-                Counts are recorded observations per synthetic source. No live
-                connector is attached; a deployment would ingest through
-                scheduled source adapters.
+                Counts are synthetic exercise observations per source;
+                dataset-derived records are counted above. No live connector is
+                attached; a deployment would ingest through scheduled source
+                adapters.
               </p>
             </Panel>
           </aside>

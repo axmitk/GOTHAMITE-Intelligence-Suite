@@ -9,8 +9,19 @@ import {
   ResourceState,
   EntityLink,
   EvidenceList,
+  ProvenanceBadge,
+  DatasetProvenance,
+  TorBadge,
+  TorContext,
 } from "./ui";
-import { human, kindLabel, plural, time, entityUrl } from "./formatters";
+import {
+  human,
+  kindLabel,
+  plural,
+  time,
+  entityUrl,
+  isTorExit,
+} from "./formatters";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { RelationshipGraph } from "./RelationshipGraph";
 import type { Profile, SearchResult } from "./types";
@@ -40,7 +51,7 @@ const catalogs: Record<
   darkweb: {
     title: "Dark-web intelligence",
     subtitle:
-      "Dark-web source observations: mentions and extracted identifiers from synthetic exposure bulletins, with source, confidence and corroboration status.",
+      "Dark-web source observations: synthetic exposure mentions, dataset-derived forum threads and marketplace listings, each with source, confidence, provenance and corroboration status.",
     kind: "darkweb_mention",
   },
 };
@@ -53,7 +64,12 @@ export function Intelligence({
   const config = catalogs[catalog];
   const [params, setParams] = useSearchParams();
   const query = params.get("q") || "";
-  const kind = config.kind || params.get("kind") || "";
+  // The dark-web view offers its own source-type tabs over one observation model.
+  const kind =
+    (catalog === "darkweb" ? params.get("kind") : null) ||
+    config.kind ||
+    params.get("kind") ||
+    "";
   const page = Math.max(1, Number(params.get("page")) || 1);
   const [draft, setDraft] = useState(query);
   const { data, loading, error, reload } = useResource<SearchResult>(
@@ -69,7 +85,7 @@ export function Intelligence({
         title={config.title}
         subtitle={config.subtitle}
       >
-        <Badge value="Synthetic dataset" tone="demo" />
+        <Badge value="Synthetic and dataset-derived" tone="demo" />
       </Heading>
       <form
         className="wb-catalog-search"
@@ -118,6 +134,20 @@ export function Intelligence({
       )}
       <div className="wb-catalog-toolbar">
         <div className="wb-filterbar">
+          {catalog === "darkweb" &&
+            [
+              ["darkweb_mention", "Exposure mentions"],
+              ["forum_thread", "Forum threads"],
+              ["market_listing", "Marketplace listings"],
+            ].map(([v, l]) => (
+              <button
+                key={v}
+                className={kind === v ? "selected" : ""}
+                onClick={() => change({ kind: v, page: "1" })}
+              >
+                {l}
+              </button>
+            ))}
           {!config.kind &&
             [
               ["", "All entities"],
@@ -180,15 +210,11 @@ export function Intelligence({
                         {e.confidence.toFixed(2)}
                       </span>
                     </td>
-                    <td>
-                      <Badge
-                        value={
-                          catalog === "darkweb"
-                            ? "Unverified claim"
-                            : "Synthetic"
-                        }
-                        tone="demo"
-                      />
+                    <td className="wb-prov-cell">
+                      <ProvenanceBadge value={e.provenance} />
+                      {catalog === "darkweb" && (
+                        <Badge value="Unverified claim" tone="demo" />
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -248,6 +274,9 @@ export function EntityProfile() {
   if (!data)
     return <ResourceState loading={loading} error={error} retry={reload} />;
   const { entity } = data;
+  const tor = data.evidence.filter(
+    (e) => e.dataset_record?.dataset === "tor_project_onionoo",
+  );
   return (
     <>
       <Link to="/intelligence" className="wb-back">
@@ -258,7 +287,8 @@ export function EntityProfile() {
         title={entity.label}
         subtitle={entity.summary}
       >
-        <Badge value="Synthetic" tone="demo" />
+        <ProvenanceBadge value={entity.provenance} />
+        {entity.kind === "ip" && tor.some(isTorExit) && <TorBadge />}
       </Heading>
       <div className="wb-tabs">
         {["overview", "relationships"].map((t) => (
@@ -319,6 +349,29 @@ export function EntityProfile() {
                 </div>
               </dl>
             </Panel>
+            {entity.kind === "ip" && tor.length > 0 && (
+              <Panel
+                title="TOR infrastructure"
+                meta={<span className="wb-mono">CONTEXT, NOT A VERDICT</span>}
+              >
+                {tor.map((e) => (
+                  <TorContext key={e.id} record={e.dataset_record} />
+                ))}
+                <p className="wb-footnote">
+                  Tor Project Onionoo snapshot, matched on the exact IP. A Tor
+                  exit relay carries traffic for many users; judge the activity
+                  by its observed behavior.
+                </p>
+              </Panel>
+            )}
+            {entity.dataset_record && (
+              <Panel
+                title="Evidence provenance"
+                meta={<ProvenanceBadge value={entity.provenance} />}
+              >
+                <DatasetProvenance record={entity.dataset_record} />
+              </Panel>
+            )}
             <Panel
               title="Supporting observations"
               meta={
@@ -388,6 +441,7 @@ export function EntityProfile() {
                 ))}
               </div>
             </Panel>
+            <SourceObservations value={entity.label} />
           </aside>
         </div>
       )}
@@ -395,5 +449,70 @@ export function EntityProfile() {
         <EvidenceDrawer id={inspect} onClose={() => setInspect(null)} />
       )}
     </>
+  );
+}
+
+type EnrichmentResult = {
+  kind: string | null;
+  results: {
+    adapter: string;
+    state: string;
+    error: string | null;
+    count: number;
+  }[];
+  observations: {
+    id: string;
+    source: string;
+    source_type: string;
+    entity_kind: string;
+    value: string;
+    confidence: number;
+    provenance: string;
+    relationship: string;
+    collection_status: string;
+    summary: string;
+  }[];
+};
+
+// Adapter enrichment for this indicator. Synthetic unless live collection is
+// explicitly enabled server-side; each row states its collection status.
+function SourceObservations({ value }: { value: string }) {
+  const { data } = useResource<EnrichmentResult>(
+    `/enrichment?value=${encodeURIComponent(value)}`,
+  );
+  if (!data || !data.results.length) return null;
+  return (
+    <Panel
+      title="Source observations"
+      meta={<span className="wb-mono">ADAPTER ENRICHMENT</span>}
+    >
+      <div className="wb-source-obs">
+        {data.results.map((r) => (
+          <div key={r.adapter} className="wb-spread">
+            <span className="wb-mono">{r.adapter.toUpperCase()}</span>
+            <Badge
+              value={r.state}
+              label={`Collection status: ${r.state}`}
+              tone={r.state === "connected" ? "simulated" : "demo"}
+            />
+          </div>
+        ))}
+        {data.observations.map((o) => (
+          <article key={o.id}>
+            <small>
+              {kindLabel(o.entity_kind)} · {o.relationship.replaceAll("_", " ")}
+            </small>
+            <strong className="wb-mono wb-break">
+              {o.value.split("#")[0]}
+            </strong>
+            <p>{o.summary}</p>
+            <small>
+              Source: {o.source} · Confidence {o.confidence.toFixed(2)} ·{" "}
+              {o.provenance}
+            </small>
+          </article>
+        ))}
+      </div>
+    </Panel>
   );
 }

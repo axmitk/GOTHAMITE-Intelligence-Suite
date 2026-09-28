@@ -8,7 +8,22 @@ export interface Entity {
   first_seen: string;
   last_seen: string;
   attributes: Record<string, string | number>;
-  provenance: "synthetic";
+  provenance: Provenance;
+  dataset_record?: DatasetRecord | null;
+}
+export type Provenance = "synthetic" | "dataset_derived" | "reference_derived";
+export interface DatasetRecord {
+  provenance_class: Provenance;
+  dataset: string;
+  dataset_name: string;
+  dataset_version: string;
+  license: string;
+  source_url: string;
+  doi: string | null;
+  source_record_id: string;
+  transformation_version: string;
+  imported_at: string;
+  details: Record<string, unknown>;
 }
 export interface Evidence {
   id: string;
@@ -19,7 +34,8 @@ export interface Evidence {
   content: string;
   content_hash: string;
   confidence: number;
-  provenance: "synthetic";
+  provenance: Provenance;
+  dataset_record?: DatasetRecord | null;
 }
 export interface Relationship {
   id: string;
@@ -42,6 +58,7 @@ export interface RiskFactor {
   points: number;
   evidence_ids: string[];
   reason: string;
+  dimension?: string;
 }
 export interface Risk {
   score: number;
@@ -148,6 +165,11 @@ export interface DashboardData {
   sources: { name: string; count: number; mode: string }[];
   activity: { time: string; count: number }[];
   recent: Evidence[];
+  provenance?: {
+    indicators: Record<string, number>;
+    evidence: Record<string, number>;
+    relationships: Record<string, number>;
+  };
 }
 export interface SearchResult {
   query: string;

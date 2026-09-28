@@ -1,4 +1,4 @@
-import type { Entity } from "./types";
+import type { Entity, Evidence } from "./types";
 
 export const human = (value: string) =>
   value.replaceAll("_", " ").toLowerCase();
@@ -18,6 +18,11 @@ const kindLabels: Record<string, string> = {
   organization: "Organization",
   incident: "Incident",
   vulnerability: "Vulnerability",
+  forum_thread: "Forum thread",
+  market_listing: "Marketplace listing",
+  report: "Source report",
+  country: "Country",
+  tor_relay: "Tor relay",
 };
 export const kindLabel = (kind: string) =>
   kindLabels[kind] || human(kind).replace(/^./, (c) => c.toUpperCase());
@@ -44,8 +49,13 @@ const pad = (n: number) => String(n).padStart(2, "0");
 export const time = (value: string) => {
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
-  return `${pad(d.getUTCDate())} ${months[d.getUTCMonth()]}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+  // The synthetic exercise is a single 2026 day; dataset records span years.
+  const year = d.getUTCFullYear() === 2026 ? "" : ` ${d.getUTCFullYear()}`;
+  return `${pad(d.getUTCDate())} ${months[d.getUTCMonth()]}${year}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
 };
+// Tor Project Onionoo observations carry relay context in their dataset record.
+export const isTorExit = (e: Pick<Evidence, "dataset_record">) =>
+  e.dataset_record?.details?.observation_type === "tor_exit_node";
 export const entityUrl = (entity: Pick<Entity, "kind" | "id">) =>
   entity.kind === "incident"
     ? `/investigations/${entity.id}`

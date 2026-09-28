@@ -1,5 +1,122 @@
 # GOTHAMITE progress — 2026-09-28
 
+## TOR exit-node intelligence and case library (2026-09-29)
+
+TOR snapshot → TOR adapter → normalized observation → IOC enrichment → evidence →
+correlation → graph → case → NIST → response → report, fully offline.
+
+- **Snapshot:** Tor Project Onionoo `details`, relays published 2026-09-28
+  17:00:00 UTC, retrieved 2026-09-28, 18 relays (16 exit, 12 running, 11 AS names).
+  CC0. Fetched once during development; runtime never contacts Onionoo or starts Tor.
+- **Imported:** 18 relay entities, 15 new IP entities (one address matched the
+  existing INC-1047 IP), 18 observations (16 `tor_context` exit, 2 `tor_relay`),
+  18 `ASSOCIATED_WITH` edges, each with a dataset record (rule, snapshot, relay fields).
+- **Correlation:** `tor-exact-ip-v1`, exact normalized IPv4 only. No ASN/range match.
+- **Risk:** new "TOR exit-node context" factor, +5, dimension "TOR context"; every
+  factor now names its dimension (reputation, observed behavior, TOR context, source
+  corroboration, asset impact, exposure). Method label is now `risk-v1.1`. INC-1042
+  still scores 100.
+- **UI:** "TOR exit node" text badge (IOC heading, evidence rows), TOR infrastructure
+  section in the IOC profile and evidence drawer, `tor_relay` graph nodes in the
+  Domain / IP lane, case headers show every provenance class present. Graphs for
+  cases outside the actor chain no longer start with empty rows.
+- **Case library:** INC-1047 to INC-1052 (see DATA_SOURCES.md). The queue has 11
+  cases. The campaign-context finding now appears only when a campaign is in scope,
+  so inventory-only cases do not claim a campaign link.
+- **Tests:** backend **98 passed** (82 + 16 in `tests/test_tor_library.py`, run with
+  non-loopback sockets and subprocesses forbidden). Browser **12/12**, 0 console
+  errors, three consecutive runs. New check: TOR IOC → enrichment → evidence →
+  risk → graph → report → library case states. Updated expectations, no assertion
+  removed: queue 5 → 11 rows, exposure mentions 4 → 5 (INC-1051 bulletin), the
+  dataset-edge test accepts `ASSOCIATED_WITH` and any case's `INVESTIGATES` scope,
+  and the `imported` fixture seeds the library as the app does. Two checks gained
+  explicit waits for their panel (they counted elements before render).
+- **Offline:** cold start on an empty database with outbound sockets blocked: 0
+  connection attempts, 11 cases, 18 relays.
+- **Unresolved:** none for Tor (CC0). DWData and MailAccess licensing unchanged.
+
+## Public CTI dataset integration
+
+Real public data now flows through the existing model:
+PUBLIC DATASET → dataset adapter → normalized observation → evidence →
+correlation → graph → case → NIST → report. Full detail: DATA_SOURCES.md.
+
+- **Datasets added:** DarkForums Safe Corpus (Zenodo 10.5281/zenodo.21991378,
+  CC BY 4.0) and Infoblox Threat Intelligence (@5b5a12d, CC BY 4.0), as filtered
+  offline snapshots. DWData: **not added** (no licence); schema projection plus six
+  labelled reference reconstructions only.
+- **Imported:** 462 entities, 498 evidence rows, 312 relationships. Forum: 200
+  threads and 153 posts (1 thread dropped). Infoblox: 140 listings of 121
+  indicators across 7 reports. Import takes about 1.2 s on first start and is
+  skipped afterwards.
+- **Filtered:** 110 of 153 posts had their text withheld (redacted personal
+  data, credential references, phone-like numbers, encoded blobs, financial
+  data); 1 thread dropped; 1 Infoblox row rejected. No raw post text is bundled.
+- **Findings that limit the demonstration (stated, not hidden):** the corpus is a
+  single "Leaks" sub-forum with no CVE/ATT&CK content, and the two datasets share
+  **no** entity. Multi-observation support is real within Infoblox (14 domains
+  in more than one report) and within the forum; cross-dataset corroboration is
+  implemented and proven with a test fixture only.
+- **Case:** INC-1046 "Decoy Dog DNS infrastructure review" (50 dataset-derived
+  observations). Existing risk/NIST rules only; report has an "Evidence sources"
+  block and per-observation provenance. INC-1042 is untouched and synthetic.
+- **UI:** one provenance badge (Synthetic / Dataset-derived / Reference
+  reconstruction) in search, catalogs, evidence rows, the drawer, case headers and
+  reports; dataset-record details (dataset, record id, version, licence/DOI,
+  transformation, import time); dark-web view tabs for exposure mentions, forum
+  threads and marketplace listings; the graph shows direct relationships for
+  entities outside the exercise chain; dates show the year outside 2026.
+- **Tests:** backend **82 passed** (56 + 26 in `tests/test_datasets.py`), also
+  run with external network blocked (0 connection attempts). Browser **11/11**
+  (new check: dataset search → provenance → evidence drawer → graph → forum and
+  marketplace tabs → INC-1046 report → canonical IOC still synthetic), 0 console
+  errors. Two existing expectations were updated because INC-1046 exists: the
+  queue now has 5 rows (all five ids asserted), and catalog pagination asserts
+  "Page 2 of N" instead of a fixed total. No test was removed.
+- **Unresolved licensing:** DWData redistribution; MailAccess has no LICENSE file.
+
+## Source adapter pass (defensive CTI integration)
+
+Audited four repositories and added a common observation model. No module
+was replaced and the synthetic demo is unchanged and works offline.
+
+Audit result (full table in THIRD_PARTY_NOTICES.md):
+
+- **deepdarkCTI** (GPL-3.0): source catalogue. **Integrated** as a source
+  registry parser that reads a local clone; never fetched, never vendored.
+- **TorBot** (GPL-3.0): onion collection adapter over a process boundary,
+  **disabled by default**, one approved target per call. Not run live here.
+- **horus** (GPL-3.0): mixes passive lookups with active scanning. Live call
+  **not wired**; synthetic passive-metadata adapter only.
+- **MailAccess** (MIT declared, no LICENSE file): findings shape used. Its active
+  account probing, mailbox verification and proxy egress are **out of scope and
+  not invoked**; live call not wired.
+
+What was built (`gothamite/backend/collection/`): adapter interfaces;
+`Observation` with source, source type, observed_at, collection status,
+provenance, confidence, entity type/value, relationship type and synthetic flag;
+`SourceState` (synthetic / connected / available / unavailable / error);
+content-id deduplication; synthetic fallback; per-adapter error capture; four
+session-protected endpoints; and a "Source observations" panel on the existing
+IOC profile.
+
+Integrated versus architectural:
+
+| Capability | State |
+| --- | --- |
+| Observation model, dedup, state model, registry parser | Implemented and tested |
+| Synthetic MailAccess / horus / TorBot adapters | Implemented; used by the demo |
+| Live TorBot adapter | Wired, off by default, not exercised live |
+| Live horus / MailAccess adapters | Not wired (safety guard) |
+| Scheduler, collection worker, persisting observations into evidence/graph | Architecture only |
+
+Verification after the final change: `pytest tests -q` **56 passed** (44
+existing + 12 new, run with `subprocess.run` forbidden to prove no adapter
+launches a tool by default); build passed; lint exit 0 (six pre-existing
+warnings); `npm run test:e2e` **10/10, 0 browser errors**, now also asserting the
+IOC profile shows adapter observations with "collection status: synthetic";
+canonical 203.0.113.42 → INC-1042 path unchanged. Demo server restarted.
+
 ## Content and realism pass
 
 A copy and claims audit across the React workbench, the persona toolkit, the

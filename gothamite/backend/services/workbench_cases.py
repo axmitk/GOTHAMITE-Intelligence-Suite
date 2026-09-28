@@ -3,7 +3,7 @@ from uuid import uuid4
 from fastapi import HTTPException
 from sqlalchemy import update
 from backend.models.workbench import IncidentCase, CaseNote, ResponseAction, AuditEvent, IntelRelationship
-from backend.services.workbench_intelligence import require_case, require_entity, context_for, serialize
+from backend.services.workbench_intelligence import require_case, require_entity, context_for, serialize, with_provenance
 from backend.services.workbench_analysis import risk_assessment, EvidenceRuleProvider, recommendations, nist_mapping, STATES
 
 
@@ -58,7 +58,7 @@ def case_payload(db, id):
     evidence_ids = [e.id for e in evidence]
     relationships = db.query(IntelRelationship).filter(IntelRelationship.evidence_id.in_(evidence_ids)).order_by(IntelRelationship.id).all()
     return {**serialize(case), "title": entity.label, "summary": entity.summary,
-            "entities": [serialize(e) for e in entities if e.id != id], "evidence": [serialize(e) for e in evidence],
+            "entities": [serialize(e) for e in entities if e.id != id], "evidence": with_provenance(db, [serialize(e) for e in evidence], "evidence"),
             "relationships": [serialize(r) for r in relationships],
             "risk": risk_assessment(evidence, entities), "analysis": EvidenceRuleProvider().analyze(evidence, entities),
             "notes": [serialize(n) for n in notes], "actions": recs,
@@ -130,11 +130,22 @@ def review_action(db, id, rule, body):
     return case_payload(db, id)
 
 
+def _provenance_phrase_dicts(evidence) -> str:
+    class _E:
+        def __init__(self, p): self.provenance = p
+    from backend.services.workbench_analysis import _provenance_phrase
+    return _provenance_phrase([_E(e.get("provenance", "synthetic")) for e in evidence])
+
+
 def report_markdown(case):
     def safe(value):
         # Reports are plain Markdown; neutralize HTML and active link syntax in user notes.
         return str(value).replace("<", "&lt;").replace(">", "&gt;").replace("[", "\\[").replace("]", "\\]").replace("#", "\\#")
-    rows = [f"# GOTHAMITE / {case['id']}", "", "SYNTHETIC EXERCISE — no real intelligence or response execution.", "",
+    prov = {e.get("provenance", "synthetic") for e in case["evidence"]}
+    banner = ("SYNTHETIC EXERCISE — no real intelligence or response execution." if prov <= {"synthetic"} else
+              "CONTAINS DATASET-DERIVED EVIDENCE from public research datasets (see Evidence sources). "
+              "Response actions are simulations; no external system is changed.")
+    rows = [f"# GOTHAMITE / {case['id']}", "", banner, "",
             safe(case["title"]), "Generated from the saved investigation trail. Observations, interpretation and approvals are distinct.",
             f"Status: {case['status']} | Analyst: {safe(case['analyst'])} | Severity: {case['severity']}",
             f"Created: {case['created_at']} | Updated: {case['updated_at']} | Version: {case['version']}",
@@ -143,16 +154,36 @@ def report_markdown(case):
     decided = [a for a in actions if a["status"] != "pending"]
     findings = case["analysis"]["findings"]
     rows += [
-        f"{len(case['evidence'])} synthetic observations and {len(case['relationships'])} evidence-backed relationships support this case. "
+        f"{_provenance_phrase_dicts(case['evidence'])} and {len(case['relationships'])} evidence-backed relationships support this case. "
         f"Baseline risk is {case['risk']['score']}/100 ({case['risk']['level']}) from {len(case['risk']['factors'])} evidenced factors.",
         (f"Rule-based findings: {'; '.join(f['title'] + ' (' + f['confidence'] + ' confidence)' for f in findings)}."
          if findings else "Insufficient evidence for a rule-based finding."),
         f"Response: {len(decided)} of {len(actions)} recommendations reviewed "
         f"({sum(a['status'] == 'simulated' for a in actions)} simulated, {sum(a['status'] == 'rejected' for a in actions)} rejected). "
         f"Case stage: {case['status']}." + (f" Next stage requires: {case['advance']['requirement']}" if case["advance"]["requirement"] and case["advance"]["next"] else ""),
-        "", "## Observed evidence (synthetic)"]
+        "", "## Observed evidence" + (" (synthetic)" if prov <= {"synthetic"} else "")]
+    rows += ["### Evidence sources", "Dataset-derived evidence and synthetic demonstration evidence are listed separately."]
+    sources: dict = {}
     for ev in case["evidence"]:
-        rows += [f"### {ev['id']} — {safe(ev['title'])}", f"{ev['observed_at']} | {safe(ev['source'])} | confidence annotation: {ev['confidence']}", safe(ev["content"]), f"SHA-256: {ev['content_hash']}", ""]
+        rec = ev.get("dataset_record")
+        k = rec["dataset"] if rec else "synthetic"
+        sources.setdefault(k, {"rec": rec, "n": 0})["n"] += 1
+    for k, v in sorted(sources.items()):
+        rec = v["rec"]
+        if rec:
+            rows.append(f"- Dataset-derived evidence: {v['n']} observation(s) from {safe(rec['dataset_name'])}, "
+                        f"version {safe(rec['dataset_version'])}, licence {safe(rec['license'])}"
+                        + (f", DOI {rec['doi']}" if rec.get("doi") else "") + f", {rec['source_url']}. "
+                        f"Transformation {rec['transformation_version']}; imported {rec['imported_at']}.")
+        else:
+            rows.append(f"- Synthetic demonstration evidence: {v['n']} observation(s) from the GOTHAMITE exercise seed.")
+    rows.append("")
+    for ev in case["evidence"]:
+        rec = ev.get("dataset_record")
+        label = (f"Dataset-derived | {safe(rec['dataset_name'])} | record {safe(rec['source_record_id'])}" if rec
+                 else "Synthetic demonstration evidence")
+        rows += [f"### {ev['id']} — {safe(ev['title'])}", f"{ev['observed_at']} | {safe(ev['source'])} | confidence annotation: {ev['confidence']}",
+                 f"Provenance: {label}", safe(ev["content"]), f"SHA-256: {ev['content_hash']}", ""]
     rows += ["## Correlated context", "Evidence-backed associations; not proof of actor identity or compromise."]
     labels = {e["id"]: e["label"] for e in case["entities"]}
     labels[case["id"]] = case["title"]

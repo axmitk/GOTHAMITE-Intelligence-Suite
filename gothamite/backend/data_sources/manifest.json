@@ -1,0 +1,84 @@
+{
+ "transformation_version": "gothamite-ds-1.0",
+ "datasets": {
+  "darkforums_safe_corpus": {
+   "name": "Dataset for Threat Intelligence in Dark Web Forums (Safe Corpus)",
+   "role": "forum intelligence",
+   "provenance_class": "dataset_derived",
+   "license": "CC BY 4.0",
+   "doi": "10.5281/zenodo.21991378",
+   "source_url": "https://zenodo.org/records/21991378",
+   "dataset_version": "2026-08-18 (Zenodo record 21991378)",
+   "raw_sha256": "c44b98f6d1a9faec0e1bf61d2a78461c5547b6a2216eb74fa42675dc75147949",
+   "bundled": "filtered snapshot",
+   "snapshot": "darkforums/forum_snapshot.json",
+   "stats": {
+    "threads_in": 201,
+    "threads_kept": 200,
+    "threads_dropped": 1,
+    "malformed_lines": 0,
+    "posts_kept": 153,
+    "posts_suppressed": 110
+   }
+  },
+  "infoblox_threat_intelligence": {
+   "name": "Infoblox Threat Intelligence indicators",
+   "role": "IOC intelligence",
+   "provenance_class": "dataset_derived",
+   "license": "CC BY 4.0",
+   "doi": null,
+   "source_url": "https://github.com/infobloxopen/threat-intelligence",
+   "dataset_version": "git 5b5a12d",
+   "bundled": "bounded snapshot",
+   "reports": [
+    "c2_beacon_20230414_iocs.csv",
+    "decoy_dog_cta_20230420_iocs.csv",
+    "decoy_dog_cta_20230714_iocs.csv",
+    "detour_dog_20250930_iocs.csv",
+    "pig_butchering_20250506_iocs.csv",
+    "fake_captcha_20260423_iocs.csv",
+    "volta_stealer_20260629_iocs.csv"
+   ],
+   "snapshot": "infoblox/ioc_snapshot.json",
+   "stats": {
+    "reports": 7,
+    "indicators": 140,
+    "unique_indicators": 121,
+    "rows_rejected": 1
+   }
+  },
+  "dwdata": {
+   "name": "DWData dark web marketplace data (crcresearch)",
+   "role": "marketplace reference",
+   "provenance_class": "reference_derived",
+   "license": "No licence declared; redistribution not verified",
+   "doi": null,
+   "source_url": "https://github.com/crcresearch/DWData",
+   "dataset_version": "schema/taxonomy only",
+   "bundled": "no raw records",
+   "snapshot": "dwdata/reconstruction.json",
+   "stats": {
+    "reconstruction_listings": 6,
+    "raw_records": 0
+   }
+  },
+  "tor_project_onionoo": {
+   "name": "Tor Project Onionoo relay metadata",
+   "role": "TOR infrastructure intelligence",
+   "provenance_class": "dataset_derived",
+   "license": "CC0 1.0 (Tor Metrics data)",
+   "doi": null,
+   "source_url": "https://onionoo.torproject.org/details",
+   "dataset_version": "relays_published 2026-09-28 17:00:00 UTC (retrieved 2026-09-28)",
+   "bundled": "bounded point-in-time snapshot",
+   "snapshot": "tor/onionoo_snapshot.json",
+   "transformation_version": "gothamite-tor-1.0",
+   "stats": {
+    "relays": 18,
+    "rejected": 0,
+    "exit_relays": 16,
+    "running": 12
+   }
+  }
+ }
+}

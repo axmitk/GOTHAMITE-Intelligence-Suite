@@ -87,3 +87,26 @@ class AuditEvent(Base):
     action = Column(String(64), nullable=False)
     detail = Column(Text, nullable=False)
     created_at = Column(String(32), nullable=False)
+
+
+class DatasetRecord(Base):
+    """Full provenance for a dataset-derived entity, evidence row or relationship.
+
+    Synthetic seed records have no row here. ``provenance`` on the entity or
+    evidence row says which class it is; this table says exactly where it came
+    from and how it was transformed.
+    """
+    __tablename__ = "wb_dataset_records"
+    record_type = Column(String(16), primary_key=True)  # entity | evidence | relationship
+    record_id = Column(String(160), primary_key=True)
+    provenance_class = Column(String(24), nullable=False)  # dataset_derived | reference_derived
+    dataset = Column(String(64), nullable=False, index=True)
+    dataset_name = Column(String(160), nullable=False)
+    dataset_version = Column(String(80), nullable=False)
+    license = Column(String(80), nullable=False)
+    source_url = Column(String(240), nullable=False)
+    doi = Column(String(80), nullable=True)
+    source_record_id = Column(String(160), nullable=False)
+    transformation_version = Column(String(40), nullable=False)
+    imported_at = Column(String(32), nullable=False)
+    details = Column(JSON, nullable=False, default=dict)

@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 import { ArrowUpRight, RefreshCw } from "lucide-react";
-import type { Entity, Evidence, Risk } from "./types";
+import type {
+  DatasetRecord,
+  Entity,
+  Evidence,
+  Provenance,
+  Risk,
+} from "./types";
 
-import { human, kindLabel, time, entityUrl } from "./formatters";
+import { isTorExit, human, kindLabel, time, entityUrl } from "./formatters";
 
 // Badges use sentence case ("Pending review") so status language reads consistently.
 export function Badge({
@@ -20,6 +26,106 @@ export function Badge({
     <span className={`wb-badge ${tone || value.toLowerCase()}`}>
       {text.charAt(0).toUpperCase() + text.slice(1)}
     </span>
+  );
+}
+const provenanceLabel: Record<Provenance, string> = {
+  synthetic: "Synthetic",
+  dataset_derived: "Dataset-derived",
+  reference_derived: "Reference reconstruction",
+};
+// Three provenance classes that must never be shown as the same thing.
+export function ProvenanceBadge({ value }: { value?: string }) {
+  const p = (value || "synthetic") as Provenance;
+  return (
+    <span className={`wb-badge wb-prov ${p}`}>
+      {provenanceLabel[p] || value}
+    </span>
+  );
+}
+// Tor Project Onionoo observations carry relay context in their dataset record.
+export function TorBadge() {
+  return <span className="wb-badge wb-tor">TOR exit node</span>;
+}
+const yesNo = (v: unknown) => (v ? "Yes" : "No");
+export function TorContext({ record }: { record?: DatasetRecord | null }) {
+  const d = record?.details;
+  if (!record || record.dataset !== "tor_project_onionoo" || !d) return null;
+  return (
+    <dl className="wb-metadata two-col wb-tor-context">
+      <div>
+        <dt>Exit node</dt>
+        <dd>{yesNo(d.exit)}</dd>
+      </div>
+      <div>
+        <dt>Running at snapshot</dt>
+        <dd>{yesNo(d.running)}</dd>
+      </div>
+      <div>
+        <dt>Relay</dt>
+        <dd>
+          {String(d.nickname)}{" "}
+          <span className="wb-mono wb-break">{String(d.fingerprint)}</span>
+        </dd>
+      </div>
+      <div>
+        <dt>AS</dt>
+        <dd>{String(d.as_name || "Not published")}</dd>
+      </div>
+      <div>
+        <dt>First observed</dt>
+        <dd>{d.first_seen ? time(String(d.first_seen)) : "Not published"}</dd>
+      </div>
+      <div>
+        <dt>Last observed</dt>
+        <dd>{d.last_seen ? time(String(d.last_seen)) : "Not published"}</dd>
+      </div>
+      <div>
+        <dt>Source</dt>
+        <dd>Tor Project Onionoo</dd>
+      </div>
+      <div>
+        <dt>Snapshot</dt>
+        <dd>{String(d.snapshot)}</dd>
+      </div>
+    </dl>
+  );
+}
+export function DatasetProvenance({
+  record,
+}: {
+  record?: DatasetRecord | null;
+}) {
+  if (!record) return null;
+  return (
+    <dl className="wb-metadata wb-dataset-record">
+      <div>
+        <dt>Dataset</dt>
+        <dd>{record.dataset_name}</dd>
+      </div>
+      <div>
+        <dt>Source record</dt>
+        <dd className="wb-mono wb-break">{record.source_record_id}</dd>
+      </div>
+      <div>
+        <dt>Dataset version</dt>
+        <dd>{record.dataset_version}</dd>
+      </div>
+      <div>
+        <dt>Licence</dt>
+        <dd>
+          {record.license}
+          {record.doi ? ` · DOI ${record.doi}` : ""}
+        </dd>
+      </div>
+      <div>
+        <dt>Transformation</dt>
+        <dd className="wb-mono">{record.transformation_version}</dd>
+      </div>
+      <div>
+        <dt>Imported</dt>
+        <dd>{time(record.imported_at)}</dd>
+      </div>
+    </dl>
   );
 }
 export function Heading({
@@ -167,7 +273,12 @@ export function RiskPanel({
         {risk.factors.map((f) => (
           <details key={f.label}>
             <summary>
-              <span>{f.label}</span>
+              <span>
+                {f.label}
+                {f.dimension && (
+                  <small className="wb-factor-dimension">{f.dimension}</small>
+                )}
+              </span>
               <b>+{f.points}</b>
             </summary>
             <p>{f.reason}</p>
@@ -202,8 +313,9 @@ export function EvidenceList({
             <span className="wb-evidence-main">
               <strong>{e.title}</strong>
               <span>
-                {e.source} <span className="wb-dot">·</span>{" "}
-                {time(e.observed_at)}
+                <ProvenanceBadge value={e.provenance} />
+                {isTorExit(e) && <TorBadge />} {e.source}{" "}
+                <span className="wb-dot">·</span> {time(e.observed_at)}
               </span>
               <small className="wb-mono">{e.id}</small>
             </span>

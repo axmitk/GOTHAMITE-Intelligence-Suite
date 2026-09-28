@@ -5,7 +5,7 @@ from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel, Field, ConfigDict, field_validator
 from sqlalchemy.orm import Session
 from backend.db import get_db
-from backend.models.workbench import IntelEntity, IntelEvidence, IntelRelationship, IncidentCase
+from backend.models.workbench import IntelEntity, IntelEvidence, IntelRelationship, IncidentCase, DatasetRecord
 from backend.services.workbench_security import require_session, create_session, origin_check, limit, COOKIE
 from backend.services import workbench_intelligence as intel, workbench_cases as cases
 from backend.services.workbench_analysis import analyze, NIST
@@ -31,11 +31,22 @@ def session(request: Request, response: Response):
 def dashboard(db: Session = Depends(get_db)):
     all_cases = [cases.case_payload(db, c.id) for c in db.query(IncidentCase).order_by(IncidentCase.id).all()]
     summaries = [{k: c[k] for k in ("id", "title", "status", "severity", "analyst", "updated_at", "risk")} | {"evidence_count": len(c["evidence"]), "asset_count": sum(e["kind"] == "asset" for e in c["entities"])} for c in all_cases]
-    rows = db.query(IntelEvidence).order_by(IntelEvidence.observed_at).all()
+    all_rows = db.query(IntelEvidence).order_by(IntelEvidence.observed_at).all()
+    # The exercise timeline, recent list and per-source chart describe the synthetic
+    # exercise only; dataset-derived records are counted separately below.
+    rows = [e for e in all_rows if e.provenance == "synthetic"]
     counts = Counter(e.source for e in rows)
+    ind = db.query(IntelEntity).filter(IntelEntity.kind.in_(intel.INDICATOR_KINDS)).all()
+    rels = {r.record_id for r in db.query(DatasetRecord.record_id).filter(DatasetRecord.record_type == "relationship").all()}
+    total_rels = db.query(IntelRelationship).count()
+    provenance = {
+        "indicators": dict(Counter(e.provenance for e in ind)),
+        "evidence": dict(Counter(e.provenance for e in all_rows)),
+        "relationships": {"synthetic": total_rels - len(rels), "dataset_derived": len(rels)},
+    }
     activity = Counter(e.observed_at[11:13] + ":" + ("00" if int(e.observed_at[14:16]) < 30 else "30") for e in rows)
     return {"snapshot": SNAPSHOT, "mode": "synthetic", "indicators": db.query(IntelEntity).filter(IntelEntity.kind.in_(intel.INDICATOR_KINDS)).count(),
-            "relationships": db.query(IntelRelationship).count(), "evidence_count": len(rows),
+            "relationships": total_rels, "evidence_count": len(all_rows), "provenance": provenance,
             "active_cases": sum(c["status"] != "CLOSED" for c in summaries),
             "critical_cases": sum(c["severity"] == "critical" and c["status"] != "CLOSED" for c in summaries),
             "cases": summaries, "sources": [{"name": k, "count": v, "mode": "synthetic"} for k,v in counts.items()],
@@ -58,7 +69,7 @@ def evidence(id: str, db: Session = Depends(get_db)):
     row = db.get(IntelEvidence, id)
     if row is None:
         raise HTTPException(404, "Evidence not found")
-    return intel.serialize(row)
+    return intel.with_provenance(db, [intel.serialize(row)], "evidence")[0]
 
 
 @router.get("/graph/{id}")
@@ -127,3 +138,38 @@ def report(id: str, db: Session = Depends(get_db)):
 @router.get("/nist")
 def nist():
     return {"version": "CSF 2.0", "source": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf", "categories": [{"function": f, "category": c, "title": t, "activity": a} for f,c,t,a in NIST]}
+
+
+# --- Source adapters (collection/enrichment layer; synthetic unless explicitly enabled) ---
+from backend.collection import default_registry
+from backend.collection.sources import registry_summary
+
+
+class CollectionRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    target: str = Field(min_length=3, max_length=300)
+    approved: bool = False
+
+
+@router.get("/sources/adapters")
+def source_adapters():
+    return {"adapters": default_registry().status()}
+
+
+@router.get("/sources/registry")
+def source_registry(category: str | None = Query(None, max_length=40), limit_rows: int = Query(50, ge=1, le=500, alias="limit")):
+    sources = default_registry().source_registry.sources()
+    rows = [s for s in sources if not category or s.category == category]
+    return {"summary": registry_summary(sources), "sources": [s.to_dict() for s in rows[:limit_rows]],
+            "note": "Source registry metadata. Not collected intelligence."}
+
+
+@router.get("/enrichment")
+def enrichment(value: str = Query(min_length=3, max_length=300)):
+    return default_registry().enrich(value.strip())
+
+
+@router.post("/collection")
+def collection(body: CollectionRequest):
+    # One explicit, analyst-approved target per request; never a crawl queue.
+    return default_registry().collect(body.target.strip(), approved=body.approved)

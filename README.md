@@ -104,6 +104,31 @@ mock hidden services over a simulated relay network. Scheduled or continuous
 ingestion through source adapters is the deployment architecture, not a running
 service; see [architecture](ARCHITECTURE.md#collection-model).
 
+Public datasets: filtered snapshots of the DarkForums Safe Corpus and Infoblox
+Threat Intelligence (both CC BY 4.0) are imported offline at startup as
+**dataset-derived** evidence, shown with a distinct provenance badge, and backed
+by INC-1046. DWData is reference-only (no licence). The canonical 203.0.113.42
+investigation remains synthetic. See [data sources](DATA_SOURCES.md).
+
+TOR exit-node intelligence: a bounded Tor Project Onionoo snapshot (18 relays,
+published 2026-09-28 17:00 UTC, CC0) is imported offline. An IP that exactly
+matches a relay address gets a TOR infrastructure section, a small "TOR exit node"
+badge, an `ASSOCIATED_WITH` edge to the relay and a +5 "TOR context" risk factor.
+Tor association is context, never a malicious verdict. GOTHAMITE never contacts
+Onionoo or starts Tor.
+
+Case library: INC-1047 to INC-1052 add Tor context, multi-source corroboration,
+a forum claim, a repeated Infoblox IOC, a credential exposure (placeholders only)
+and a lookalike domain, each in a different workflow and response state. They are
+deliberately synthetic or dataset-derived exercises, not real incidents.
+
+Source adapters: `gothamite/backend/collection/` normalizes MailAccess-,
+horus- and TorBot-shaped findings and the deepdarkCTI source catalogue into one
+observation model. In this build every adapter runs on synthetic fixtures; live
+execution is off by default and needs explicit opt-in. See
+[third-party notices](THIRD_PARTY_NOTICES.md) for what is integrated versus
+architectural only.
+
 This is a single-process local prototype. Its demo session is not SSO or user
 authentication. No live feeds, dark-web crawling, model API, real endpoint
 containment, arbitrary case creation or evidence uploads are implemented.

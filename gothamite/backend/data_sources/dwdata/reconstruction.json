@@ -1,0 +1,58 @@
+{
+ "listings": [
+  {
+   "id": "RECON-01",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-01",
+   "category": "Security",
+   "title": "Reconstructed listing: account-security service (category template)",
+   "price": "illustrative band 10-50 USD",
+   "rating": null
+  },
+  {
+   "id": "RECON-02",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-02",
+   "category": "Services",
+   "title": "Reconstructed listing: hosting service (category template)",
+   "price": "illustrative band 50-200 USD",
+   "rating": null
+  },
+  {
+   "id": "RECON-03",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-03",
+   "category": "SoftwareandMalware",
+   "title": "Reconstructed listing: stealer malware offering (category template)",
+   "price": "illustrative band 100-500 USD",
+   "rating": null
+  },
+  {
+   "id": "RECON-04",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-01",
+   "category": "SoftwareandMalware",
+   "title": "Reconstructed listing: loader offering (category template)",
+   "price": "illustrative band 200-800 USD",
+   "rating": null
+  },
+  {
+   "id": "RECON-05",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-02",
+   "category": "DigitalProducts",
+   "title": "Reconstructed listing: data-leak bundle (category template)",
+   "price": "illustrative band 20-100 USD",
+   "rating": null
+  },
+  {
+   "id": "RECON-06",
+   "market": "reconstruction",
+   "vendor": "reconstruction-vendor-03",
+   "category": "GuidesandTutorials",
+   "title": "Reconstructed listing: OPSEC guide (category template)",
+   "price": "illustrative band 5-30 USD",
+   "rating": null
+  }
+ ]
+}

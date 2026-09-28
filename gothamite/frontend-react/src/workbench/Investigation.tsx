@@ -10,6 +10,7 @@ import {
   Panel,
   ResourceState,
   RiskPanel,
+  ProvenanceBadge,
 } from "./ui";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { RelationshipGraph } from "./RelationshipGraph";
@@ -55,7 +56,15 @@ function ReportPreview({ caseData }: { caseData: CaseData }) {
   return (
     <Panel
       title="Investigation report"
-      meta={<Badge value="Synthetic exercise" tone="demo" />}
+      meta={
+        <span className="wb-prov-cell">
+          {[...new Set(caseData.evidence.map((e) => e.provenance))]
+            .sort()
+            .map((p) => (
+              <ProvenanceBadge key={p} value={p} />
+            ))}
+        </span>
+      }
     >
       {data ? (
         <div className="wb-report-preview">
@@ -292,7 +301,11 @@ export function Investigation() {
           </button>
         </form>
         <span className="wb-mono">VERSION {current.version}</span>
-        <Badge value="Synthetic" tone="demo" />
+        {[...new Set(current.evidence.map((e) => e.provenance))]
+          .sort()
+          .map((p) => (
+            <ProvenanceBadge key={p} value={p} />
+          ))}
       </div>
       <div className="wb-case-stages">
         {current.states.map((s, i) => (

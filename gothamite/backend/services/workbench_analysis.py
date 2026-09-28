@@ -20,22 +20,34 @@ def risk_assessment(evidence, entities):
         by_kind.setdefault(ev.kind, []).append(ev.id)
     factors = []
 
-    def factor(label, points, ids, reason):
+    def factor(label, points, ids, reason, dimension):
         if ids:
-            factors.append({"label": label, "points": points, "evidence_ids": ids, "reason": reason})
+            factors.append({"label": label, "points": points, "evidence_ids": ids, "reason": reason, "dimension": dimension})
 
-    factor("Malicious reputation observation", 20, by_kind.get("reputation", []), "The exercise feed flags infrastructure; this is a synthetic reputation observation.")
-    factor("Internal sample detection", 25, by_kind.get("malware_detection", []), "A catalogued sample hash was observed internally. Execution and exfiltration remain unproven.")
-    factor("Network contact", 15, by_kind.get("network", []), "An internal sensor observed a connection to associated infrastructure.")
+    factor("Malicious reputation observation", 20, by_kind.get("reputation", []), "A reputation source classifies this infrastructure as malicious; see each observation's provenance.", "reputation")
+    factor("Internal sample detection", 25, by_kind.get("malware_detection", []), "A catalogued sample hash was observed internally. Execution and exfiltration remain unproven.", "observed behavior")
+    factor("Network contact", 15, by_kind.get("network", []), "An internal sensor observed a connection to associated infrastructure.", "observed behavior")
     critical = [e for e in entities if e.kind == "asset" and e.attributes.get("business_criticality") == "critical"]
-    factor("Critical business asset", 20, by_kind.get("context", []) if critical else [], "Inventory classifies an affected asset as business-critical.")
-    factor("Exposure source claim", 10, by_kind.get("credential_exposure", []), "An unverified exposure claim adds investigation priority, not proof of compromise.")
-    kinds = {e.kind for e in evidence} - {"context", "mention"}
-    factor("Multiple observation types", 10, [e.id for e in evidence if e.kind in kinds] if len(kinds) >= 3 else [], "At least three observation types corroborate investigation scope; sources may not be independent.")
+    factor("Critical business asset", 20, by_kind.get("context", []) if critical else [], "Inventory classifies an affected asset as business-critical.", "asset impact")
+    factor("Exposure source claim", 10, by_kind.get("credential_exposure", []), "An unverified exposure claim adds investigation priority, not proof of compromise.", "exposure")
+    # Tor exit-node listing is context about the infrastructure, not behavior: low weight, never a verdict.
+    factor("TOR exit-node context", 5, by_kind.get("tor_context", []), "A Tor Project directory snapshot lists the IP as a Tor exit relay. Traffic from it may originate from any Tor user; this is context, not evidence of malicious intent.", "TOR context")
+    kinds = {e.kind for e in evidence} - {"context", "mention", "tor_context", "tor_relay"}
+    factor("Multiple observation types", 10, [e.id for e in evidence if e.kind in kinds] if len(kinds) >= 3 else [], "At least three observation types corroborate investigation scope; sources may not be independent.", "source corroboration")
     score = min(100, sum(f["points"] for f in factors))
     return {"score": score, "level": "critical" if score >= 80 else "high" if score >= 50 else "medium" if score >= 25 else "low",
-            "factors": factors, "method": "risk-v1: sum of evidenced factors, capped at 100. Priority score, not probability. Missing evidence contributes zero.",
+            "factors": factors, "method": "risk-v1.1: sum of evidenced factors, capped at 100. Priority score, not probability. Missing evidence contributes zero.",
             "as_of": SNAPSHOT, "limitation": "Exercise baseline risk; approving a simulated action does not prove real risk reduction."}
+
+
+def _provenance_phrase(evidence) -> str:
+    counts = {}
+    for e in evidence:
+        p = getattr(e, "provenance", "synthetic")
+        counts[p] = counts.get(p, 0) + 1
+    label = {"synthetic": "synthetic", "dataset_derived": "dataset-derived", "reference_derived": "reference-derived"}
+    parts = [f"{n} {label.get(k, k)}" for k, n in sorted(counts.items())]
+    return (" and ".join(parts) + (" observation" if len(evidence) == 1 else " observations")) if parts else "0 observations"
 
 
 class AnalysisProvider(Protocol):
@@ -49,18 +61,24 @@ class EvidenceRuleProvider:
             ("network", "Infrastructure contact warrants investigation", "Observed network contact supports a scoped hunt. Contact alone does not establish malicious execution.", "Validate process ancestry and compare connection cadence with expected application traffic.", "medium"),
             ("malware_detection", "Known exercise sample observed internally", "The sample hash matches the synthetic catalog. Process execution and persistence require separate evidence.", "Preserve host telemetry and inspect related processes before simulated isolation.", "high"),
             ("credential_exposure", "Possible credential exposure requires validation", "A synthetic source references a service identity. Neither a valid password nor account takeover is established.", "Review identity logs and validate exposure before approving a simulated credential reset.", "low"),
+            ("tor_context", "Source infrastructure is a Tor exit relay", "The Tor Project directory snapshot lists the IP as an exit relay, so the true origin is hidden and may be shared by many users. This neither confirms nor excludes malicious activity.", "Decide whether the affected service should accept Tor-originated connections, and judge the activity by its observed behavior.", "high"),
             ("context", "Campaign association is contextual", "Shared scenario infrastructure supports a campaign link. It does not establish an individual actor's identity.", "Compare independent telemetry and retain alternative hypotheses.", "low"),
         ]
         for kind, title, interpretation, next_step, confidence in rules:
             supporting = [e for e in evidence if e.kind == kind]
+            if kind == "context" and not any(e.kind == "campaign" for e in entities):
+                continue  # inventory-only context makes no campaign claim
             if supporting:
                 findings.append({"id": f"finding-{kind}", "title": title, "interpretation": interpretation,
                                  "evidence_ids": [e.id for e in supporting], "confidence": confidence,
                                  "reasoning": [e.title for e in supporting], "next_step": next_step})
         assets = [e.label for e in entities if e.kind == "asset"]
         return {"provider": "Evidence rules v1 — offline analysis (not an LLM)", "generated": False,
-                "summary": f"{len(evidence)} synthetic observations support this investigation, with {_count(len(assets), 'asset')} in its evidence context. Prioritize validation of internal observations before response." if evidence else "Insufficient evidence. No classification or response inference is available.",
-                "findings": findings, "uncertainties": ["No confirmed data exfiltration or real-world actor attribution.", "Synthetic source confidence is an exercise annotation, not a calibrated probability.", "Simulated response does not validate recovery of real systems."]}
+                "summary": f"{_provenance_phrase(evidence)} support this investigation, with {_count(len(assets), 'asset')} in its evidence context. Prioritize validation of internal observations before response." if evidence else "Insufficient evidence. No classification or response inference is available.",
+                "findings": findings, "uncertainties": ["No confirmed data exfiltration or real-world actor attribution.",
+                    "Source confidence is an annotation, not a calibrated probability." if any(getattr(e, "provenance", "synthetic") != "synthetic" for e in evidence)
+                    else "Synthetic source confidence is an exercise annotation, not a calibrated probability.",
+                    "Simulated response does not validate recovery of real systems."]}
 
 
 def analyze(db, id):
@@ -85,7 +103,7 @@ def recommendations(evidence):
 
 
 NIST_EVIDENCE = {"IDENTIFY": {"context"}, "PROTECT": {"credential_exposure"},
-                 "DETECT": {"dns", "network", "reputation", "malware_detection", "mention"}}
+                 "DETECT": {"dns", "network", "reputation", "malware_detection", "mention", "tor_context"}}
 
 
 def _count(n, word):

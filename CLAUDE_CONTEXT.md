@@ -115,6 +115,32 @@ TSX/CSS and the browser test; use `npm run format:workbench` for later edits.
 
 ## Latest verified state
 
+TOR + case library pass (Claude Opus 5.5, 2026-09-29): `data_sources/tor/`
+holds a frozen Onionoo snapshot (CC0); `importer.import_tor` adds tor_relay
+entities and `tor_context`/`tor_relay` evidence with rule `tor-exact-ip-v1`
+(exact normalized IPv4 only; reuse existing IP entities). Tor is context (+5,
+dimension "TOR context"), never reputation. `services/workbench_library.py`
+seeds INC-1047/1048/1051/1052 (synthetic) and presets INC-1049/1050 (dataset
+cases made by the importer). Startup order: seed → library → import. Never fetch
+Onionoo at runtime, never start Tor, never connect DarkForums and Infoblox.
+Tests: 98 backend, 12/12 browser.
+
+Dataset pass (Claude Opus 5.5, 2026-09-28): `backend/data_sources/` imports
+filtered offline snapshots (DarkForums Safe Corpus, Infoblox; CC BY 4.0) as
+provenance `dataset_derived` with a `wb_dataset_records` row each; DWData is
+reference-only (no licence) and must never be downloaded or bundled. INC-1046 is
+the dataset-backed case. Never link datasets to INC-1042/203.0.113.42, never
+reverse redactions, never add live collection. Rebuild snapshots only with
+scripts/prepare_datasets.py. See DATA_SOURCES.md.
+
+Source adapter pass (Claude Opus 5.5, 2026-09-28): `backend/collection/` adds
+adapter interfaces, normalized observations, SourceState, dedup, a deepdarkCTI
+registry parser and synthetic MailAccess/horus/TorBot adapters. Live adapters are
+process-isolated and off by default (GOTHAMITE_LIVE_COLLECTION + per-adapter
+flag); horus/MailAccess live calls are intentionally unwired. Never vendor GPL
+code, never wire MailAccess active probing or horus scanning, never add UI-driven
+crawling. Tests run with subprocess forbidden. See THIRD_PARTY_NOTICES.md.
+
 Content/realism pass (Claude Opus 5.5, 2026-09-28): no Ollama/LLM exists; the
 legacy Streamlit views now compute from data instead of showing fabricated model
 output. The stylometry signal is `lexical_similarity` (bag-of-words cosine).

@@ -59,6 +59,78 @@ Implemented prototype versus deployment architecture:
 | Correlation | Documented evidence weights (PGP +0.70, wallet +0.45, succession +0.15, handle +0.05, overlap −0.30, lexical similarity +0.25), capped at 0.95 | Same, with evaluation against labelled cases |
 | Analyst review | Confirm / reject candidate linkages; approve and simulate responses | Same, with authenticated identities and roles |
 
+### Offline dataset pipeline (`gothamite/backend/data_sources/`)
+
+```text
+Public dataset (local file) ─▶ scripts/prepare_datasets.py ─▶ transform.py
+  (normalize · safety filter · defensive entity extraction) ─▶ bundled snapshot + manifest.json
+  ─▶ importer.py at startup (idempotent, offline) ─▶ wb_entities / wb_evidence /
+  wb_relationships + wb_dataset_records ─▶ graph · case · NIST · report
+```
+
+Dataset records are first-class rows in the existing model, not a second model.
+Provenance classes: `synthetic`, `dataset_derived`, `reference_derived`.
+Entity ids derive from normalized values (cross-source correlation key). Edges
+are created only from a supporting record (`OBSERVED_IN`, `MENTIONS`,
+`INVESTIGATES`). The Command Center's exercise timeline stays synthetic-only;
+its metrics show synthetic and dataset-derived counts separately. See
+DATA_SOURCES.md.
+
+### TOR exit-node intelligence (`data_sources/tor/`, `importer.import_tor`)
+
+```text
+Prototype:  bundled Onionoo snapshot ─▶ normalize_onionoo_relay ─▶ tor_relay + ip entities,
+            tor_context / tor_relay observations (dataset_derived, CC0)
+            ─▶ tor-exact-ip-v1 correlation ─▶ IOC profile · evidence drawer · graph · case · NIST · report
+Deployment: scheduled Onionoo details fetch (outbound HTTPS to the Tor Project only)
+            ─▶ the same normalizer and importer, versioned snapshots, expiry of stale relays
+```
+
+The prototype runs only the first line: no network, no Tor process. Order at
+startup: exercise seed → case library → dataset import, so the exact-IP rule sees
+every IP already known. Tor context is its own risk dimension (+5), separate from
+reputation, observed behavior and source corroboration.
+
+### Synthetic case library (`services/workbench_library.py`)
+
+INC-1047 to INC-1052 reuse the exercise model, rules and workflow (no separate
+case renderer). `CASE_STATES` presets each case's workflow position by replaying
+the audit events the live workflow would record. INC-1049/INC-1050 are created by
+the importer from dataset records. INC-1042 to INC-1045 are untouched.
+
+### Source adapter layer (`gothamite/backend/collection/`)
+
+```text
+Source adapter ─▶ Scheduler* ─▶ Collection worker* ─▶ Raw observation ─▶ Normalization
+  ─▶ Deduplication ─▶ Entity resolution ─▶ Correlation ─▶ Evidence store ─▶ Investigation
+(* architecture only: no scheduler or worker runs in this build)
+```
+
+- `base.py`: `CollectionAdapter`, `EnrichmentAdapter`, `SourceRegistryAdapter`;
+  the normalized `Observation` (source, source type, observed_at, collection
+  status, provenance, confidence, entity type/value, relationship type,
+  synthetic flag, stable content id); `SourceState` = synthetic / connected /
+  available / unavailable / error; `dedupe()`.
+- `adapters/synthetic.py`: deterministic MailAccess-, TorBot- and horus-shaped
+  adapters used by the demo.
+- `adapters/isolated.py`: process-isolated adapters for the real tools. Off
+  unless `GOTHAMITE_LIVE_COLLECTION=1` **and** `GOTHAMITE_ADAPTER_<NAME>=1`.
+  TorBot also needs an approved target. horus and MailAccess live calls are
+  deliberately not wired (see THIRD_PARTY_NOTICES.md).
+- `sources.py`: deepdarkCTI catalogue parser → `Source` records (registry
+  metadata, not intelligence) plus a small synthetic registry.
+- `registry.py`: picks the live adapter only when available, otherwise the
+  synthetic one; captures adapter exceptions as `error` results.
+- API (session-protected): `GET /workbench/sources/adapters`,
+  `GET /workbench/sources/registry`, `GET /workbench/enrichment?value=`,
+  `POST /workbench/collection` (one target, `approved` required).
+- UI: a "Source observations" panel on the existing IOC profile shows each
+  adapter's collection status and its normalized observations.
+
+Adapter observations are returned to the analyst; they are **not yet persisted
+into the evidence store or graph**. That step (plus scheduling) is the next
+increment.
+
 Nothing in either repository connects to the live dark web. "Lexical similarity" is
 a bag-of-words term-frequency cosine; it is not a trained or language model.
 

@@ -1,0 +1,484 @@
+{
+ "source": "Tor Project Onionoo (details documents)",
+ "source_url": "https://onionoo.torproject.org/details",
+ "relays_published": "2026-09-28 17:00:00",
+ "retrieved": "2026-09-28",
+ "transformation_version": "gothamite-tor-1.0",
+ "note": "Bounded point-in-time snapshot for an offline prototype. It does not describe current Tor network state.",
+ "stats": {
+  "relays": 18,
+  "rejected": 0,
+  "exit_relays": 16,
+  "running": 12
+ },
+ "relays": [
+  {
+   "fingerprint": "9454F82D47EBA0CB0C2A4BFE7966181DBF108147",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.242"
+   ],
+   "or_addresses": [
+    "185.220.100.242"
+   ],
+   "first_seen": "2020-01-29T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 88789668
+  },
+  {
+   "fingerprint": "62F4994C6F3A5B3E590AEECE522591696C8DDEE2",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.241"
+   ],
+   "or_addresses": [
+    "185.220.100.241"
+   ],
+   "first_seen": "2020-01-29T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 80600639
+  },
+  {
+   "fingerprint": "C0AEABA1B55519FE5384AA44D0312BE98216DA71",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.242"
+   ],
+   "or_addresses": [
+    "185.220.100.242"
+   ],
+   "first_seen": "2020-01-29T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 74231789
+  },
+  {
+   "fingerprint": "E8AD8C4FDC3FE152150C005BB2EAA6A0990B74DF",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.243"
+   ],
+   "or_addresses": [
+    "185.220.100.243"
+   ],
+   "first_seen": "2020-01-29T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 83109826
+  },
+  {
+   "fingerprint": "9D5A7A81BC6194555CE751F75FB196E4A3982CC5",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.243"
+   ],
+   "or_addresses": [
+    "185.220.100.243"
+   ],
+   "first_seen": "2020-01-29T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 82873286
+  },
+  {
+   "fingerprint": "98F793C7320CE3C15A45353AFCC165747A40366D",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.255"
+   ],
+   "or_addresses": [
+    "185.220.100.255"
+   ],
+   "first_seen": "2018-05-02T16:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 62526511
+  },
+  {
+   "fingerprint": "939126EA4D25CB212A79746C133194F8A24C435B",
+   "nickname": "F3Netze",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "185.220.100.253"
+   ],
+   "or_addresses": [
+    "185.220.100.253"
+   ],
+   "first_seen": "2018-03-23T22:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS205100",
+   "as_name": "F3 Netze e.V.",
+   "country": "de",
+   "observed_bandwidth": 60520277
+  },
+  {
+   "fingerprint": "A9AFA933D18CF3EF4D349254FFA3DBB5EE42CA2C",
+   "nickname": "speakFreely",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "37.221.208.71"
+   ],
+   "or_addresses": [
+    "37.221.208.71"
+   ],
+   "first_seen": "2025-02-22T06:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS41075",
+   "as_name": "ATW Internet Kft.",
+   "country": "hu",
+   "observed_bandwidth": 97783319
+  },
+  {
+   "fingerprint": "1B757597C05680425CC87B8E944F0A61E8EC731E",
+   "nickname": "tanja",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "193.36.132.21"
+   ],
+   "or_addresses": [
+    "193.36.132.21"
+   ],
+   "first_seen": "2024-12-01T00:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS206075",
+   "as_name": "Hollander & Jacobsen UG (haftungsbeschraenkt)",
+   "country": "nl",
+   "observed_bandwidth": 57589999
+  },
+  {
+   "fingerprint": "678B3A694071537AD62723BDA96C6CF1358AE67A",
+   "nickname": "torexitams01",
+   "running": true,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "45.66.35.21"
+   ],
+   "or_addresses": [
+    "45.66.35.21"
+   ],
+   "first_seen": "2024-01-01T00:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS61125",
+   "as_name": "SABOTAGE LLC",
+   "country": "nl",
+   "observed_bandwidth": 68754844
+  },
+  {
+   "fingerprint": "051E2F746BC4A5C571436B2E8F97CB6EB5975B2D",
+   "nickname": "2mplas3",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Running",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "205.185.113.210"
+   ],
+   "first_seen": "2026-09-18T22:00:00Z",
+   "last_seen": "2026-09-28T00:00:00Z",
+   "as": "AS53667",
+   "as_name": "FranTech Solutions",
+   "country": "us",
+   "observed_bandwidth": 2366464
+  },
+  {
+   "fingerprint": "0145977CF1D2D4AAF98907BF81DAAD8480EFC3FD",
+   "nickname": "bauruine",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "78.142.18.219"
+   ],
+   "first_seen": "2023-02-21T09:00:00Z",
+   "last_seen": "2026-04-01T19:00:00Z",
+   "as": "AS213438",
+   "as_name": "ColocaTel Inc.",
+   "country": "nl",
+   "observed_bandwidth": 24994600
+  },
+  {
+   "fingerprint": "065EAB1D8606F08D588A435DA033C1B7B82C5E6B",
+   "nickname": "Delphos",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Fast",
+    "Running",
+    "Stable",
+    "Valid"
+   ],
+   "exit_addresses": [
+    "23.137.255.85"
+   ],
+   "or_addresses": [
+    "23.137.255.85"
+   ],
+   "first_seen": "2025-10-02T10:00:00Z",
+   "last_seen": "2026-09-28T12:00:00Z",
+   "as": "AS40663",
+   "as_name": "IncogNet LLC",
+   "country": "us",
+   "observed_bandwidth": 9546920
+  },
+  {
+   "fingerprint": "061D11291F76AB0925BA07090BE1E992DE72C450",
+   "nickname": "InvestInUrPrivacy",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Running",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "89.126.230.41"
+   ],
+   "first_seen": "2026-09-24T15:00:00Z",
+   "last_seen": "2026-09-25T13:00:00Z",
+   "as": "AS63023",
+   "as_name": "GTHost",
+   "country": "es",
+   "observed_bandwidth": 0
+  },
+  {
+   "fingerprint": "062619DE4D205F77A42C3AC7F4445F6A7813C030",
+   "nickname": "mynodeA3",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Running",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "162.33.178.72"
+   ],
+   "first_seen": "2026-09-25T06:00:00Z",
+   "last_seen": "2026-09-25T17:00:00Z",
+   "as": "AS399629",
+   "as_name": "BL Networks",
+   "country": "us",
+   "observed_bandwidth": 2174657
+  },
+  {
+   "fingerprint": "06CF5DAD777AB527F0324FF6DF98804CB02B4E8D",
+   "nickname": "Quintex699",
+   "running": false,
+   "exit": true,
+   "flags": [
+    "Exit",
+    "Running",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "103.150.187.253"
+   ],
+   "first_seen": "2026-09-20T23:00:00Z",
+   "last_seen": "2026-09-23T15:00:00Z",
+   "as": "AS146943",
+   "as_name": "Tier 4 Cloud Services",
+   "country": "in",
+   "observed_bandwidth": 3742334
+  },
+  {
+   "fingerprint": "D95A2DF17815BA92E4EA49D2D46EBAEB1DCEBABC",
+   "nickname": "0x90",
+   "running": true,
+   "exit": false,
+   "flags": [
+    "Fast",
+    "Guard",
+    "HSDir",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "88.99.7.87"
+   ],
+   "first_seen": "2024-04-16T17:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS24940",
+   "as_name": "Hetzner Online GmbH",
+   "country": "de",
+   "observed_bandwidth": 100973142
+  },
+  {
+   "fingerprint": "CDB25FA5ACC50F19BA243B5E4F5EED4E577E452B",
+   "nickname": "ARelay",
+   "running": true,
+   "exit": false,
+   "flags": [
+    "Fast",
+    "Guard",
+    "Running",
+    "Stable",
+    "V2Dir",
+    "Valid"
+   ],
+   "exit_addresses": [],
+   "or_addresses": [
+    "138.201.223.38"
+   ],
+   "first_seen": "2026-08-30T18:00:00Z",
+   "last_seen": "2026-09-28T17:00:00Z",
+   "as": "AS24940",
+   "as_name": "Hetzner Online GmbH",
+   "country": "de",
+   "observed_bandwidth": 86117733
+  }
+ ]
+}
