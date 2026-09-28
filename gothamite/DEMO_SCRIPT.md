@@ -1,3 +1,9 @@
+> **Legacy script.** This describes the original persona-correlation demo
+> (Streamlit on 8501, `docker compose`, simulated relay network). The current demo
+> is the React investigation workbench on http://127.0.0.1:8042: follow the
+> "Five-minute demo" in the [root README](../README.md). Keep this file only for
+> the persona subsystem.
+
 # DEMO_SCRIPT.md
 
 **System:** GOTHAMITE — Cross-Source Dark Web Threat Actor De-Anonymization Platform  

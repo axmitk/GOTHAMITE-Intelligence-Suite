@@ -115,8 +115,9 @@ function DemoGuide({ onClose }: { onClose: () => void }) {
       </div>
       <h2 id="guide-title">Trace the investigation.</h2>
       <p>
-        Every item in this exercise is synthetic. The analysis uses transparent
-        evidence rules, and all response actions are simulated.
+        Exercise cases are synthetic; records from public datasets are labelled
+        dataset-derived. The analysis uses transparent evidence rules, and all
+        response actions are simulated.
       </p>
       <ol>
         <li>
@@ -302,7 +303,7 @@ function Shell() {
             <small>Learn the investigation path ↗</small>
           </button>
           <p>
-            All intelligence is synthetic.
+            Exercise data is synthetic; public datasets are labelled.
             <br />
             All response actions are simulated.
           </p>
@@ -338,7 +339,7 @@ function Shell() {
           <div className="wb-topbar-right">
             <span className="wb-environment">
               <i />
-              SYNTHETIC EXERCISE
+              SYNTHETIC + PUBLIC DATASETS
             </span>
             <span className="wb-topbar-divider" />
             <div className="wb-analyst">

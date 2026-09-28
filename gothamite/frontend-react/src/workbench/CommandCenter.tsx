@@ -132,7 +132,7 @@ export function CommandCenter({ listOnly = false }: { listOnly?: boolean }) {
             <div>
               <span>Open investigations</span>
               <strong>{String(data.active_cases).padStart(2, "0")}</strong>
-              <small>Cases not yet closed · synthetic exercise</small>
+              <small>Cases not yet closed · exercise and dataset cases</small>
             </div>
             <div>
               <span>Open critical cases</span>

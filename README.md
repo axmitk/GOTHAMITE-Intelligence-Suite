@@ -1,12 +1,15 @@
 # GOTHAMITE
 
-A local cyber-intelligence investigation workbench with a connected synthetic
-exercise: search an indicator, inspect evidence and relationships, investigate a
-case, review risk and NIST alignment, approve a response simulation, and export
-the report. React, FastAPI and SQLite support persistent analyst work.
+An evidence-first cyber-intelligence investigation workbench that runs fully
+offline: search an indicator, inspect evidence and relationships, investigate a
+case, review risk and NIST CSF 2.0 alignment, approve a response simulation, and
+export the report. React, FastAPI and SQLite support persistent analyst work.
 
-**All intelligence is synthetic. Analysis uses offline evidence rules, not an LLM.
-Response simulations never change external systems.**
+**Every record carries one provenance label: synthetic (the exercise and case
+library), dataset-derived (filtered public snapshots: DarkForums Safe Corpus,
+Infoblox, Tor Project Onionoo) or reference-derived (DWData-shaped
+reconstructions). Analysis uses offline evidence rules, not an LLM. Response
+simulations never change external systems. Nothing is collected live.**
 
 ## Run on this Windows machine
 
@@ -36,7 +39,7 @@ platforms need those dependencies adjusted. npm scripts use project-local Node
 
 ## Five-minute demo
 
-1. On **Command center**, review the four cases and synthetic source labels.
+1. On **Command center**, review the 11-case queue and the provenance labels.
 2. Search **203.0.113.42** using global search (Ctrl+K).
 3. Open the IOC profile, then **Relationship graph**. Select **Finance gateway
    beaconing** and **Open investigation** (INC-1042).
@@ -54,10 +57,21 @@ platforms need those dependencies adjusted. npm scripts use project-local Node
    automated interpretation, risk, NIST mapping, response decisions and the
    analyst approval record in separate sections.
 
+8. Optional: search **185.220.100.242** to see Tor exit-node context (INC-1047),
+   or **claudfront.net** to see an indicator listed by three Infoblox reports.
+
 The hero case begins in INVESTIGATING. Notes and actions persist, so a previously
-exercised case may be further along. Seeding never resets it. Other scenarios cover
-an exposed service identity, suspected staging and unverified scanning. The dataset
-contains 252 indicators, 291 relationships, 134 evidence items and 8 assets.
+exercised case may be further along. Seeding never resets it.
+
+| Cases | What they exercise |
+| --- | --- |
+| INC-1042 to INC-1045 | Original synthetic exercise: beaconing (hero), exposed service identity, staging, unverified scanning |
+| INC-1046 | Dataset-derived Decoy Dog DNS review (Infoblox) |
+| INC-1047 to INC-1052 | Case library: Tor context, multi-source corroboration, forum claim, repeated Infoblox IOC, credential exposure (placeholders), lookalike domain |
+
+A fresh database holds 510 indicators (259 synthetic, 251 dataset-derived), 664
+evidence items (148 synthetic, 510 dataset-derived, 6 reference-derived), 639
+relationships and 12 assets.
 
 ## Development and checks
 
@@ -70,6 +84,8 @@ npm run lint
 npm run test:e2e
 ```
 
+Current results: 98 backend tests, 12/12 browser checks with no console errors,
+a clean production build and 6 pre-existing lint warnings in legacy pages.
 The browser check uses installed Microsoft Edge, a fresh temporary database and
 port 8043. Screenshots and an example report go to `gothamite/verification/`.
 Set `GOTHAMITE_BROWSER=chrome` to use an installed Chrome channel instead.
@@ -84,6 +100,10 @@ For frontend hot reload, keep the demo backend running and run `npm run dev` fro
 - `gothamite/backend/api/workbench.py`: investigation API.
 - `gothamite/backend/services/workbench_*.py`: seed, search, graph, analysis,
   case lifecycle, reports and local session checks.
+- `gothamite/backend/services/workbench_library.py`: case library INC-1047 to INC-1052.
+- `gothamite/backend/data_sources/`: bundled dataset snapshots, manifest, safety
+  filter and offline importer (DarkForums, Infoblox, Tor Onionoo, DWData reconstruction).
+- `gothamite/backend/collection/`: source adapter layer (synthetic fixtures by default).
 - `gothamite/backend/models/workbench.py`: additive SQLAlchemy tables.
 - `gothamite/workbench-demo.db`: persistent SQLite database (ignored by Git).
 - `gothamite/backend/demo.py`: seeded, same-origin demo entrypoint and SPA hosting.
@@ -99,7 +119,7 @@ Existing persona overview, graph, dossiers and timeline remain at /overview,
 ## Boundaries
 
 Collection: the workbench loads synthetic source observations from a
-reproducible seed. The companion `darkweb-sandbox` demonstrates collection from
+reproducible seed and public datasets from bundled snapshots. The companion `darkweb-sandbox` demonstrates collection from
 mock hidden services over a simulated relay network. Scheduled or continuous
 ingestion through source adapters is the deployment architecture, not a running
 service; see [architecture](ARCHITECTURE.md#collection-model).
@@ -130,8 +150,8 @@ execution is off by default and needs explicit opt-in. See
 architectural only.
 
 This is a single-process local prototype. Its demo session is not SSO or user
-authentication. No live feeds, dark-web crawling, model API, real endpoint
-containment, arbitrary case creation or evidence uploads are implemented.
+authentication. No live feeds, dark-web crawling, Tor connection, model API, real
+endpoint containment, arbitrary case creation or evidence uploads are implemented.
 NIST CSF 2.0 labels organize the workflow; they do not certify compliance.
 Risk expresses triage priority, not a probability or proof of attribution.
 

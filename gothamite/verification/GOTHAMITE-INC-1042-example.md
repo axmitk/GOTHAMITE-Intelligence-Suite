@@ -12,7 +12,7 @@ Generated from the saved investigation trail. Observations, interpretation and a
 
 Status: CONTAINMENT | Analyst: Demo analyst | Severity: critical
 
-Created: 2026-09-28T09:00:00Z | Updated: 2026-09-28T18:39:39.504474Z | Version: 5
+Created: 2026-09-28T09:00:00Z | Updated: 2026-09-28T18:45:38.035771Z | Version: 5
 
 
 
@@ -272,7 +272,7 @@ Assigned analyst: Demo analyst. Local exercise seat; not verified identity.
 
 ### Analyst conclusions and hypotheses
 
-- 2026-09-28T18:39:38.660861Z / hypothesis / Demo analyst: Validate process ancestry. &lt;img src=x onerror=alert(1)&gt;
+- 2026-09-28T18:45:37.180311Z / hypothesis / Demo analyst: Validate process ancestry. &lt;img src=x onerror=alert(1)&gt;
 
 
 
@@ -280,10 +280,10 @@ Assigned analyst: Demo analyst. Local exercise seat; not verified identity.
 
 Every case change, note, approval and simulation, in order. UTC.
 
-- 2026-09-28T18:39:38.660861Z / Demo analyst / note_added: Added hypothesis entry
+- 2026-09-28T18:45:37.180311Z / Demo analyst / note_added: Added hypothesis entry
 
-- 2026-09-28T18:39:39.382020Z / Demo analyst / response_approved: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
+- 2026-09-28T18:45:37.905921Z / Demo analyst / response_approved: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
 
-- 2026-09-28T18:39:39.445802Z / Demo analyst / response_simulated: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
+- 2026-09-28T18:45:37.973714Z / Demo analyst / response_simulated: Isolate affected endpoint: Analyst reviewed supporting evidence. Simulation only; no system command executed.
 
-- 2026-09-28T18:39:39.507562Z / Demo analyst / case_updated: status: INVESTIGATING → CONTAINMENT
+- 2026-09-28T18:45:38.038476Z / Demo analyst / case_updated: status: INVESTIGATING → CONTAINMENT

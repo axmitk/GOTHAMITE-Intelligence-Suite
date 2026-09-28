@@ -1,7 +1,8 @@
 # GOTHAMITE continuation context
 
-This file exports the current engineering context for Claude. Work is local and
-uncommitted. The original task is an autonomous, demonstrable GOTHAMITE prototype,
+This file exports the current engineering context for Claude. Work is committed
+and pushed on branch `gothamite-investigation-workbench` (origin:
+axmitk/GOTHAMITE-Intelligence-Suite); read "Latest verified state" first. The original task is an autonomous, demonstrable GOTHAMITE prototype,
 not a plan or visual mockup. The connected local demo and final verification are
 complete. Preserve working code and analyst data when extending it.
 
@@ -19,8 +20,8 @@ Read `C:\Users\aadik\Downloads\GOTHAMITE_Master_Build_Prompt_GPT-6_Astra_AUTONOM
 It supersedes the non-autonomous version in the same folder. The user authorizes
 reasonable implementation choices without repeated confirmation. The core path:
 Dashboard → Search → IOC → Enrichment → Graph → Incident → Evidence analysis →
-NIST → Reviewed simulated response → Report. All intelligence must be honestly
-labelled synthetic. No real destructive cyber actions or fake live integrations.
+NIST → Reviewed simulated response → Report. Every record must be honestly
+labelled with its provenance (synthetic, dataset-derived, reference-derived). No real destructive cyber actions or fake live integrations.
 Use restrained dark, information-dense analyst UI. The user also requested this
 Claude context export and then asked to continue the build.
 
@@ -32,7 +33,8 @@ Claude context export and then asked to continue the build.
 - Older sibling checkout `C:\Users\aadik\sih 2026\gothamite` is untouched.
 - OS: Windows; PowerShell. Python 3.12.7; system Node 22.11.0.
 - No applicable AGENTS.md was found in the inspected project hierarchy.
-- No git commit/push/deployment has been performed.
+- Commits 145d110 and 147a75c are pushed; no merge to the default branch and no
+  deployment.
 
 ## Existing architecture and preserved work
 
@@ -49,7 +51,8 @@ Original README claims about Ollama/Neo4j/production readiness were overstated.
 - `backend/services/workbench_seed.py`: idempotent fictional scenarios; 120 IPs,
   120 domains, four hashes, four URLs, four emails, four cases, four fictional
   actors/campaigns/malware families, eight assets, synthetic exposure/vulnerability
-  records. Evidence has SHA-256 content integrity and explicit entity links.
+  records. `workbench_library.py` adds INC-1047 to INC-1052; the dataset importer
+  adds INC-1046 and public snapshot records (see Latest verified state). Evidence has SHA-256 content integrity and explicit entity links.
 - `workbench_intelligence.py`: bounded search/pagination, profiles, graph queries.
 - `workbench_analysis.py`: transparent risk factors, an offline rule-based analysis
   provider (explicitly NOT an LLM), evidence references, recommendations, CSF 2.0.
