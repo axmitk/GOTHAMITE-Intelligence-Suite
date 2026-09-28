@@ -3,7 +3,8 @@ from collections import Counter
 import re
 
 def compute_stylometric_similarity(text1: str, text2: str) -> float:
-    # A very basic TF-IDF / Cosine Similarity approximation for stylometric profiling
+    # Bag-of-words term-frequency cosine similarity. No IDF weighting and no trained
+    # model: a deterministic lexical-overlap measure used as a corroborating signal.
     def get_tokens(text):
         return re.findall(r'\b\w+\b', text.lower())
     

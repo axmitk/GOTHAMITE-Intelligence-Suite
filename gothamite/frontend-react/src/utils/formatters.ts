@@ -61,24 +61,24 @@ export function getSourceColor(source: string): {
   switch (source.toLowerCase()) {
     case 'forum-alpha':
       return {
-        dot: 'bg-[#3498db]',
-        text: 'text-[#5dade2]',
-        bg: 'bg-[#3498db]/10',
-        border: 'border-[#3498db]/30',
+        dot: 'bg-[#9eb9c9]',
+        text: 'text-[#9eb9c9]',
+        bg: 'bg-[#9eb9c9]/10',
+        border: 'border-[#9eb9c9]/30',
       };
     case 'marketplace-beta':
       return {
-        dot: 'bg-[#e67e22]',
-        text: 'text-[#f39c12]',
-        bg: 'bg-[#e67e22]/10',
-        border: 'border-[#e67e22]/30',
+        dot: 'bg-[#c9ad86]',
+        text: 'text-[#c9ad86]',
+        bg: 'bg-[#c9ad86]/10',
+        border: 'border-[#c9ad86]/30',
       };
     case 'forum-gamma':
       return {
-        dot: 'bg-[#2ecc71]',
-        text: 'text-[#2ecc71]',
-        bg: 'bg-[#2ecc71]/10',
-        border: 'border-[#2ecc71]/30',
+        dot: 'bg-[#add0c1]',
+        text: 'text-[#add0c1]',
+        bg: 'bg-[#add0c1]/10',
+        border: 'border-[#add0c1]/30',
       };
     default:
       return {

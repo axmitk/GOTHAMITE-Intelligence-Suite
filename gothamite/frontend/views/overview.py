@@ -1,96 +1,77 @@
+from html import escape as escape_html
 import streamlit as st
 import pandas as pd
 
+CARD = "background-color: #0f172a; padding: 15px; border: 1px solid #1e293b; border-radius: 4px;"
+
+
+def _metric(label, value, note):
+    st.html(
+        f"<div style='{CARD}'>"
+        f"<div style='color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;'>{escape_html(label)}</div>"
+        f"<div style='color: #f8fafc; font-size: 2rem; font-weight: 600; font-family: monospace;'>{escape_html(str(value))}</div>"
+        f"<div style='color: #64748b; font-size: 0.75rem;'>{escape_html(note)}</div></div>"
+    )
+
+
 def render_overview(graph_data, sources_data):
-    st.markdown("<h2>00 &mdash; WORKSTATION DASHBOARD</h2>", unsafe_allow_html=True)
-    st.markdown("<div style='color: #94a3b8; margin-bottom: 20px;'>GOTHAMITE Operational Intelligence & Analysis Center (Powered by Ollama).</div>", unsafe_allow_html=True)
+    st.html('<h2>00 &mdash; WORKSTATION DASHBOARD</h2>')
+    st.html("<div style='color: #94a3b8; margin-bottom: 20px;'>Cross-source persona correlation over a synthetic source corpus. "
+            "Every count below is computed from the loaded dataset; correlation uses documented, deterministic evidence weights.</div>")
     st.markdown("---")
-    
+
+    nodes = graph_data.get("nodes", [])
+    edges = graph_data.get("edges", [])
+    proposed = [e for e in edges if e.get("status") == "proposed"]
+    artifacts = sum(s.get("artifacts_count", 0) for s in sources_data)
+
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown("""
-        <div style='background-color: #0f172a; padding: 15px; border-left: 3px solid #38bdf8; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; border-radius: 4px;'>
-            <div style='color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;'>Active Investigations</div>
-            <div style='color: #f8fafc; font-size: 2rem; font-weight: 600; font-family: monospace;'>12</div>
-        </div>
-        """, unsafe_allow_html=True)
+        _metric("Observed personas", len(nodes), "Distinct handles per source")
     with col2:
-        st.markdown("""
-        <div style='background-color: #0f172a; padding: 15px; border-left: 3px solid #ef4444; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; border-radius: 4px;'>
-            <div style='color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;'>Critical Entities</div>
-            <div style='color: #f8fafc; font-size: 2rem; font-weight: 600; font-family: monospace;'>3</div>
-        </div>
-        """, unsafe_allow_html=True)
+        _metric("Collected artifacts", artifacts, "Synthetic posts and listings")
     with col3:
-        st.markdown("""
-        <div style='background-color: #0f172a; padding: 15px; border-left: 3px solid #10b981; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; border-radius: 4px;'>
-            <div style='color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;'>New Correlations</div>
-            <div style='color: #f8fafc; font-size: 2rem; font-weight: 600; font-family: monospace;'>8</div>
-        </div>
-        """, unsafe_allow_html=True)
+        _metric("Candidate linkages", len(edges), "Cross-source relationships with evidence")
     with col4:
-        st.markdown("""
-        <div style='background-color: #0f172a; padding: 15px; border-left: 3px solid #8b5cf6; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; border-radius: 4px;'>
-            <div style='color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;'>Ollama Inferences</div>
-            <div style='color: #f8fafc; font-size: 2rem; font-weight: 600; font-family: monospace;'>45</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-    st.markdown("<br>", unsafe_allow_html=True)
-    
+        _metric("Awaiting analyst review", len(proposed), "Proposed; not yet confirmed or rejected")
+
+    st.html('<br>')
     col_a, col_b = st.columns([2, 1])
-    
+
     with col_a:
-        st.markdown("<h4>NIST CSF OPERATIONAL WORKFLOW</h4>", unsafe_allow_html=True)
-        st.markdown("""
-        <div style='display: flex; justify-content: space-between; align-items: center; background-color: #0f172a; padding: 20px; border: 1px solid #1e293b; margin-bottom: 20px;'>
-            <div style='text-align: center; color: #38bdf8;'><div style='font-weight: 600; font-size: 0.9rem;'>IDENTIFY</div><div style='font-size: 0.7rem; color: #64748b;'>Asset Discovery</div></div>
-            <div style='color: #334155;'>→</div>
-            <div style='text-align: center; color: #10b981;'><div style='font-weight: 600; font-size: 0.9rem;'>PROTECT</div><div style='font-size: 0.7rem; color: #64748b;'>Risk Priority</div></div>
-            <div style='color: #334155;'>→</div>
-            <div style='text-align: center; color: #f59e0b;'><div style='font-weight: 600; font-size: 0.9rem;'>DETECT</div><div style='font-size: 0.7rem; color: #64748b;'>Continuous Intel</div></div>
-            <div style='color: #334155;'>→</div>
-            <div style='text-align: center; color: #ef4444;'><div style='font-weight: 600; font-size: 0.9rem;'>RESPOND</div><div style='font-size: 0.7rem; color: #64748b;'>Ollama Analysis</div></div>
-            <div style='color: #334155;'>→</div>
-            <div style='text-align: center; color: #8b5cf6;'><div style='font-weight: 600; font-size: 0.9rem;'>RECOVER</div><div style='font-size: 0.7rem; color: #64748b;'>Dossier / Reporting</div></div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("<h4>RECENT INTELLIGENCE PIPELINE ACTIVITY</h4>", unsafe_allow_html=True)
-        df = pd.DataFrame([
-            {"Time": "10:12:44", "Stage": "EXTRACTION", "Source": "forum-alpha", "Event": "Extracted 2 PGP Keys"},
-            {"Time": "10:11:02", "Stage": "THREAT INFERENCE", "Source": "OLLAMA (Llama3)", "Event": "Linguistic match identified (94% confidence)"},
-            {"Time": "10:05:15", "Stage": "COLLECTION", "Source": "Browser", "Event": "Captured marketplace listing (shadow_market)"},
-            {"Time": "09:58:30", "Stage": "RISK", "Source": "ENGINE", "Event": "Elevated entity risk to CRITICAL"}
-        ])
-        st.dataframe(df, use_container_width=True, hide_index=True)
-        
+        st.html('<h4>COLLECTION AND CORRELATION PIPELINE</h4>')
+        stages = [
+            ("SOURCE", "Synthetic fixtures"), ("EXTRACT", "Handles, PGP, wallets"), ("NORMALIZE", "Canonical identifiers"),
+            ("RESOLVE", "Persona per source"), ("CORRELATE", "Weighted evidence"), ("REVIEW", "Analyst decision"),
+        ]
+        cells = "<div style='color: #334155;'>→</div>".join(
+            f"<div style='text-align: center;'><div style='font-weight: 600; font-size: 0.85rem; color: #cbd5e1;'>{escape_html(a)}</div>"
+            f"<div style='font-size: 0.7rem; color: #64748b;'>{escape_html(b)}</div></div>" for a, b in stages)
+        st.html(f"<div style='display: flex; justify-content: space-between; align-items: center; {CARD} margin-bottom: 8px;'>{cells}</div>")
+        st.html("<div style='color: #64748b; font-size: 0.75rem; margin-bottom: 20px;'>Prototype: synthetic source fixtures. "
+                "Target deployment: scheduled ingestion through source adapters into the same normalization and correlation stages.</div>")
+
+        st.html('<h4>CANDIDATE LINKAGES BY SCORE</h4>')
+        if edges:
+            rows = sorted(edges, key=lambda e: e.get("score", 0), reverse=True)
+            st.dataframe(pd.DataFrame([{
+                "From": e.get("from_handle"), "To": e.get("to_handle"), "Score": f"{e.get('score', 0):.2f}",
+                "Evidence rows": e.get("evidence_count", 0), "Review status": e.get("status"),
+            } for e in rows]), width='stretch', hide_index=True)
+        else:
+            st.info("No candidate linkages. Run a correlation pass after loading source fixtures.")
+
     with col_b:
-        st.markdown("<h4>PRIORITY ENTITIES</h4>", unsafe_allow_html=True)
-        st.markdown("""
-        <div style='background-color: #0f172a; border: 1px solid #1e293b; padding: 15px; margin-bottom: 10px;'>
-            <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;'>
-                <div style='color: #f8fafc; font-weight: 600;'>nightjar</div>
-                <div style='color: #ef4444; font-size: 0.75rem; font-weight: 700; background-color: rgba(239, 68, 68, 0.1); padding: 2px 6px; border-radius: 4px;'>CRITICAL</div>
-            </div>
-            <div style='color: #94a3b8; font-size: 0.8rem;'>Shared PGP / Ollama Flag</div>
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown("""
-        <div style='background-color: #0f172a; border: 1px solid #1e293b; padding: 15px; margin-bottom: 10px;'>
-            <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;'>
-                <div style='color: #f8fafc; font-weight: 600;'>shadow_broker</div>
-                <div style='color: #f59e0b; font-size: 0.75rem; font-weight: 700; background-color: rgba(245, 158, 11, 0.1); padding: 2px 6px; border-radius: 4px;'>HIGH</div>
-            </div>
-            <div style='color: #94a3b8; font-size: 0.8rem;'>Marketplace Vendor Profile</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("<h4>COLLECTION STATUS</h4>", unsafe_allow_html=True)
-        st.markdown("""
-        <div style='background-color: #0f172a; border: 1px solid #1e293b; padding: 15px;'>
-            <div style='display: flex; justify-content: space-between; margin-bottom: 8px;'><span style='color: #cbd5e1; font-size: 0.85rem;'>Dark Web Scrapers</span><span style='color: #10b981; font-size: 0.85rem; font-weight: 600;'>ONLINE</span></div>
-            <div style='display: flex; justify-content: space-between; margin-bottom: 8px;'><span style='color: #cbd5e1; font-size: 0.85rem;'>LLM Engine (Ollama)</span><span style='color: #10b981; font-size: 0.85rem; font-weight: 600;'>ACTIVE</span></div>
-            <div style='display: flex; justify-content: space-between;'><span style='color: #cbd5e1; font-size: 0.85rem;'>Correlation Engine</span><span style='color: #10b981; font-size: 0.85rem; font-weight: 600;'>PROCESSING</span></div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.html('<h4>SOURCE COLLECTION STATUS</h4>')
+        if not sources_data:
+            st.info("No sources loaded.")
+        for s in sources_data:
+            st.html(
+                f"<div style='{CARD} margin-bottom: 8px;'>"
+                f"<div style='display: flex; justify-content: space-between;'><span style='color: #f8fafc; font-weight: 600; font-family: monospace;'>{escape_html(str(s.get('source_id')))}</span>"
+                f"<span style='color: #94a3b8; font-size: 0.75rem;'>SYNTHETIC SOURCE</span></div>"
+                f"<div style='color: #94a3b8; font-size: 0.8rem;'>{escape_html(str(s.get('type')))} · reliability {escape_html(str(s.get('reliability')))} · "
+                f"{escape_html(str(s.get('artifacts_count', 0)))} artifacts · last ingestion {escape_html(str(s.get('last_scan', 'never'))[:10])}</div></div>"
+            )
+        st.html("<div style='color: #64748b; font-size: 0.75rem;'>No live connector is attached. Sources are exercise fixtures; "
+                "no dark-web network is contacted.</div>")

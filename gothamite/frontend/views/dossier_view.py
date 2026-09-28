@@ -1,128 +1,95 @@
+from html import escape as escape_html
 import streamlit as st
 from frontend.api_client import get_persona_dossier
 
+CARD = "background-color: #0f172a; padding: 20px; border: 1px solid #1e293b; margin-bottom: 20px;"
+
+
 def render_dossier(graph_data):
-    st.markdown("<h2>06 &mdash; INVESTIGATE / DOSSIER</h2>", unsafe_allow_html=True)
-    st.markdown("<div style='color: #94a3b8; margin-bottom: 20px;'>Comprehensive entity intelligence dossier mapped to NIST Recover/Report functions. Includes LLM-Assisted Analysis (Ollama).</div>", unsafe_allow_html=True)
+    st.html('<h2>06 &mdash; INVESTIGATE / DOSSIER</h2>')
+    st.html("<div style='color: #94a3b8; margin-bottom: 20px;'>Persona dossier: extracted identifiers, source artifacts and "
+            "candidate cross-source linkages (NIST CSF Respond: RS.AN incident analysis). Synthetic corpus.</div>")
     st.markdown("---")
-    
+
     nodes = graph_data.get("nodes", [])
     if not nodes:
-        st.info("No entities available for dossier generation.")
+        st.info("No personas available for a dossier.")
         return
-        
-    options = {f"{n.get('handle')} (Source: {n.get('source', 'unknown')})": n for n in nodes}
-    selected = st.selectbox("Select Target Entity", list(options.keys()))
+
+    options = {f"{n.get('handle')} (source: {n.get('source_id', 'unknown')})": n for n in nodes}
+    selected = st.selectbox("Persona", list(options.keys()))
     entity = options[selected]
-    
     handle = entity.get('handle')
-    persona_id = entity.get('id')
-    
-    # Fetch real API dossier
-    api_dossier = get_persona_dossier(persona_id)
+
+    api_dossier = get_persona_dossier(entity.get('id'))
     if not api_dossier:
-        st.error("Dossier data could not be loaded from backend.")
+        st.error("Dossier data could not be loaded from the backend.")
         return
-        
+
     idents = api_dossier.get('identifiers', [])
     pgps = [i['value'] for i in idents if i['type'] == 'pgp_fingerprint']
     wallets = [i['value'] for i in idents if i['type'] == 'wallet']
-    
-    # Inject Synthetic Demo Data
-    aliases = "None detected"
-    emails = "No exposed email"
-    risk_score = 45
-    risk_level = "LOW"
-    risk_color = "#10b981"
-    llm_analysis = "Insufficient data for detailed LLM behavioral profiling."
-    
-    if handle in ["nightjar", "ven0m"]:
-        aliases = "ven0m, shadow_broker (Correlated)" if handle == "nightjar" else "nightjar, shadow_broker (Correlated)"
-        emails = "nightjar_sec@protonmail.com (Synthetic Intel)"
-        risk_score = 92
-        risk_level = "CRITICAL"
-        risk_color = "#f87171"
-        llm_analysis = "<b>OLLAMA THREAT INFERENCE:</b> Stylometric analysis confirms a 94% linguistic match between posts by 'nightjar' and historic 'ven0m' leak announcements. The actor demonstrates high operational security (OPSEC) but failed to rotate PGP keys across marketplace boundaries. <b>TTPs Extracted:</b> Credential brokering, persistent infrastructure re-use, cryptocurrency laundering."
-    elif handle == "quill_v2":
-        aliases = "quill (Correlated)"
-        risk_score = 75
-        risk_level = "HIGH"
-        risk_color = "#f59e0b"
-        llm_analysis = "<b>OLLAMA THREAT INFERENCE:</b> Profile indicates an established data broker returning after a hiatus. Key rotation was observed, but temporal posting patterns strongly link to legacy 'quill' operations."
-        
-    st.markdown(f"<h3>INTELLIGENCE DOSSIER: <span style='color: #38bdf8;'>{handle}</span></h3>", unsafe_allow_html=True)
-    
+    links = api_dossier.get('correlated_links', [])
+    strongest = max(links, key=lambda l: l['score']) if links else None
+
+    st.html(f"<h3>PERSONA DOSSIER: <span style='color: #38bdf8;'>{escape_html(f'{handle}')}</span></h3>")
     col1, col2 = st.columns([2, 1])
-    
+
     with col1:
-        st.markdown("<h4>IDENTITY & INFRASTRUCTURE</h4>", unsafe_allow_html=True)
-        
-        pgp_str = "<br>".join(pgps) if pgps else "None detected"
-        wallet_str = "<br>".join(wallets) if wallets else "None detected"
-        
-        st.markdown(f"""
-        <div style='background-color: #0f172a; padding: 20px; border: 1px solid #1e293b; margin-bottom: 20px;'>
-            <table style='width: 100%; color: #cbd5e1; font-size: 0.9rem;'>
-                <tr><td style='padding: 8px 0; color: #64748b; width: 30%;'>Primary Identifier</td><td style='font-family: monospace; color: #f8fafc;'>{handle}</td></tr>
-                <tr><td style='padding: 8px 0; color: #64748b;'>Aliases</td><td style='font-family: monospace; color: #38bdf8;'>{aliases}</td></tr>
-                <tr><td style='padding: 8px 0; color: #64748b;'>Associated Emails</td><td style='font-family: monospace; color: #f8fafc;'>{emails}</td></tr>
-                <tr><td style='padding: 8px 0; color: #64748b;'>PGP Fingerprints</td><td style='font-family: monospace; color: #f8fafc;'>{pgp_str}</td></tr>
-                <tr><td style='padding: 8px 0; color: #64748b;'>Crypto Wallets</td><td style='font-family: monospace; color: #f8fafc;'>{wallet_str}</td></tr>
-            </table>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("<h4>LLM-ASSISTED THREAT INFERENCE</h4>", unsafe_allow_html=True)
-        st.markdown(f"""
-        <div style='background-color: #1e1b4b; padding: 20px; border: 1px solid #4c1d95; margin-bottom: 20px; border-left: 4px solid #8b5cf6;'>
-            <div style='color: #c4b5fd; font-size: 0.75rem; font-weight: 700; margin-bottom: 8px;'>GENERATED BY OLLAMA (LLAMA 3)</div>
-            <div style='color: #f8fafc; font-size: 0.9rem; line-height: 1.5;'>{llm_analysis}</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("<h4>INTELLIGENCE OBSERVATIONS</h4>", unsafe_allow_html=True)
-        
-        obs_html = "<div style='background-color: #0f172a; padding: 20px; border: 1px solid #1e293b;'>"
+        st.html('<h4>EXTRACTED IDENTIFIERS</h4>')
+        rows = [
+            ("Handle", handle),
+            ("Source", api_dossier.get('source_id', 'unknown')),
+            ("PGP fingerprints", "<br>".join(escape_html(p) for p in pgps) if pgps else "None extracted"),
+            ("Wallet identifiers", "<br>".join(escape_html(w) for w in wallets) if wallets else "None extracted"),
+            ("Candidate aliases", ", ".join(escape_html(l['target_handle']) for l in links) if links else "None proposed"),
+        ]
+        table = "".join(
+            f"<tr><td style='padding: 8px 0; color: #64748b; width: 30%;'>{escape_html(k)}</td>"
+            f"<td style='font-family: monospace; color: #f8fafc; word-break: break-all;'>{v if k in ('PGP fingerprints', 'Wallet identifiers', 'Candidate aliases') else escape_html(str(v))}</td></tr>"
+            for k, v in rows)
+        st.html(f"<div style='{CARD}'><table style='width: 100%; color: #cbd5e1; font-size: 0.9rem;'>{table}</table></div>")
+
+        st.html('<h4>AUTOMATED INTERPRETATION (DETERMINISTIC)</h4>')
+        if strongest:
+            summary = (f"{len(idents)} identifiers extracted from source artifacts. {len(links)} candidate cross-source "
+                       f"linkage{'' if len(links) == 1 else 's'}; the strongest is {strongest['target_handle']} ({strongest['target_source']}) at "
+                       f"score {strongest['score']:.2f}, status {strongest['status']}. The score is a sum of documented evidence "
+                       "weights, not a probability. Analyst review decides whether a linkage is accepted.")
+        else:
+            summary = (f"{len(idents)} identifiers extracted. Insufficient evidence for a cross-source linkage: "
+                       "no shared PGP fingerprint, wallet or succession pattern was found.")
+        st.html(f"<div style='{CARD}'><div style='color: #f8fafc; font-size: 0.9rem; line-height: 1.5;'>{escape_html(summary)}</div>"
+                "<div style='color: #64748b; font-size: 0.75rem; margin-top: 8px;'>Rule-based summary of the evidence table. "
+                "No language model is used in this build.</div></div>")
+
+        st.html('<h4>SOURCE ARTIFACTS</h4>')
+        obs_html = f"<div style='{CARD}'>"
         timeline = api_dossier.get('timeline', [])
-        
-        if timeline:
-            for t in timeline[:3]:
-                obs_html += f"""
-                <div style='margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;'>
-                    <div style='color: #10b981; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;'>SOURCE: {api_dossier.get('source_id', 'unknown')}</div>
-                    <div style='color: #f8fafc; font-size: 0.9rem;'>{t.get('snippet')}</div>
-                    <div style='color: #64748b; font-size: 0.75rem; margin-top: 4px; font-family: monospace;'>Date: {t.get('collected_at')} | Conf: HIGH</div>
-                </div>
-                """
-        else:
-            obs_html += "<div style='color: #64748b;'>No direct artifacts found for this entity.</div>"
-            
-        obs_html += "</div>"
-        st.markdown(obs_html, unsafe_allow_html=True)
-        
+        for t in timeline[:3]:
+            obs_html += (
+                "<div style='margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;'>"
+                f"<div style='color: #94a3b8; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;'>SOURCE: {escape_html(str(api_dossier.get('source_id', 'unknown')))}</div>"
+                f"<div style='color: #f8fafc; font-size: 0.9rem;'>{escape_html(str(t.get('snippet')))}</div>"
+                f"<div style='color: #64748b; font-size: 0.75rem; margin-top: 4px; font-family: monospace;'>Collected: {escape_html(str(t.get('collected_at')))} | Artifact: {escape_html(str(t.get('artifact_id')))}</div>"
+                "</div>")
+        if not timeline:
+            obs_html += "<div style='color: #64748b;'>No source artifacts recorded for this persona.</div>"
+        st.html(obs_html + "</div>")
+
     with col2:
-        st.markdown("<h4>ANALYTICAL RISK</h4>", unsafe_allow_html=True)
-        st.markdown(f"""
-        <div style='background-color: #0f172a; border: 1px solid #1e293b; padding: 20px; text-align: center; margin-bottom: 20px;'>
-            <div style='color: #94a3b8; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; margin-bottom: 5px;'>RISK LEVEL</div>
-            <div style='color: {risk_color}; font-size: 2.5rem; font-weight: 700; line-height: 1;'>{risk_level}</div>
-            <div style='color: #64748b; font-size: 0.8rem; margin-top: 5px;'>Score: {risk_score}/100</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("<h4>CORRELATION SUMMARY</h4>", unsafe_allow_html=True)
-        links = api_dossier.get('correlated_links', [])
-        
+        st.html('<h4>STRONGEST CANDIDATE LINKAGE</h4>')
+        score = f"{strongest['score']:.2f}" if strongest else "—"
+        st.html(f"<div style='{CARD} text-align: center;'>"
+                "<div style='color: #94a3b8; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; margin-bottom: 5px;'>LINKAGE SCORE</div>"
+                f"<div style='color: #f8fafc; font-size: 2rem; font-family: monospace;'>{escape_html(score)}</div>"
+                "<div style='color: #64748b; font-size: 0.75rem;'>Evidence-weight sum, capped at 0.95</div></div>")
+
+        st.html('<h4>CANDIDATE LINKAGES</h4>')
         corr_html = "<div style='background-color: #0f172a; padding: 15px; border: 1px solid #1e293b;'>"
-        if links:
-            for l in links:
-                status_icon = "✅" if l['status'] == 'confirmed' else "⚠️" if l['status'] == 'proposed' else "❌"
-                corr_html += f"<div style='color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;'>{status_icon} Correlated with <b>{l['target_handle']}</b> (Score: {l['score']:.2f})</div>"
-        else:
-            corr_html += "<div style='color: #64748b; font-size: 0.85rem;'>No correlated entities found.</div>"
-            
-        corr_html += "</div>"
-        st.markdown(corr_html, unsafe_allow_html=True)
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        st.button("EXPORT INTELLIGENCE REPORT (PDF)", type="primary", use_container_width=True)
+        for l in links:
+            corr_html += (f"<div style='color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;'>{escape_html(str(l['status']).upper())} · "
+                          f"<b>{escape_html(str(l['target_handle']))}</b> ({escape_html(str(l['target_source']))}) · score {l['score']:.2f}</div>")
+        if not links:
+            corr_html += "<div style='color: #64748b; font-size: 0.85rem;'>No candidate linkages.</div>"
+        st.html(corr_html + "</div>")

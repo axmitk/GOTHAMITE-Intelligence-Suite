@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Sparkles,
+  History,
   Filter,
   ArrowRight,
 } from 'lucide-react';
@@ -212,11 +212,11 @@ export const Timeline: React.FC = () => {
         }`}
       >
         <div className="flex items-start gap-3 text-xs">
-          <Sparkles size={18} className="text-accent-cyan shrink-0 mt-0.5" />
+          <History size={18} className="text-accent-cyan shrink-0 mt-0.5" />
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-text-primary">
-                Rebrand Migration Spotlight:
+                Handle succession:
               </span>
               <span className="font-mono text-accent-cyan">
                 quillfeather ➔ quill_v2 (17-day succession gap)
@@ -227,8 +227,9 @@ export const Timeline: React.FC = () => {
               <span className="font-mono text-amber-400">2026-04-02</span> on <em>forum-alpha</em>. Exactly 17 days later,{' '}
               <strong className="text-text-primary font-mono">quill_v2</strong> surfaces on{' '}
               <span className="font-mono text-emerald-400">2026-04-19</span> on <em>forum-gamma</em> using the identical Bitcoin wallet (
-              <span className="font-mono text-text-primary">1Kp7dR3z...</span>). The system attributes this transition at{' '}
-              <strong className="text-text-primary font-mono">0.60 confidence</strong> via deterministic temporal succession.
+              <span className="font-mono text-text-primary">1Kp7dR3z...</span>). Candidate linkage score{' '}
+              <strong className="text-text-primary font-mono">0.60</strong>: shared wallet (+0.45) plus temporal
+              succession (+0.15). Analyst review decides whether the linkage is accepted.
             </p>
           </div>
         </div>
@@ -301,9 +302,9 @@ export const Timeline: React.FC = () => {
 
                   // Source color mapping
                   const sourceBarColor = {
-                    'forum-alpha': 'bg-[#3498db] border-[#5dade2]',
-                    'marketplace-beta': 'bg-[#e67e22] border-[#f39c12]',
-                    'forum-gamma': 'bg-[#2ecc71] border-[#58d68d]',
+                    'forum-alpha': 'bg-[#9eb9c9] border-[#9eb9c9]',
+                    'marketplace-beta': 'bg-[#c9ad86] border-[#c9ad86]',
+                    'forum-gamma': 'bg-[#add0c1] border-[#add0c1]',
                   }[persona.source_id] || 'bg-gray-500 border-gray-400';
 
                   return (

@@ -1,120 +1,115 @@
-<div align="center">
-    <h1>GOTHAMITE INTELLIGENCE SUITE</h1>
-    <p><b>Advanced Cyber-Intelligence & Entity Resolution Platform</b></p>
-    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat-square"></a>
-    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="Status" src="https://img.shields.io/badge/status-production_ready-success.svg?style=flat-square"></a>
-    <a href="https://github.com/axmitk/GOTHAMITE-Intelligence-Suite"><img alt="License" src="https://img.shields.io/badge/license-MIT-darkgray.svg?style=flat-square"></a>
-    <br><br>
-    <p>An end-to-end operational intelligence platform engineered for deep-web source monitoring, multi-factor entity resolution, and LLM-powered explainable intelligence correlation.</p>
-    <a href="#architecture">Architecture</a> &bull; <a href="#nist-csf-integration">NIST CSF Integration</a> &bull; <a href="#llm-integration">LLM Analysis</a> &bull; <a href="#installation-and-deployment">Installation</a>
-</div>
+# GOTHAMITE
 
-<br>
+A local cyber-intelligence investigation workbench with a connected synthetic
+exercise: search an indicator, inspect evidence and relationships, investigate a
+case, review risk and NIST alignment, approve a response simulation, and export
+the report. React, FastAPI and SQLite support persistent analyst work.
 
-<div align="center">
-  <img src="gothamite/frontend-react/scripts/overview_rendered.png" alt="GOTHAMITE Dashboard" width="800">
-</div>
+**All intelligence is synthetic. Analysis uses offline evidence rules, not an LLM.
+Response simulations never change external systems.**
 
-<br>
+## Run on this Windows machine
 
-## Architecture
+Dependencies and the production frontend are already installed in this checkout.
 
-The GOTHAMITE platform operates on a robust data-fusion pipeline designed to minimize manual investigation time and maximize actionable intelligence. The system continuously ingests, standardizes, and infers threats from multiple external vectors.
+```powershell
+cd 'C:\Users\aadik\sih 2026\Gothamite-Release'
+.\START_GOTHAMITE.ps1
+```
 
-<b>Entity Resolution & Correlation Pipeline</b>
+Open **http://127.0.0.1:8042**. The server binds loopback only; Ctrl+C stops it.
+If this session's demo is already running, open the URL directly.
 
-| Pipeline Stage | Module | Technique / Technology |
-|---|---|---|
-| **Data Collection** | darkweb-sandbox/bridge_collector.py | Automated scraping of Web, News, Forums, Threat Feeds, and Marketplaces |
-| **Integration** | ackend/services/ingest_service.py | Parsing, cleaning, and de-duplicating unstructured intelligence |
-| **Standardization** | ackend/api/ingest.py | Entity linking, cross-source correlation, and confidence scoring |
-| **Threat Inference** | ackend/services/llm_analysis.py | **Ollama**-powered behavior pattern analysis, summarization, and IOC extraction |
-| **Output / Graph** | rontend/views/graph_view.py | Interactive Threat Graph (Neo4j / custom 3D visualization) |
+For a fresh Windows x64 installation, install Python 3.12+ and Node 22.22+, then:
 
-<br>
+```powershell
+.\SETUP_GOTHAMITE.ps1
+.\START_GOTHAMITE.ps1
+```
 
-## NIST CSF Integration
+Setup downloads dependencies, creates a virtual environment if needed and builds
+the frontend. It preserves databases. If PowerShell blocks downloaded scripts,
+inspect them and run their listed commands manually under your organization's policy.
+This checkout explicitly includes Windows x64 bundler/linter bindings; other
+platforms need those dependencies adjusted. npm scripts use project-local Node
+22.22. System Node 22.11 can emit engine warnings during installation.
 
-The GOTHAMITE user interface is designed as a professional cyber-intelligence workstation, operationally mapping directly to the National Institute of Standards and Technology (NIST) Cybersecurity Framework to guide analysts through a disciplined investigation cycle.
+## Five-minute demo
 
-<table>
-  <tr>
-    <td width="20%"><b>IDENTIFY</b></td>
-    <td>Asset discovery, context mapping, and threat surface identification.</td>
-  </tr>
-  <tr>
-    <td><b>PROTECT</b></td>
-    <td>Data integrity, access control, and proactive threat prioritization.</td>
-  </tr>
-  <tr>
-    <td><b>DETECT</b></td>
-    <td>Continuous threat monitoring, multi-signal correlation, and anomaly detection.</td>
-  </tr>
-  <tr>
-    <td><b>RESPOND</b></td>
-    <td>Alerts, timeline construction, and interactive graph investigation support.</td>
-  </tr>
-  <tr>
-    <td><b>RECOVER</b></td>
-    <td>Exportable dossiers, system improvement, and post-incident analysis logs.</td>
-  </tr>
-</table>
+1. On **Command center**, review the four cases and synthetic source labels.
+2. Search **203.0.113.42** using global search (Ctrl+K).
+3. Open the IOC profile, then **Relationship graph**. Select **Finance gateway
+   beaconing** and **Open investigation** (INC-1042).
+4. Inspect an evidence item's source, raw observation and SHA-256 hash. In **Graph**,
+   select **Grey Moth** and inspect a relationship's supporting evidence.
+5. In **Analysis**, run evidence analysis. Each finding shows its confidence,
+   reasoning factors, supporting evidence and recommended next step. Inspect the
+   risk factors. In **NIST alignment**, each CSF function cites its evidence and
+   linked response actions. Save a notebook hypothesis.
+6. In **Response**, approve **Isolate affected endpoint**, then **Run simulation**.
+   **Advance to containment** stays disabled, with its prerequisite stated, until
+   a containment or hunt simulation exists. The decision audit trail records
+   approval, simulation and progression.
+7. In **Report**, export Markdown with observed evidence, correlated context,
+   automated interpretation, risk, NIST mapping, response decisions and the
+   analyst approval record in separate sections.
 
-<br>
+The hero case begins in INVESTIGATING. Notes and actions persist, so a previously
+exercised case may be further along. Seeding never resets it. Other scenarios cover
+an exposed service identity, suspected staging and unverified scanning. The dataset
+contains 252 indicators, 291 relationships, 134 evidence items and 8 assets.
 
-## LLM-Assisted Analysis (Ollama)
+## Development and checks
 
-A critical component of GOTHAMITE is the **LLM-Assisted Analysis Module**, which processes raw scraped intelligence locally and securely without exposing sensitive investigation data to third-party APIs.
-
-- **Local Model Processing**: Utilizes Ollama running local models (e.g., Llama 3) for deep-dive summarization and reasoning.
-- **Threat Extraction**: Automatically extracts Indicators of Compromise (IOCs) and Tactics, Techniques, and Procedures (TTPs) from raw forum posts and pastebin dumps.
-- **Stylometric Profiling**: Employs behavior pattern analysis to attribute multiple disjointed aliases to a single threat actor based on linguistic footprints.
-
-<br>
-
-## Technology Stack
-
-- **Frontend**: Streamlit + React (Custom 3D Force Graph via Three.js)
-- **Backend API**: FastAPI (Python 3.11+)
-- **LLM Engine**: Ollama (Local AI Processing)
-- **Graph Database**: Neo4j / NetworkX
-- **Relational Store**: SQLite / PostgreSQL (SQLAlchemy ORM)
-- **Deployment**: Docker + Docker Compose (Isolated microservices)
-
-<br>
-
-## Installation and Deployment
-
-GOTHAMITE utilizes a containerized microservice architecture, allowing for isolated and reproducible deployments.
-
-<b>Prerequisites</b><br>
-Ensure Docker and Docker Compose are installed on your host system. For local LLM analysis, ensure Ollama is installed and the target model is pulled (ollama run llama3).
-
-<b>Deploying the Workstation</b><br>
-Navigate to the primary application directory and initialize the containers. The analyst workstation will be available at http://localhost:8501.
-
-`ash
+```powershell
 cd gothamite
-docker compose up --build -d
-`
+.\.venv\Scripts\python.exe -m pytest tests -q
+cd frontend-react
+npm run build
+npm run lint
+npm run test:e2e
+```
 
-<b>Initializing Synthetic Intelligence Sources</b><br>
-For demonstration and testing purposes, the platform includes a sandbox of simulated intelligence sources.
+The browser check uses installed Microsoft Edge, a fresh temporary database and
+port 8043. Screenshots and an example report go to `gothamite/verification/`.
+Set `GOTHAMITE_BROWSER=chrome` to use an installed Chrome channel instead.
+Keep port 8043 free while running the check.
 
-`ash
-cd darkweb-sandbox/mock_sites
-docker compose -f docker-compose.sites.yml up -d
-`
+For frontend hot reload, keep the demo backend running and run `npm run dev` from
+`gothamite/frontend-react`. Open http://localhost:5173; Vite proxies API calls to 8042.
 
-<b>Running the Autonomous Collector</b><br>
-Execute the collection script to simulate the intelligence pipeline scraping the mock .onion sites, extracting entities, and pushing them to the GOTHAMITE ingest API.
+## Architecture and data
 
-`ash
-cd darkweb-sandbox
-python bridge_collector.py
-`
+- `gothamite/frontend-react/src/workbench/`: React application and case workspace.
+- `gothamite/backend/api/workbench.py`: investigation API.
+- `gothamite/backend/services/workbench_*.py`: seed, search, graph, analysis,
+  case lifecycle, reports and local session checks.
+- `gothamite/backend/models/workbench.py`: additive SQLAlchemy tables.
+- `gothamite/workbench-demo.db`: persistent SQLite database (ignored by Git).
+- `gothamite/backend/demo.py`: seeded, same-origin demo entrypoint and SPA hosting.
 
-<br>
-<div align="center">
-    <p><i>Developed by Team Shankh_AvivCREW for SIH 2026</i></p>
-</div>
+Set `GOTHAMITE_DB_PATH` to another file for a separate exercise. For a custom
+`GOTHAMITE_PORT`, also set `GOTHAMITE_ORIGINS` to the exact browser origin.
+Preserve any database containing analyst work.
+
+Existing persona overview, graph, dossiers and timeline remain at /overview,
+/graph, /dossier and /timeline. Legacy Streamlit runs separately; see
+[the app README](gothamite/README.md).
+
+## Boundaries
+
+Collection: the workbench loads synthetic source observations from a
+reproducible seed. The companion `darkweb-sandbox` demonstrates collection from
+mock hidden services over a simulated relay network. Scheduled or continuous
+ingestion through source adapters is the deployment architecture, not a running
+service; see [architecture](ARCHITECTURE.md#collection-model).
+
+This is a single-process local prototype. Its demo session is not SSO or user
+authentication. No live feeds, dark-web crawling, model API, real endpoint
+containment, arbitrary case creation or evidence uploads are implemented.
+NIST CSF 2.0 labels organize the workflow; they do not certify compliance.
+Risk expresses triage priority, not a probability or proof of attribution.
+
+See [architecture](ARCHITECTURE.md), [completed work and limitations](OVERNIGHT_PROGRESS.md),
+and [Claude continuation context](CLAUDE_CONTEXT.md). Preview the
+[command center](gothamite/verification/command-center.png).
