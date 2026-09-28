@@ -347,7 +347,8 @@ approved simulation → report works end to end. Notes persist across reloads.
 Case progression and closure enforce their prerequisites. All response operations
 are local simulation records. Source labels and uncertainty stay visible.
 
-Final verification:
+Verification at the end of that first pass (current results are at the top of
+this file: 98 backend tests, 12/12 browser checks):
 
 - Production TypeScript/Vite build passed.
 - **43 backend tests passed**, including six new integration tests.
@@ -378,7 +379,7 @@ The browser test always creates and removes its own temporary database.
 
 **COMMAND CENTER → search `203.0.113.42` → IOC PROFILE → supporting Evidence →
 Correlation Graph → Related Incident (Finance gateway beaconing / INC-1042) →
-Investigation → AI Analysis (offline evidence rules) → Risk Factors →
+Investigation → Analysis (offline evidence rules) → Risk Factors →
 NIST Alignment → Response Recommendation → Analyst Approval → Report Export.**
 
 The Reference IOC link beside the Command Center header starts the same search.
@@ -396,8 +397,10 @@ visits, the case retains those actions; already completed steps cannot repeat.
 
 - Analysis is a deterministic evidence-rule provider, **not LLM inference**.
   No model credential, model request or live enrichment is involved.
-- All threat data, assets and dark-web excerpts are synthetic. Attribution and
-  baseline risk are exercise interpretations, not real-world conclusions.
+- Exercise data, assets and exercise dark-web excerpts are synthetic. Public
+  dataset records (DarkForums, Infoblox, Tor Onionoo) are bounded point-in-time
+  snapshots, labelled dataset-derived; forum claims stay unverified. Attribution
+  and baseline risk are exercise interpretations, not real-world conclusions.
 - No endpoint/network control is executed. Approval means demo analyst review;
   the session does not authenticate a real person.
 - Single-process SQLite and in-memory security state are not production multi-user
@@ -407,7 +410,8 @@ visits, the case retains those actions; already completed steps cannot repeat.
   reproducible environment; fresh-machine setup has not been independently tested.
 - Original Streamlit can be run separately but the full new workflow is React;
   this session's end-to-end verification covered React, not every Streamlit view.
-- The working changes are local and uncommitted. Nothing was pushed or deployed.
+- Committed and pushed on branch `gothamite-investigation-workbench`; not merged
+  to the default branch and not deployed.
 
 ## Next recommended development steps
 

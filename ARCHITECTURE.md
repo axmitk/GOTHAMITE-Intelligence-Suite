@@ -143,7 +143,7 @@ This is a workflow mapping, not a compliance certification.
 The production frontend and API share one loopback origin at port 8042. Vite
 bundles use `/static` so the `/assets` inventory route remains refreshable. Dev
 Vite on 5173 proxies to the same backend. Lazy route chunks keep the initial
-JavaScript bundle about 212 KB (70 KB gzip).
+JavaScript bundle about 218 KB (71 KB gzip).
 
 Demo sessions are signed, expire after 12 hours, and use HttpOnly/SameSite cookies.
 Writes require an origin check and a CSRF token. Valid sessions are reused across
@@ -162,19 +162,21 @@ stay within the evidence scope. Graph edges reference their source evidence.
 
 Evidence hashes detect content differences; they are not signatures or an
 external chain-of-custody guarantee. Synthetic records use reserved IP ranges,
-`.example` names and explicitly fictional vulnerability identifiers. No live
+`.example` names and explicitly fictional vulnerability identifiers; the one
+exception is INC-1047's source IP, a real Tor exit address from the bundled
+Onionoo snapshot, named by a synthetic log. No live
 external enrichment is performed. Existing data is preserved by sentinel-based
 idempotent seed logic; future seed/schema revisions will need explicit migrations.
 
 ## Validation and deployment assumptions
 
 Verified on Windows x64, Python 3.12.7 and project-local Node 22.22. Production
-build passes, 44 backend tests pass, and 10 isolated Edge browser checks pass with
-zero console/page errors. Six pre-existing lint warnings remain in legacy React
+build passes, 98 backend tests pass, and 12 isolated Edge browser checks pass with
+zero console/page errors (2026-09-29). Six pre-existing lint warnings remain in legacy React
 views; new workbench code has no lint warnings. Verification screenshots and an
 example exported report are in `gothamite/verification/`.
 
 SQLite, single-worker sessions and explicitly installed Windows native bindings
 are intentional local-demo choices. Deployment, multi-user RBAC, shared durable
-sessions/rate limits, schema migrations, real ingestion and a model-backed
+sessions/rate limits, schema migrations, scheduled ingestion (including Onionoo refresh) and a model-backed
 analysis provider are separate future work. No production deployment was made.
