@@ -12,6 +12,7 @@ From a single indicator to an auditable, NIST-aligned incident report, fully off
 ![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy-003B57?logo=sqlite&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-98_backend_·_12_e2e-2ea44f)
 ![Offline](https://img.shields.io/badge/runs-fully_offline-555)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 Smart India Hackathon 2026 · Team Shankh_AvivCREW
 
@@ -187,3 +188,8 @@ See the [development log](docs/OVERNIGHT_PROGRESS.md) for verification history.
 ## Team
 
 **Team Shankh_AvivCREW**, Smart India Hackathon 2026.
+
+## License
+
+Code is released under the [MIT License](LICENSE). Bundled public datasets keep
+their own licences (CC BY 4.0, CC0); see [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
