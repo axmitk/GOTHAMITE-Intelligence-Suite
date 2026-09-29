@@ -9,8 +9,8 @@ repository with START_GOTHAMITE.ps1, or from this directory:
 
 Open http://127.0.0.1:8042. Search **203.0.113.42** to begin the hero investigation.
 See the [root README](../README.md) for setup, demo and limitations;
-[architecture](../ARCHITECTURE.md) for implementation decisions; and
-[handoff](../OVERNIGHT_PROGRESS.md) for verification results.
+[architecture](../docs/ARCHITECTURE.md) for implementation decisions; and
+[development log](../docs/OVERNIGHT_PROGRESS.md) for verification results.
 
 ## Legacy persona workbench
 

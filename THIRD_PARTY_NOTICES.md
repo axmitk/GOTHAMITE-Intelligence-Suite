@@ -25,9 +25,9 @@ Audited 2026-09-28 at the upstream commits listed below.
 | DWData (crcresearch) | **No licence declared** | Notre Dame CRC research | **Not bundled.** Schema/taxonomy reference only |
 
 Changes made to the CC BY 4.0 data: records filtered for safety (text withheld,
-URLs removed), entities extracted, and fields normalized (see DATA_SOURCES.md).
+URLs removed), entities extracted, and fields normalized (see docs/DATA_SOURCES.md).
 The GOTHAMITE reconstruction listings are not DWData content. The Onionoo
-snapshot is reduced to the fields listed in DATA_SOURCES.md. "Tor" is a trademark
+snapshot is reduced to the fields listed in docs/DATA_SOURCES.md. "Tor" is a trademark
 of The Tor Project, Inc.; GOTHAMITE is not affiliated with or endorsed by it. The
 Elastic Security Labs article on Tor exit-node monitoring was used as an
 architectural reference only; no Elastic code is included.

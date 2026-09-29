@@ -1,160 +1,189 @@
+<div align="center">
+
 # GOTHAMITE
 
-An evidence-first cyber-intelligence investigation workbench that runs fully
-offline: search an indicator, inspect evidence and relationships, investigate a
-case, review risk and NIST CSF 2.0 alignment, approve a response simulation, and
-export the report. React, FastAPI and SQLite support persistent analyst work.
+**Evidence-first threat intelligence and investigation workbench**
 
-**Every record carries one provenance label: synthetic (the exercise and case
-library), dataset-derived (filtered public snapshots: DarkForums Safe Corpus,
-Infoblox, Tor Project Onionoo) or reference-derived (DWData-shaped
-reconstructions). Analysis uses offline evidence rules, not an LLM. Response
-simulations never change external systems. Nothing is collected live.**
+From a single indicator to an auditable, NIST-aligned incident report, fully offline.
 
-## Run on this Windows machine
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React_18-TypeScript-61DAFB?logo=react&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy-003B57?logo=sqlite&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-98_backend_·_12_e2e-2ea44f)
+![Offline](https://img.shields.io/badge/runs-fully_offline-555)
 
-Dependencies and the production frontend are already installed in this checkout.
+Smart India Hackathon 2026 · Team Shankh_AvivCREW
 
-```powershell
-cd 'C:\Users\aadik\sih 2026\Gothamite-Release'
-.\START_GOTHAMITE.ps1
+![Command center](docs/screenshots/command-center.png)
+
+</div>
+
+## Why GOTHAMITE
+
+Threat signals arrive fragmented: an IP from a sensor, a domain in a public
+indicator list, a leak claim on a dark-web forum. Analysts correlate them by hand
+across separate tools, and the links are rarely recorded with their evidence.
+
+GOTHAMITE turns those fragments into one continuous, auditable investigation.
+Every observation keeps its **source, time, confidence and provenance**, and every
+graph edge cites the observation that supports it.
+
+```
+Collect → Enrich → Correlate → Analyze → Prioritize → Investigate → Respond → Learn
 ```
 
-Open **http://127.0.0.1:8042**. The server binds loopback only; Ctrl+C stops it.
-If this session's demo is already running, open the URL directly.
+## Features
 
-For a fresh Windows x64 installation, install Python 3.12+ and Node 22.22+, then:
+| | |
+| --- | --- |
+| **IOC search and profiles** | Global search, enrichment, and every supporting observation with its source |
+| **Evidence locker** | Raw recorded observation with a SHA-256 integrity hash |
+| **Correlation graph** | Actor → campaign → malware → domain → IP → asset → incident; edges only from evidence |
+| **Rule-based analysis** | Findings with confidence, reasoning and next step. Offline and deterministic, not an LLM |
+| **Transparent risk** | A sum of evidenced factors, each labelled by dimension (reputation, behavior, Tor context…) |
+| **NIST CSF 2.0 mapping** | Each function cites its evidence and linked response actions |
+| **Controlled response** | Recommend → analyst approval → simulation, with a full audit trail. Nothing external is touched |
+| **Reports** | Structured Markdown export keeping evidence, interpretation, risk and decisions separate |
+| **Public CTI data** | DarkForums Safe Corpus, Infoblox indicators and Tor Project Onionoo, all as offline snapshots |
+
+## Screenshots
+
+| Relationship graph | Evidence and integrity hash |
+| --- | --- |
+| ![Graph](docs/screenshots/relationship-graph.png) | ![Evidence](docs/screenshots/evidence-hash.png) |
+| **Tor exit-node context** | **Rule-based analysis and risk** |
+| ![Tor](docs/screenshots/tor-context.png) | ![Analysis](docs/screenshots/analysis-risk.png) |
+
+## Quick start (Windows)
+
+Requires Python 3.12+ and Node 22.22+.
 
 ```powershell
-.\SETUP_GOTHAMITE.ps1
-.\START_GOTHAMITE.ps1
+git clone https://github.com/axmitk/GOTHAMITE-Intelligence-Suite.git
+cd GOTHAMITE-Intelligence-Suite
+.\SETUP_GOTHAMITE.ps1     # venv, dependencies, frontend build
+.\START_GOTHAMITE.ps1     # serves http://127.0.0.1:8042 (loopback only)
 ```
 
-Setup downloads dependencies, creates a virtual environment if needed and builds
-the frontend. It preserves databases. If PowerShell blocks downloaded scripts,
-inspect them and run their listed commands manually under your organization's policy.
-This checkout explicitly includes Windows x64 bundler/linter bindings; other
-platforms need those dependencies adjusted. npm scripts use project-local Node
-22.22. System Node 22.11 can emit engine warnings during installation.
+The first start seeds the exercise and imports the bundled dataset snapshots, all
+from local files. Analyst work persists in `gothamite/workbench-demo.db`, and
+restarting never resets it.
 
 ## Five-minute demo
 
-1. On **Command center**, review the 11-case queue and the provenance labels.
-2. Search **203.0.113.42** using global search (Ctrl+K).
-3. Open the IOC profile, then **Relationship graph**. Select **Finance gateway
-   beaconing** and **Open investigation** (INC-1042).
-4. Inspect an evidence item's source, raw observation and SHA-256 hash. In **Graph**,
-   select **Grey Moth** and inspect a relationship's supporting evidence.
-5. In **Analysis**, run evidence analysis. Each finding shows its confidence,
-   reasoning factors, supporting evidence and recommended next step. Inspect the
-   risk factors. In **NIST alignment**, each CSF function cites its evidence and
-   linked response actions. Save a notebook hypothesis.
-6. In **Response**, approve **Isolate affected endpoint**, then **Run simulation**.
-   **Advance to containment** stays disabled, with its prerequisite stated, until
-   a containment or hunt simulation exists. The decision audit trail records
-   approval, simulation and progression.
-7. In **Report**, export Markdown with observed evidence, correlated context,
-   automated interpretation, risk, NIST mapping, response decisions and the
-   analyst approval record in separate sections.
+1. On the **Command center**, review the 11-case queue and its provenance labels.
+2. Search **203.0.113.42** (Ctrl+K) and open the IOC profile.
+3. Open a supporting observation to see the raw evidence and its SHA-256 hash.
+4. Open **INC-1042** and follow the **Graph** from threat actor to incident.
+5. In **Analysis**, run the evidence rules and inspect the risk factors.
+6. In **NIST alignment**, see which evidence and actions support each function.
+7. In **Response**, approve *Isolate affected endpoint*, then run the simulation.
+8. In **Report**, export the investigation as Markdown.
+9. Also try **claudfront.net** (listed by three Infoblox reports) and
+   **185.220.100.242** (Tor exit-node context, INC-1047).
 
-8. Optional: search **185.220.100.242** to see Tor exit-node context (INC-1047),
-   or **claudfront.net** to see an indicator listed by three Infoblox reports.
+## Case library
 
-The hero case begins in INVESTIGATING. Notes and actions persist, so a previously
-exercised case may be further along. Seeding never resets it.
+| Case | Pattern | Provenance |
+| --- | --- | --- |
+| INC-1042 | Finance gateway beaconing: the hero investigation | Synthetic |
+| INC-1043 – 1045 | Exposed service identity, application staging, perimeter scanning | Synthetic |
+| INC-1046 | Decoy Dog DNS infrastructure review | Dataset-derived (Infoblox) |
+| INC-1047 | IOC with Tor exit-node context | Synthetic telemetry + Tor Onionoo |
+| INC-1048 | One IOC corroborated by four independent sources | Synthetic |
+| INC-1049 | Forum leak claim naming a government domain | Dataset-derived (DarkForums) |
+| INC-1050 | Repeated Infoblox IOC, one observation per report | Dataset-derived (Infoblox) |
+| INC-1051 | Credential exposure (placeholders only) | Synthetic |
+| INC-1052 | Lookalike domain from DNS, closed with lessons learned | Synthetic |
 
-| Cases | What they exercise |
+Cases start in different workflow and response states: new, triaged,
+investigating, containment and closed, with actions pending, approved, simulated
+or rejected.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph Sources["Sources (offline)"]
+    S1[Synthetic exercise seed]
+    S2[DarkForums Safe Corpus]
+    S3[Infoblox indicators]
+    S4[Tor Project Onionoo]
+  end
+  S1 & S2 & S3 & S4 --> N[Normalize + safety filter<br/>provenance record per row]
+  N --> DB[(SQLite<br/>entities · evidence · relationships)]
+  DB --> C[Exact-match correlation<br/>evidence-backed edges]
+  C --> A[Rule-based analysis<br/>risk · NIST CSF 2.0]
+  A --> R[Approval → simulated response<br/>audit trail]
+  R --> P[Report export]
+  DB --> UI[React + D3 workbench]
+```
+
+| Layer | Stack |
 | --- | --- |
-| INC-1042 to INC-1045 | Original synthetic exercise: beaconing (hero), exposed service identity, staging, unverified scanning |
-| INC-1046 | Dataset-derived Decoy Dog DNS review (Infoblox) |
-| INC-1047 to INC-1052 | Case library: Tor context, multi-source corroboration, forum claim, repeated Infoblox IOC, credential exposure (placeholders), lookalike domain |
+| Frontend | React 18, TypeScript, Vite, D3 |
+| Backend | FastAPI, SQLAlchemy, SQLite |
+| Data | Bundled, filtered snapshots with a manifest and per-record provenance |
+| Testing | pytest (98) and Playwright/Edge end-to-end checks (12) |
 
-A fresh database holds 510 indicators (259 synthetic, 251 dataset-derived), 664
-evidence items (148 synthetic, 510 dataset-derived, 6 reference-derived), 639
-relationships and 12 assets.
+More detail: [architecture](docs/ARCHITECTURE.md) · [data sources and provenance](docs/DATA_SOURCES.md)
 
-## Development and checks
+## Data and provenance
+
+Every record carries exactly one label, shown as a badge in the UI and kept in reports:
+
+- **Synthetic**: the exercise and case library. Documentation IP ranges and `.example` domains.
+- **Dataset-derived**: filtered public snapshots.
+  - DarkForums Safe Corpus (CC BY 4.0)
+  - Infoblox Threat Intelligence (CC BY 4.0)
+  - Tor Project Onionoo relay metadata (CC0)
+- **Reference-derived**: reconstructions shaped like DWData, which is not redistributed (no licence).
+
+GOTHAMITE never crawls, never connects to Tor, and never calls an external API at
+runtime. Tor association is treated as context, never as a malicious verdict.
+See [DATA_SOURCES](docs/DATA_SOURCES.md) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
+
+## Development
 
 ```powershell
 cd gothamite
-.\.venv\Scripts\python.exe -m pytest tests -q
+.\.venv\Scripts\python.exe -m pytest tests -q      # backend: 98 tests
 cd frontend-react
-npm run build
-npm run lint
-npm run test:e2e
+npm run build; npm run lint                        # production build, oxlint
+npm run test:e2e                                   # 12 browser checks in Edge (port 8043)
+npm run dev                                        # hot reload on :5173, API proxied to :8042
 ```
 
-Current results: 98 backend tests, 12/12 browser checks with no console errors,
-a clean production build and 6 pre-existing lint warnings in legacy pages.
-The browser check uses installed Microsoft Edge, a fresh temporary database and
-port 8043. Screenshots and an example report go to `gothamite/verification/`.
-Set `GOTHAMITE_BROWSER=chrome` to use an installed Chrome channel instead.
-Keep port 8043 free while running the check.
+## Repository layout
 
-For frontend hot reload, keep the demo backend running and run `npm run dev` from
-`gothamite/frontend-react`. Open http://localhost:5173; Vite proxies API calls to 8042.
+```
+gothamite/
+  backend/
+    api/              REST API (/api/v1/workbench)
+    services/         search, graph, analysis, cases, reports, case library
+    data_sources/     bundled snapshots, manifest, safety filter, importer
+    collection/       source adapter layer (synthetic fixtures by default)
+    models/           SQLAlchemy tables
+  frontend-react/     React workbench (src/workbench) + legacy persona pages
+  tests/              pytest suites
+  verification/       end-to-end screenshots and an example report
+darkweb-sandbox/      companion simulated onion-routing collection sandbox
+docs/                 architecture, data sources, development log, presentation
+```
 
-## Architecture and data
+## Scope and limitations
 
-- `gothamite/frontend-react/src/workbench/`: React application and case workspace.
-- `gothamite/backend/api/workbench.py`: investigation API.
-- `gothamite/backend/services/workbench_*.py`: seed, search, graph, analysis,
-  case lifecycle, reports and local session checks.
-- `gothamite/backend/services/workbench_library.py`: case library INC-1047 to INC-1052.
-- `gothamite/backend/data_sources/`: bundled dataset snapshots, manifest, safety
-  filter and offline importer (DarkForums, Infoblox, Tor Onionoo, DWData reconstruction).
-- `gothamite/backend/collection/`: source adapter layer (synthetic fixtures by default).
-- `gothamite/backend/models/workbench.py`: additive SQLAlchemy tables.
-- `gothamite/workbench-demo.db`: persistent SQLite database (ignored by Git).
-- `gothamite/backend/demo.py`: seeded, same-origin demo entrypoint and SPA hosting.
+This is a single-machine prototype for demonstration and evaluation:
 
-Set `GOTHAMITE_DB_PATH` to another file for a separate exercise. For a custom
-`GOTHAMITE_PORT`, also set `GOTHAMITE_ORIGINS` to the exact browser origin.
-Preserve any database containing analyst work.
+- **Response:** response actions are simulations, and approval is a local demo seat, not SSO.
+- **Analysis:** analysis is deterministic rules, not a machine-learning model.
+- **Risk:** risk expresses triage priority, not probability or attribution.
+- **NIST:** NIST CSF 2.0 labels organize the workflow; they do not certify compliance.
+- **Data:** dataset snapshots are point-in-time. Scheduled ingestion is the deployment design, not a running service.
 
-Existing persona overview, graph, dossiers and timeline remain at /overview,
-/graph, /dossier and /timeline. Legacy Streamlit runs separately; see
-[the app README](gothamite/README.md).
+See the [development log](docs/OVERNIGHT_PROGRESS.md) for verification history.
 
-## Boundaries
+## Team
 
-Collection: the workbench loads synthetic source observations from a
-reproducible seed and public datasets from bundled snapshots. The companion `darkweb-sandbox` demonstrates collection from
-mock hidden services over a simulated relay network. Scheduled or continuous
-ingestion through source adapters is the deployment architecture, not a running
-service; see [architecture](ARCHITECTURE.md#collection-model).
-
-Public datasets: filtered snapshots of the DarkForums Safe Corpus and Infoblox
-Threat Intelligence (both CC BY 4.0) are imported offline at startup as
-**dataset-derived** evidence, shown with a distinct provenance badge, and backed
-by INC-1046. DWData is reference-only (no licence). The canonical 203.0.113.42
-investigation remains synthetic. See [data sources](DATA_SOURCES.md).
-
-TOR exit-node intelligence: a bounded Tor Project Onionoo snapshot (18 relays,
-published 2026-09-28 17:00 UTC, CC0) is imported offline. An IP that exactly
-matches a relay address gets a TOR infrastructure section, a small "TOR exit node"
-badge, an `ASSOCIATED_WITH` edge to the relay and a +5 "TOR context" risk factor.
-Tor association is context, never a malicious verdict. GOTHAMITE never contacts
-Onionoo or starts Tor.
-
-Case library: INC-1047 to INC-1052 add Tor context, multi-source corroboration,
-a forum claim, a repeated Infoblox IOC, a credential exposure (placeholders only)
-and a lookalike domain, each in a different workflow and response state. They are
-deliberately synthetic or dataset-derived exercises, not real incidents.
-
-Source adapters: `gothamite/backend/collection/` normalizes MailAccess-,
-horus- and TorBot-shaped findings and the deepdarkCTI source catalogue into one
-observation model. In this build every adapter runs on synthetic fixtures; live
-execution is off by default and needs explicit opt-in. See
-[third-party notices](THIRD_PARTY_NOTICES.md) for what is integrated versus
-architectural only.
-
-This is a single-process local prototype. Its demo session is not SSO or user
-authentication. No live feeds, dark-web crawling, Tor connection, model API, real
-endpoint containment, arbitrary case creation or evidence uploads are implemented.
-NIST CSF 2.0 labels organize the workflow; they do not certify compliance.
-Risk expresses triage priority, not a probability or proof of attribution.
-
-See [architecture](ARCHITECTURE.md), [completed work and limitations](OVERNIGHT_PROGRESS.md),
-and [Claude continuation context](CLAUDE_CONTEXT.md). Preview the
-[command center](gothamite/verification/command-center.png).
+**Team Shankh_AvivCREW**, Smart India Hackathon 2026.

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Node / build output
+node_modules/
+dist/
+
+# Local runtime data and secrets
+*.db
+*.log
+.env
+.local/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local tool settings
+.claude/
+.mcp.json
