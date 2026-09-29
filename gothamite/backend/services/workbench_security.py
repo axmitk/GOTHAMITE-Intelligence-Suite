@@ -1,6 +1,9 @@
 """Local demo seat, CSRF protection and bounded per-process request limiting.
 
 This is deliberately not production identity/SSO. The launcher binds loopback.
+A hosted demo sets GOTHAMITE_PUBLIC_URL (or runs on Render, which provides
+RENDER_EXTERNAL_URL); that single https origin is then allowed and the session
+cookie is marked Secure.
 """
 import hashlib
 import hmac
@@ -14,6 +17,11 @@ from fastapi import HTTPException, Request
 SECRET = secrets.token_bytes(32)
 COOKIE = "gothamite_demo"
 ORIGINS = set(os.getenv("GOTHAMITE_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://localhost:8042,http://127.0.0.1:8042,http://localhost:8000,http://127.0.0.1:8000,http://testserver").split(","))
+PUBLIC_URL = (os.getenv("GOTHAMITE_PUBLIC_URL") or os.getenv("RENDER_EXTERNAL_URL") or "").rstrip("/")
+if PUBLIC_URL:
+    ORIGINS.add(PUBLIC_URL)
+PUBLIC_HOST = PUBLIC_URL.split("://", 1)[-1].split("/", 1)[0] if PUBLIC_URL else ""
+SECURE_COOKIE = PUBLIC_URL.startswith("https://")
 _buckets = defaultdict(deque)
 _lock = Lock()
 

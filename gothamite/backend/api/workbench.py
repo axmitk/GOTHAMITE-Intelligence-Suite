@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, ConfigDict, field_validator
 from sqlalchemy.orm import Session
 from backend.db import get_db
 from backend.models.workbench import IntelEntity, IntelEvidence, IntelRelationship, IncidentCase, DatasetRecord
-from backend.services.workbench_security import require_session, create_session, origin_check, limit, COOKIE
+from backend.services.workbench_security import require_session, create_session, origin_check, limit, COOKIE, SECURE_COOKIE
 from backend.services import workbench_intelligence as intel, workbench_cases as cases
 from backend.services.workbench_analysis import analyze, NIST
 from backend.services.workbench_seed import SNAPSHOT
@@ -22,7 +22,7 @@ def session(request: Request, response: Response):
     if request.headers.get("x-gothamite-client") != "workbench":
         raise HTTPException(403, "Demo session requires the workbench client header")
     token, csrf = create_session(request.cookies.get(COOKIE, ""))
-    response.set_cookie(COOKIE, token, httponly=True, samesite="strict", max_age=43200, path="/api/v1")
+    response.set_cookie(COOKIE, token, httponly=True, secure=SECURE_COOKIE, samesite="strict", max_age=43200, path="/api/v1")
     response.headers["Cache-Control"] = "no-store"
     return {"analyst": "Demo analyst", "role": "analyst", "mode": "synthetic", "csrf": csrf}
 

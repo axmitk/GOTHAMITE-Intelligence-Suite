@@ -12,7 +12,7 @@ from backend.api.entities import router as entities_router
 from backend.api.artifacts import router as artifacts_router
 from backend.api.export import router as export_router
 from backend.api.workbench import router as workbench_router, session_router
-from backend.services.workbench_security import ORIGINS
+from backend.services.workbench_security import ORIGINS, PUBLIC_HOST
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 
@@ -38,7 +38,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1", "testserver"])
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1", "testserver"] + ([PUBLIC_HOST] if PUBLIC_HOST else []))
 
 
 @app.exception_handler(RequestValidationError)
