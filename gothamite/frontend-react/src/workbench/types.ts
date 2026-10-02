@@ -44,6 +44,7 @@ export interface Relationship {
   relation: string;
   evidence_id: string;
   confidence: number;
+  provenance?: string | null;
 }
 export interface GraphData {
   root: string;

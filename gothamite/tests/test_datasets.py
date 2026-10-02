@@ -161,6 +161,18 @@ def test_same_indicator_across_reports_keeps_each_observation(imported):
     assert all(e["provenance"] == "dataset_derived" for e in profile["evidence"])
 
 
+def test_graph_edges_carry_their_evidence_provenance(imported):
+    client, _ = imported
+    edges = client.get(f"{BASE}/graph/{entity_id('domain', 'claudfront.net')}").json()["edges"]
+    assert edges and all(e["provenance"] == "dataset_derived" for e in edges)
+    # Forum-claim edges sit below 0.9 confidence; they stay dataset-derived, not "synthetic".
+    forum = client.get(f"{BASE}/graph/INC-1049").json()["edges"]
+    low = [e for e in forum if e["confidence"] < 0.9]
+    assert low and all(e["provenance"] == "dataset_derived" for e in low)
+    synthetic = client.get(f"{BASE}/graph/INC-1042").json()["edges"]
+    assert synthetic and all(e["provenance"] == "synthetic" for e in synthetic)
+
+
 def test_cross_dataset_entity_retains_both_provenances(workbench, monkeypatch, tmp_path):  # noqa: F811
     """The real snapshots share no entity; prove the rule with a fixture."""
     client, factory = workbench

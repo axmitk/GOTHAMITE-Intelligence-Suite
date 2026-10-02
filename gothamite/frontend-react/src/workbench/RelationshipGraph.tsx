@@ -2,7 +2,7 @@ import { useId, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Minus, Plus, RotateCcw, ArrowUpRight } from "lucide-react";
 import { useResource } from "./api";
-import { Badge, Panel, ResourceState, EvidenceRefs } from "./ui";
+import { Badge, Panel, ProvenanceBadge, ResourceState, EvidenceRefs } from "./ui";
 import { human, kindLabel, plural, entityUrl } from "./formatters";
 import type { GraphData, Relationship } from "./types";
 
@@ -612,14 +612,7 @@ export function RelationshipGraph({
                 <p className="wb-break">
                   {labels.get(edge.source_id)} → {labels.get(edge.target_id)}
                 </p>
-                <Badge
-                  value={
-                    edge.confidence >= 0.9
-                      ? "High confidence"
-                      : "Synthetic association"
-                  }
-                  tone="demo"
-                />
+                <ProvenanceBadge value={edge.provenance ?? undefined} />
                 <p>Confidence annotation: {edge.confidence.toFixed(2)}</p>
               </div>
               <div>

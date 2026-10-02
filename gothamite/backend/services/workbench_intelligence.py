@@ -70,6 +70,15 @@ def search(db: Session, q: str, kind: str | None, page: int, limit: int):
     return {"query": q, "total": total, "page": page, "limit": limit, "results": [serialize(r) for r in rows]}
 
 
+def _with_edge_provenance(db: Session, edges: list[dict]) -> list[dict]:
+    """Label each edge with the provenance of the observation that supports it."""
+    ids = {e["evidence_id"] for e in edges}
+    found = dict(db.query(IntelEvidence.id, IntelEvidence.provenance).filter(IntelEvidence.id.in_(ids)).all()) if ids else {}
+    for e in edges:
+        e["provenance"] = found.get(e["evidence_id"])
+    return edges
+
+
 def graph(db: Session, root: str, depth: int = 3, limit: int = 32):
     root_entity = require_entity(db, root)
     evidence, entities = context_for(db, root)
@@ -84,7 +93,7 @@ def graph(db: Session, root: str, depth: int = 3, limit: int = 32):
         nodes = db.query(IntelEntity).filter(IntelEntity.id.in_(node_ids)).order_by((IntelEntity.id == root).desc(), IntelEntity.kind, IntelEntity.id).limit(limit).all()
         included = {n.id for n in nodes}
         return {"root": root, "nodes": [serialize(n) for n in nodes],
-                "edges": [serialize(r) for r in scoped_edges if r.source_id in included and r.target_id in included],
+                "edges": _with_edge_provenance(db, [serialize(r) for r in scoped_edges if r.source_id in included and r.target_id in included]),
                 "truncated": len(node_ids) > limit, "depth": depth, "limit": limit}
     # Prioritize the connected evidence slice before expanding campaign infrastructure.
     contextual = {e.id for e in entities}
@@ -110,7 +119,7 @@ def graph(db: Session, root: str, depth: int = 3, limit: int = 32):
                 seen_edges.add(rel.id)
                 edges.append(serialize(rel))
     nodes = db.query(IntelEntity).filter(IntelEntity.id.in_(visited)).order_by(IntelEntity.kind, IntelEntity.id).all()
-    return {"root": root, "nodes": [serialize(n) for n in nodes], "edges": edges, "truncated": truncated, "depth": depth, "limit": limit}
+    return {"root": root, "nodes": [serialize(n) for n in nodes], "edges": _with_edge_provenance(db, edges), "truncated": truncated, "depth": depth, "limit": limit}
 
 
 def profile(db: Session, id: str):
