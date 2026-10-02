@@ -104,42 +104,6 @@ SITES: dict[str, Site] = {
         item_path="listing",
         item_word="Listings",
     ),
-            "marketplace-epsilon": Site(
-        site_id="marketplace-epsilon",
-        kind="marketplace",
-        name="Epsilon Market",
-        tagline="Next gen underground drugs & exploit market",
-        address="epsilon8qkw4rx.onion.mock",
-        item_path="listing",
-        item_word="Listings",
-    ),
-    "forum-zeta": Site(
-        site_id="forum-zeta",
-        kind="forum",
-        name="Zeta Board",
-        tagline="Advanced Persistent Threat forum",
-        address="zeta5vnp3ty2.onion.mock",
-        item_path="thread",
-        item_word="Threads",
-    ),
-    "marketplace-omega": Site(
-        site_id="marketplace-omega",
-        kind="marketplace",
-        name="Omega Market",
-        tagline="The end of all markets",
-        address="omega9xrq2zv.onion.mock",
-        item_path="listing",
-        item_word="Listings",
-    ),
-    "forum-delta": Site(
-        site_id="forum-delta",
-        kind="forum",
-        name="Delta Board",
-        tagline="Underground carding and exploit discussion.",
-        address="delta9pqr5st.onion.mock",
-        item_path="thread",
-        item_word="Threads",
-    ),
     "forum-gamma": Site(
         site_id="forum-gamma",
         kind="forum",
@@ -159,10 +123,6 @@ PERSONAS: dict[str, Persona] = {
     "A2": Persona("A2", "n1ghtjar_", "marketplace-beta", "2026-02-14", "2026-08-22", PGP_A, WALLET_A),
     "B1": Persona("B1", "quillfeather", "forum-alpha", "2026-01-20", "2026-04-02", PGP_B1, WALLET_B),
     "B2": Persona("B2", "quill_v2", "forum-gamma", "2026-04-19", "2026-08-18", PGP_B2, WALLET_B),
-            "F1": Persona("F1", "venom_strike", "marketplace-epsilon", "2026-01-01", "2026-09-01", PGP_A, WALLET_A),
-    "F2": Persona("F2", "venomous", "forum-zeta", "2026-02-01", "2026-09-01", PGP_A, WALLET_A),
-    "F3": Persona("F3", "ven0m", "marketplace-omega", "2026-03-01", "2026-09-01", PGP_A, WALLET_A),
-    "E1": Persona("E1", "cipher_ghost", "forum-delta", "2026-03-01", "2026-08-20", PGP_C1, WALLET_A),
     "C1": Persona("C1", "nightjarr", "forum-gamma", "2026-03-01", "2026-08-21", PGP_C1, WALLET_C1),
     "D1": Persona("D1", "bellwether", "marketplace-beta", "2026-02-01", "2026-08-19", PGP_D1, WALLET_D1),
 }
@@ -181,24 +141,6 @@ PERSONAS: dict[str, Persona] = {
 # that invites claiming a capability this system does not have.
 
 POSTS: list[Post] = [
-    Post("marketplace-epsilon", 101, "venom_strike", "2026-05-10T12:00:00Z", "Selling access", "Initial access broker.", pgp=PGP_A, wallets=(WALLET_A,)),
-    Post("forum-zeta", 202, "venomous", "2026-06-10T12:00:00Z", "Looking for partners", "Let's do some ransomware.", pgp=PGP_A, wallets=(WALLET_A,)),
-    Post("marketplace-omega", 303, "ven0m", "2026-07-10T12:00:00Z", "RaaS Affiliate", "Looking for new RaaS.", pgp=PGP_A, wallets=(WALLET_A,)),
-
-    # === forum-delta / E1 cipher_ghost =========================================
-    Post(
-        "forum-delta", 71, "cipher_ghost", "2026-03-15T12:00:00Z",
-        "Selling 0days",
-        "New 0days for sale. Using the same crypto wallet as the boss.",
-        wallets=(WALLET_A,)
-    ),
-    Post(
-        "forum-delta", 72, "cipher_ghost", "2026-04-10T12:00:00Z",
-        "Another dump",
-        "Here is my PGP key for verification.",
-        pgp=PGP_C1
-    ),
-
     # === forum-alpha / A1 nightjar =========================================
     # 2026-01-08 -> 2026-08-20.  PGP on 3 posts, wallet on 3 (spec asks >= 2).
     Post(

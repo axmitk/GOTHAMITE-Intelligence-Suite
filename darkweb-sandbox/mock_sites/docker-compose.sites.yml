@@ -46,34 +46,6 @@ services:
       <<: *site-env
       SITE_ID: forum-gamma
 
-  forum-delta:
-    <<: *site
-    container_name: forum-delta
-    environment:
-      <<: *site-env
-      SITE_ID: forum-delta
-
-  marketplace-epsilon:
-    <<: *site
-    container_name: marketplace-epsilon
-    environment:
-      <<: *site-env
-      SITE_ID: marketplace-epsilon
-
-  forum-zeta:
-    <<: *site
-    container_name: forum-zeta
-    environment:
-      <<: *site-env
-      SITE_ID: forum-zeta
-
-  marketplace-omega:
-    <<: *site
-    container_name: marketplace-omega
-    environment:
-      <<: *site-env
-      SITE_ID: marketplace-omega
-
 networks:
   sandbox-net:
     external: true

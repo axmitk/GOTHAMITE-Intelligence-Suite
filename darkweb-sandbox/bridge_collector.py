@@ -26,11 +26,6 @@ TARGETS = [
     {"source_id": "forum-gamma", "source_type": "forum", "host": "gamma2xd6bt5hy.onion.mock", "resource": "/thread/53"},
     # D1 bellwether (negative control)
     {"source_id": "marketplace-beta", "source_type": "marketplace", "host": "beta4np8vz3wc.onion.mock", "resource": "/listing/42"},
-    {"source_id": "forum-delta", "source_type": "forum", "host": "delta9pqr5st.onion.mock", "resource": "/thread/71"},
-    {"source_id": "forum-delta", "source_type": "forum", "host": "delta9pqr5st.onion.mock", "resource": "/thread/72"},
-    {"source_id": "marketplace-epsilon", "source_type": "marketplace", "host": "epsilon8qkw4rx.onion.mock", "resource": "/listing/101"},
-    {"source_id": "forum-zeta", "source_type": "forum", "host": "zeta5vnp3ty2.onion.mock", "resource": "/thread/202"},
-    {"source_id": "marketplace-omega", "source_type": "marketplace", "host": "omega9xrq2zv.onion.mock", "resource": "/listing/303"},
 ]
 
 def collect(target):

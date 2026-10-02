@@ -45,10 +45,6 @@ MOCK_ADDRESS_MAP: dict[str, tuple[str, int]] = {
     "alpha7fq2mx9k.onion.mock": ("forum-alpha", 80),
     "beta4np8vz3wc.onion.mock": ("marketplace-beta", 80),
     "gamma2xd6bt5hy.onion.mock": ("forum-gamma", 80),
-    "delta9pqr5st.onion.mock": ("forum-delta", 80),
-    "epsilon8qkw4rx.onion.mock": ("marketplace-epsilon", 80),
-    "zeta5vnp3ty2.onion.mock": ("forum-zeta", 80),
-    "omega9xrq2zv.onion.mock": ("marketplace-omega", 80),
 }
 
 
