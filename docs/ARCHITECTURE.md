@@ -133,8 +133,10 @@ increment.
 
 Nothing in either repository connects to the live dark web. "Lexical similarity" is
 a bag-of-words term-frequency cosine; it is not a trained or language model. It compares
-the raw HTML of each persona's first artifact, fires on no pair in the scenario set and has
-no test of its own.
+the raw HTML of each persona's first artifact, fires on no pair in the seeded scenario set and
+has no test of its own. On pages scraped through the sandbox (2026-10-03) it fired on 8 of 12
+pairs, 6 of them negatives, because the shared page template dominates; the overlap penalty
+kept every negative below the threshold.
 
 NIST mapping uses CSF 2.0 categories, checked against the official Core:
 https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf

@@ -204,7 +204,12 @@ Development follows a strict phase-gate protocol documented in `AgentsDocs/IMPLE
 - [x] **Phase 6: Integration & Demo Hardening** — End-to-end `docker compose` validation, cold-start repeatability, and demo rehearsal.
 
 > **Current status (2026-10-03).** Phases 1–6 are implemented (commit `46daed4`). The 164 unit
-> tests pass (`python -m unittest discover -s tests -t .`); the Docker stack was not re-run on this date. Reports are in `AgentsDocs/reports/`,
+> tests pass (`python -m unittest discover -s tests -t .`). On the same date the Docker stack
+> (directory, 7 relays, 3 mock sites) was run end to end: the scraper agent fetched 57 pages over
+> 3-hop circuits and GOTHAMITE's ingest accepted 48. The 9 rejected pages are 3 index pages with
+> no persona and 6 profile pages with no `observed_at`, both required by the ingest API; they
+> carry no identifiers. The image does not include `scraper/`, so the run mounted it with
+> `-v ./scraper:/app/scraper:ro`. Reports are in `AgentsDocs/reports/`,
 > and the engineering decisions are recorded in `AgentsDocs/SPEC_DECISIONS.md`.
 > The `docker compose` stack is **executed and verified**: seven relays register,
 > `GET /path?hops=3` returns varying paths, and a 3-hop carry to

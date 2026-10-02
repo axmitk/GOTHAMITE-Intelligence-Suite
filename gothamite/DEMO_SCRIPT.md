@@ -76,7 +76,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 > 3. Handle Similarity via Levenshtein Edit Distance (+0.05)
 > 4. Temporal Succession for Migrations and Rebrands (+0.15)
 > 5. Activity Overlap Conflict Penalties (-0.30)
-> 6. Lexical similarity, term-frequency cosine on raw HTML (+0.25, corroboration only; fires on no scenario pair)
+> 6. Lexical similarity, term-frequency cosine on raw HTML (+0.25, corroboration only; fires on no seeded pair, but on 8 of 12 scraped pairs because of shared page markup)
 >
 > Scores are strictly capped at 0.95. Let us trigger the correlation pass."
 
@@ -117,7 +117,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 
 > "Finally, the dossier and the export keep provenance: every evidence row in the CSV/JSON export carries its source artifact ID, and each artifact keeps its SHA-256 hash.
 >
-> In summary, GOTHAMITE transforms fragmented dark web noise into verifiable, auditable, and deterministic intelligence."
+> In summary, GOTHAMITE transforms fragmented dark web noise into auditable, deterministic intelligence."
 
 ---
 

@@ -90,8 +90,10 @@ Other limits of the current rules:
 - **Shared service addresses.** Escrow, exchange-deposit and mixer addresses are not
   excluded. Two customers of one escrow address get +0.25 each time.
 - **The lexical signal reads raw HTML.** It compares the first stored artifact of each
-  persona, markup included, so template tags inflate the similarity. No scenario pair
-  triggers it, and no test covers it.
+  persona, markup included, so template tags inflate the similarity. No pair in the seeded
+  scenario set triggers it, and no test covers it. In an end-to-end run on 2026-10-03 over pages scraped through the sandbox, it fired on
+  8 of 12 pairs, 6 of them negatives; the overlap penalty kept every negative below the
+  threshold, and the rebrand pair scored 0.65 instead of 0.40.
 - **Same-source sock puppets are never compared.** Two handles on one forum are never
   scored against each other.
 - **All pairs are compared.** The cost grows with the square of the number of personas,
