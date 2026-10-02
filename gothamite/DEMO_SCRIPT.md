@@ -72,7 +72,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 > 
 > GOTHAMITE implements a deterministic, multi-vector correlation engine. It evaluates 5 independent signal dimensions:
 > 1. Cryptographic PGP Key Matching (+0.70)
-> 2. Cryptocurrency Wallet Reuse (+0.45)
+> 2. Cryptocurrency Wallet Reuse (+0.25, needs a second signal to form a link)
 > 3. Handle Similarity via Levenshtein Edit Distance (+0.05 to +0.20)
 > 4. Temporal Succession for Migrations and Rebrands (+0.15)
 > 5. Activity Overlap Conflict Penalties (-0.30)
@@ -90,7 +90,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 >
 > Look at our headline attribution:
 > - Persona `nightjar` on `forum-alpha` is linked to `n1ghtjar_` on `marketplace-beta`.
-> - Click the edge: the Evidence Inspector reveals the exact breakdown—Shared Canonical PGP Fingerprint (+0.70) and Shared Bitcoin Settlement Wallet (+0.45), capped at 0.95.
+> - Click the edge: the Evidence Inspector reveals the exact breakdown—Shared Canonical PGP Fingerprint (+0.70) and Shared Bitcoin Settlement Wallet (+0.25), capped at 0.95.
 > - Click the 'Artifact ID' link: the analyst immediately views the raw immutable HTML collected from the onion site, proving the exact origin and timestamp."
 
 ---
@@ -101,7 +101,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 > "Real threat actors rotate credentials and set decoys. GOTHAMITE is specifically hardened against naive matching:
 >
 > **1. The Rebrand (`quillfeather` → `quill_v2`):**
-> Notice this link has a confidence score of 0.60. `quillfeather` announced departure from `forum-alpha` in early April. 17 days later, `quill_v2` surfaced on `forum-gamma`. The actor rotated their PGP key, but reused their treasury wallet. GOTHAMITE detected the wallet reuse (+0.45) and temporal succession (+0.15) to uncover the rebrand despite key rotation.
+> Notice this link has a confidence score of 0.40. `quillfeather` announced departure from `forum-alpha` in early April. 17 days later, `quill_v2` surfaced on `forum-gamma`. The actor rotated their PGP key, but reused their treasury wallet. GOTHAMITE detected the wallet reuse (+0.25) and temporal succession (+0.15) to uncover the rebrand despite key rotation.
 >
 > **2. The Decoy Defense (`nightjarr` with two R's):**
 > Notice persona `nightjarr`. Naive edit-distance tools link `nightjar` and `nightjarr` immediately because their handles are 90% identical. But GOTHAMITE evaluates the activity window: both posted concurrently on competing platforms without shared cryptographic proof. The temporal overlap penalty (-0.30) completely wiped out the handle similarity (+0.05), dropping the score below our 0.30 threshold. **No false positive edge was created.**

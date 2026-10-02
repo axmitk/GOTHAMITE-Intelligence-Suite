@@ -56,7 +56,7 @@ def test_phase6_packaging_files_exist():
     assert "quillfeather" in demo_script
     assert "nightjarr" in demo_script
     assert "0.95" in demo_script
-    assert "0.60" in demo_script
+    assert "0.40" in demo_script
 
 
 def test_phase6_cold_start_and_fallback_path():
@@ -96,7 +96,7 @@ def test_phase6_cold_start_and_fallback_path():
         # Step 4: Verify headline attribution
         edge_map = {f"{e['from_handle']}->{e['to_handle']}": e for e in graph["edges"]}
         assert any(e["score"] == 0.95 for e in graph["edges"]), "Headline 0.95 edge missing"
-        assert any(e["score"] == 0.60 for e in graph["edges"]), "Rebrand 0.60 edge missing"
+        assert any(e["score"] == 0.40 for e in graph["edges"]), "Rebrand 0.40 edge missing"
         assert any(e["type"] == "transacted_with" for e in graph["edges"]), "Transaction edge missing"
 
         # Verify time elapsed is well under 120s

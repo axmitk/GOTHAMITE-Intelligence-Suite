@@ -44,8 +44,8 @@ def client_with_seeded_db(test_db_session):
 def test_seed_benchmark_results(test_db_session):
     """
     Acceptance Criteria 1, 2, 3, 4:
-    - nightjar <-> n1ghtjar_ == 0.95 (PGP +0.70, wallet +0.45)
-    - quillfeather -> quill_v2 == 0.60 (wallet +0.45, succession +0.15)
+    - nightjar <-> n1ghtjar_ == 0.95 (PGP +0.70, wallet +0.25)
+    - quillfeather -> quill_v2 == 0.40 (wallet +0.25, succession +0.15)
     - nightjar <-> nightjarr == NO EDGE (0.05 - 0.30 below threshold)
     - bellwether -> n1ghtjar_ == transacted_with ONLY
     """
@@ -77,7 +77,7 @@ def test_seed_benchmark_results(test_db_session):
     ev_a = test_db_session.query(Evidence).filter_by(relationship_id=rel_a.relationship_id).all()
     ev_a_types = {e.signal_type for e in ev_a}
     assert ev_a_types == {"shared_pgp", "shared_wallet"}
-    assert {e.weight for e in ev_a} == {0.70, 0.45}
+    assert {e.weight for e in ev_a} == {0.70, 0.25}
 
     # 2. quillfeather -> quill_v2 (B1 -> B2)
     rel_b = (
@@ -96,12 +96,12 @@ def test_seed_benchmark_results(test_db_session):
         .first()
     )
     assert rel_b is not None, "quillfeather -> quill_v2 edge missing!"
-    assert rel_b.score == 0.60, f"Expected score 0.60, got {rel_b.score}"
+    assert rel_b.score == 0.40, f"Expected score 0.40, got {rel_b.score}"
 
     ev_b = test_db_session.query(Evidence).filter_by(relationship_id=rel_b.relationship_id).all()
     ev_b_types = {e.signal_type for e in ev_b}
     assert ev_b_types == {"shared_wallet", "temporal_succession"}
-    assert {e.weight for e in ev_b} == {0.45, 0.15}
+    assert {e.weight for e in ev_b} == {0.25, 0.15}
 
     # 3. nightjar <-> nightjarr (A1 <-> C1: Decoy correctly rejected)
     rel_c = (

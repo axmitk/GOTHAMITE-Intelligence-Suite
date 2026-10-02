@@ -228,7 +228,7 @@ export const Timeline: React.FC = () => {
               <strong className="text-text-primary font-mono">quill_v2</strong> surfaces on{' '}
               <span className="font-mono text-emerald-400">2026-04-19</span> on <em>forum-gamma</em> using the identical Bitcoin wallet (
               <span className="font-mono text-text-primary">1Kp7dR3z...</span>). Candidate linkage score{' '}
-              <strong className="text-text-primary font-mono">0.60</strong>: shared wallet (+0.45) plus temporal
+              <strong className="text-text-primary font-mono">0.40</strong>: shared wallet (+0.25) plus temporal
               succession (+0.15). Analyst review decides whether the linkage is accepted.
             </p>
           </div>

@@ -56,7 +56,7 @@ Implemented prototype versus deployment architecture:
 | Ingestion | Sandbox posts artifacts to `/api/v1/ingest`; the 8042 workbench loads equivalent synthetic fixtures from an idempotent seed | Scheduled or continuous collection workers |
 | Raw observations | Immutable artifacts with SHA-256 content hashes | Same, plus collection time and source health |
 | Normalization / extraction | Deterministic extraction of handles, PGP fingerprints and wallet identifiers | Same rules, versioned |
-| Correlation | Documented evidence weights (PGP +0.70, wallet +0.45, succession +0.15, handle +0.05, overlap −0.30, lexical similarity +0.25), capped at 0.95 | Same, with evaluation against labelled cases |
+| Correlation | Documented evidence weights (PGP +0.70, wallet +0.25, succession +0.15, handle +0.05, overlap −0.30, lexical similarity +0.25), capped at 0.95; hand-set priors, see [scoring_rationale](scoring_rationale.md) | Same, with evaluation against labelled cases |
 | Analyst review | Confirm / reject candidate linkages; approve and simulate responses | Same, with authenticated identities and roles |
 
 ### Offline dataset pipeline (`gothamite/backend/data_sources/`)

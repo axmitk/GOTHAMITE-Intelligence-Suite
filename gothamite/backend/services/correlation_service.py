@@ -23,7 +23,8 @@ class CorrelationService:
         
         Rules:
         1. Evaluates all cross-source persona pairs (P.source_id != Q.source_id).
-        2. Exact-match signals only (PGP: +0.70, Wallet: +0.45, Succession: +0.15, Handle: +0.05, Overlap: -0.30).
+        2. Exact-match signals (PGP: +0.70, Wallet: +0.25, Succession: +0.15, Handle: +0.05, Overlap: -0.30)
+           plus one lexical corroboration signal (+0.25). Weights are hand-set priors; see docs/scoring_rationale.md.
         3. Clamps scores to [0.00, 0.95]. Emits edge only if score >= 0.30.
         4. Preserves analyst rejections (status == 'rejected' is never overwritten or recreated).
         5. Handles transaction references into separate 'transacted_with' edges (never promoted to identity).
@@ -271,14 +272,17 @@ class CorrelationService:
                 "note": f"Identical normalized PGP fingerprint: {key}",
             })
 
-        # Signal 2: Shared Cryptocurrency Wallet (+0.45)
+        # Signal 2: Shared Cryptocurrency Wallet (+0.25)
+        # Kept below the 0.30 edge threshold on purpose: the extractor records wallet
+        # mentions, not ownership (escrow, mixers, scam-warning posts quoting an address),
+        # so a shared wallet must be corroborated by at least one other signal.
         shared_wallets = set(p1_wallets.keys()) & set(p2_wallets.keys())
         for wallet in shared_wallets:
             ident = p2_wallets[wallet]
             signals.append({
                 "signal_type": "shared_wallet",
                 "direction": "supporting",
-                "weight": 0.45,
+                "weight": 0.25,
                 "artifact_id": ident.artifact_id,
                 "note": f"Identical cryptocurrency wallet address: {wallet}",
             })
