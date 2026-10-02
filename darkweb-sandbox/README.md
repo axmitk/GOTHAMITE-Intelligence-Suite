@@ -1,7 +1,7 @@
 # darkweb-sandbox
 
 > **Simulated Onion-Routed Network & Hidden Service Collection Layer**  
-> **Team AvivCREW** | **Smart India Hackathon 2026** (Internal College Prototype)  
+> **Team Shankh_AvivCREW** | **Smart India Hackathon 2026**  
 > *Authoritative Companion Repository to the GOTHAMITE Threat Intelligence Platform*
 
 ---
@@ -200,13 +200,12 @@ Development follows a strict phase-gate protocol documented in `AgentsDocs/IMPLE
 - [x] **Phase 2: Directory Service** — Dynamic registration of 5–7 relays and randomized circuit path generation (`GET /path?hops=N`).
 - [x] **Phase 3: Multi-Hop Layered Routing** — Nested 3-hop circuit construction, per-hop layer peeling, return leg re-encryption, and intermediate node blind forwarding.
 - [x] **Phase 4: Synthetic Mock Sites** — Containerized deployment of `forum-alpha`, `marketplace-beta`, and `forum-gamma` with planted identifiers and cross-site linkages.
-- [ ] **Phase 5: Scraper Agent** — Automated crawl loop over `onion_client`, structured identifier extraction, and schema-validated dispatch to GOTHAMITE.
-- [ ] **Phase 6: Integration & Demo Hardening** — End-to-end `docker compose` validation, cold-start repeatability, and demo rehearsal.
+- [x] **Phase 5: Scraper Agent** — Automated crawl loop over `onion_client`, structured identifier extraction, and schema-validated dispatch to GOTHAMITE.
+- [x] **Phase 6: Integration & Demo Hardening** — End-to-end `docker compose` validation, cold-start repeatability, and demo rehearsal.
 
-> **Current status.** Phases 1–4 are implemented and tested — see
-> `AgentsDocs/reports/PHASE_1_REPORT.md` and `AgentsDocs/reports/PHASE_4_REPORT.md`.
-> The engineering decisions that unblocked them are recorded in
-> `AgentsDocs/SPEC_DECISIONS.md`. Phases 5 and 6 are not started.
+> **Current status (2026-10-03).** Phases 1–6 are implemented (commit `46daed4`). The 164 unit
+> tests pass (`python -m unittest discover -s tests -t .`); the Docker stack was not re-run on this date. Reports are in `AgentsDocs/reports/`,
+> and the engineering decisions are recorded in `AgentsDocs/SPEC_DECISIONS.md`.
 > The `docker compose` stack is **executed and verified**: seven relays register,
 > `GET /path?hops=3` returns varying paths, and a 3-hop carry to
 > `phase1sandbox.onion.mock` completes over `sandbox-net` with the §6 visibility
@@ -243,11 +242,11 @@ python -m scripts.phase1_demo
 
 ### Run the tests
 
-80 tests. Phase 1 (38) covers layer construction, the visibility table, nonce
+164 tests. Phase 1 (38) covers layer construction, the visibility table, nonce
 discipline, log hygiene, invalid input and relay failure. Phase 4 (42) crawls all
 three mock sites through real 3-hop paths and checks the planted corpus — including
-that no page carries an identifier belonging to another persona. No test touches the
-network:
+that no page carries an identifier belonging to another persona. The Phase 5 and demo-viewer
+suites cover the scraper and the bridge. No test touches the network:
 
 ```bash
 python -m unittest discover -s tests -t . -v
@@ -263,8 +262,8 @@ python -m client.onion_client --directory http://localhost:8000 --hops 3 \
 ### Quick Start (Docker — verified)
 ```bash
 # Clone repository
-git clone https://github.com/Tanish18906/darkweb-sandbox.git
-cd darkweb-sandbox
+git clone https://github.com/axmitk/GOTHAMITE-Intelligence-Suite.git
+cd GOTHAMITE-Intelligence-Suite/darkweb-sandbox
 
 # Phase 1: directory + 7 relays + the Phase-1 endpoint
 docker compose up --build -d
@@ -289,4 +288,4 @@ docker compose run --rm --entrypoint python directory -m client.onion_client    
 
 ## 9. License
 
-Developed for educational, research, and hackathon evaluation purposes for **Smart India Hackathon 2026** by **Team AvivCREW**.
+Developed for educational, research, and hackathon evaluation purposes for **Smart India Hackathon 2026** by **Team Shankh_AvivCREW**.

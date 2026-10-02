@@ -2,15 +2,15 @@
 
 # GOTHAMITE
 
-**Evidence-first threat intelligence and investigation workbench**
+**Evidence-linked persona correlation and investigation workbench for dark web threat actor attribution**
 
-From a single indicator to an auditable, NIST-aligned incident report, fully offline.
+From a dark web handle or a single indicator to an auditable, evidence-backed lead, fully offline.
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)
 ![React](https://img.shields.io/badge/React_18-TypeScript-61DAFB?logo=react&logoColor=black)
 ![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy-003B57?logo=sqlite&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-98_backend_·_12_e2e-2ea44f)
+![Tests](https://img.shields.io/badge/tests-100_backend_(%2B2_xfail)_·_12_e2e_·_164_sandbox-2ea44f)
 ![Offline](https://img.shields.io/badge/runs-fully_offline-555)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
@@ -38,6 +38,7 @@ Collect → Enrich → Correlate → Analyze → Prioritize → Investigate → 
 
 | | |
 | --- | --- |
+| **Persona correlation** | Cross-source scoring of handles, PGP keys and wallets with documented weights, a contradiction penalty and a 0.95 cap; every edge cites its source artifacts. Weights are hand-set priors: see [scoring rationale](docs/scoring_rationale.md) |
 | **IOC search and profiles** | Global search, enrichment, and every supporting observation with its source |
 | **Evidence locker** | Raw recorded observation with a SHA-256 integrity hash |
 | **Correlation graph** | Actor → campaign → malware → domain → IP → asset → incident; edges only from evidence |
@@ -81,7 +82,8 @@ restarting never resets it.
 6. In **NIST alignment**, see which evidence and actions support each function.
 7. In **Response**, approve *Isolate affected endpoint*, then run the simulation.
 8. In **Report**, export the investigation as Markdown.
-9. Also try **claudfront.net** (listed by three Infoblox reports) and
+9. Open the persona graph at **/graph** and click **quillfeather → quill_v2**: 0.40 (wallet +0.25, succession +0.15).
+10. Also try **claudfront.net** (listed by three Infoblox reports) and
    **185.220.100.242** (Tor exit-node context, INC-1047).
 
 ## Case library
@@ -126,7 +128,7 @@ flowchart LR
 | Frontend | React 18, TypeScript, Vite, D3 |
 | Backend | FastAPI, SQLAlchemy, SQLite |
 | Data | Bundled, filtered snapshots with a manifest and per-record provenance |
-| Testing | pytest (98) and Playwright/Edge end-to-end checks (12) |
+| Testing | pytest (100 pass, 2 strict expected failures), Playwright/Edge end-to-end checks (12), sandbox unittest (164) |
 
 More detail: [architecture](docs/ARCHITECTURE.md) · [data sources and provenance](docs/DATA_SOURCES.md)
 
@@ -141,15 +143,16 @@ Every record carries exactly one label, shown as a badge in the UI and kept in r
   - Tor Project Onionoo relay metadata (CC0)
 - **Reference-derived**: reconstructions shaped like DWData, which is not redistributed (no licence).
 
-GOTHAMITE never crawls, never connects to Tor, and never calls an external API at
-runtime. Tor association is treated as context, never as a malicious verdict.
+The GOTHAMITE application never crawls, never connects to Tor, and never calls an external API at
+runtime. The companion `darkweb-sandbox` crawls only its own mock .onion sites over a
+simulated relay network; the hosted demo loads the equivalent persona fixtures from a seed. Tor association is treated as context, never as a malicious verdict.
 See [DATA_SOURCES](docs/DATA_SOURCES.md) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
 
 ## Development
 
 ```powershell
 cd gothamite
-.\.venv\Scripts\python.exe -m pytest tests -q      # backend: 98 tests
+.\.venv\Scripts\python.exe -m pytest tests -q      # backend: 100 pass, 2 expected failures
 cd frontend-react
 npm run build; npm run lint                        # production build, oxlint
 npm run test:e2e                                   # 12 browser checks in Edge (port 8043)
@@ -182,6 +185,13 @@ This is a single-machine prototype for demonstration and evaluation:
 - **Risk:** risk expresses triage priority, not probability or attribution.
 - **NIST:** NIST CSF 2.0 labels organize the workflow; they do not certify compliance.
 - **Data:** dataset snapshots are point-in-time. Scheduled ingestion is the deployment design, not a running service.
+- **Attribution:** persona weights are hand-set priors and have not been calibrated. The scenario test suite
+  (6 personas, 3 sources, 12 scored pairs, 2 links, 10 negatives including 1 decoy) checks that the rules are
+  applied; it does not measure real-world accuracy. A quoted PGP key, or a quoted wallet within 45 days of the
+  owner's last post, can still create a false link (two strict expected-failure tests).
+- **Not built:** hidden-service misconfiguration and origin-server analysis, links to real-world entities,
+  trust links, date-range queries, actor category, and export of a filtered result set (CSV/JSON is an API
+  endpoint over the whole correlation set).
 
 See the [development log](docs/OVERNIGHT_PROGRESS.md) for verification history.
 

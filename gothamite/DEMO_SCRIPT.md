@@ -18,7 +18,7 @@
 1. **Rehearse the exact sequence below at least twice cold-start before presenting.**
 2. **Have the pre-recorded walkthrough video ready and cued.** Chained systems across live or simulated networks carry environmental risks. If an external service hangs for more than 10 seconds, immediately switch to the video and maintain verbal narration.
 3. **Use precise, professional terminology:**
-   - Say *simulated onion-routed network*, *multi-hop relay pool*, *layered encryption*, *synthetic benchmark corpus*, *threat actor persona*, *evidence locker*.
+   - Say *simulated onion-routed network*, *multi-hop relay pool*, *layered encryption*, *synthetic scenario test suite*, *threat actor persona*, *evidence locker*.
    - Never say "Tor browser" or "we hacked the dark web". Every statement made must be literally and technically true.
 4. **Adhere to the strict vocabulary contract:**
    - Use *"suspected same actor"*, *"likely linked"*, *"confidence score 0.95"*, *"evidence"*.
@@ -46,9 +46,9 @@ Before stepping up, configure the display into clean, uncluttered windows:
 
 > "An intelligence analyst tracking dark web threat actors faces a fundamental challenge: fragmentation. The exact same human adversary operates under completely different handles across disparate dark web forums, escrow markets, and leak boards.
 >
-> Today, correlating these personas is painstakingly manual—investigators manually cross-reference forum posts, maintain ad-hoc spreadsheets, and rely on human memory. This does not scale, introduces cognitive bias, and cannot produce court-admissible audit trails.
+> Today, correlating these personas is painstakingly manual—investigators manually cross-reference forum posts, maintain ad-hoc spreadsheets, and rely on human memory. This does not scale, introduces cognitive bias, and leaves no audit trail of why two handles were linked.
 >
-> GOTHAMITE solves this by automating deterministic, multi-vector actor correlation. Furthermore, because operating against live dark web networks is ethically and legally constrained, we built an end-to-end simulated onion-routed infrastructure with synthetic marketplaces and realistic actor activity to demonstrate attribution with verifiable ground truth."
+> GOTHAMITE solves this by automating deterministic, multi-vector actor correlation. Furthermore, because operating against live dark web networks is ethically and legally constrained, we built an end-to-end simulated onion-routed infrastructure with synthetic marketplaces and realistic actor activity to exercise each attribution rule on cases with known answers."
 
 ---
 
@@ -68,14 +68,15 @@ Before stepping up, configure the display into clean, uncluttered windows:
 ### 2:00 — Deterministic Correlation Engine (75 seconds)
 *Switch to Window 2 (Streamlit Overview / Graph).*
 
-> "Attribution cannot be a black box. Machine learning models can hallucinate links and cannot testify in court.
+> "Every attribution score must be rebuildable by hand from its evidence.
 > 
-> GOTHAMITE implements a deterministic, multi-vector correlation engine. It evaluates 5 independent signal dimensions:
+> GOTHAMITE implements a deterministic correlation engine. It evaluates six signals:
 > 1. Cryptographic PGP Key Matching (+0.70)
 > 2. Cryptocurrency Wallet Reuse (+0.25, needs a second signal to form a link)
-> 3. Handle Similarity via Levenshtein Edit Distance (+0.05 to +0.20)
+> 3. Handle Similarity via Levenshtein Edit Distance (+0.05)
 > 4. Temporal Succession for Migrations and Rebrands (+0.15)
 > 5. Activity Overlap Conflict Penalties (-0.30)
+> 6. Lexical similarity, term-frequency cosine on raw HTML (+0.25, corroboration only; fires on no scenario pair)
 >
 > Scores are strictly capped at 0.95. Let us trigger the correlation pass."
 
@@ -104,7 +105,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 > Notice this link has a confidence score of 0.40. `quillfeather` announced departure from `forum-alpha` in early April. 17 days later, `quill_v2` surfaced on `forum-gamma`. The actor rotated their PGP key, but reused their treasury wallet. GOTHAMITE detected the wallet reuse (+0.25) and temporal succession (+0.15) to uncover the rebrand despite key rotation.
 >
 > **2. The Decoy Defense (`nightjarr` with two R's):**
-> Notice persona `nightjarr`. Naive edit-distance tools link `nightjar` and `nightjarr` immediately because their handles are 90% identical. But GOTHAMITE evaluates the activity window: both posted concurrently on competing platforms without shared cryptographic proof. The temporal overlap penalty (-0.30) completely wiped out the handle similarity (+0.05), dropping the score below our 0.30 threshold. **No false positive edge was created.**
+> Notice persona `nightjarr`. Naive edit-distance tools link `nightjar` and `nightjarr` immediately because their handles differ by one character. But GOTHAMITE evaluates the activity window: both posted concurrently on competing platforms without shared cryptographic proof. The temporal overlap penalty (-0.30) completely wiped out the handle similarity (+0.05), dropping the score below our 0.30 threshold. **No false positive edge was created.**
 >
 > **3. Financial Transactions (`bellwether` → `n1ghtjar_`):**
 > Look at `bellwether`. They transacted with `n1ghtjar_` via escrow. GOTHAMITE created a `transacted_with` relationship, but strictly isolated it from identity clustering. A customer is never accused of being the vendor."
@@ -112,9 +113,9 @@ Before stepping up, configure the display into clean, uncluttered windows:
 ---
 
 ### 6:15 — Audit Dossier, Export & Conclusion (30 seconds)
-*Switch to `2_dossier` and click Export CSV/JSON.*
+*Switch to `2_dossier`. CSV/JSON export is the API endpoint `GET /api/v1/export?format=csv|json` (whole correlation set; no UI button).*
 
-> "Finally, the platform generates court-ready entity dossiers and forensic exports. Every single export row carries cryptographic hashes and artifact IDs for full evidentiary provenance.
+> "Finally, the dossier and the export keep provenance: every evidence row in the CSV/JSON export carries its source artifact ID, and each artifact keeps its SHA-256 hash.
 >
 > In summary, GOTHAMITE transforms fragmented dark web noise into verifiable, auditable, and deterministic intelligence."
 
@@ -124,8 +125,8 @@ Before stepping up, configure the display into clean, uncluttered windows:
 
 | Question | Defensible Answer |
 |---|---|
-| **Why not use LLMs or AI for attribution?** | In intelligence and criminal prosecution, black-box AI attribution is inadmissible. LLMs hallucinate non-existent connections and cannot provide mathematical proof. GOTHAMITE uses deterministic, rule-based scoring where every score reconstructs exactly to its underlying signals and raw artifacts. |
-| **Why synthetic data instead of live Dark Web data?** | Scraping live dark web networks during development is ethically irresponsible and legally prohibited for student teams. Synthetic data provides rigorous, labeled ground truth, enabling objective validation of false positives and edge cases. When authorized, GOTHAMITE points directly to lawful feeds without altering the core engine. |
+| **Why not use LLMs or AI for attribution?** | An attribution lead has to be checkable. GOTHAMITE uses deterministic, rule-based scoring where every score reconstructs exactly to its underlying signals and raw artifacts. The weights are hand-set priors, not yet calibrated (docs/scoring_rationale.md). |
+| **Why synthetic data instead of live Dark Web data?** | Scraping live dark web networks during development is ethically irresponsible and legally prohibited for student teams. Synthetic cases have known answers, so each rule can be exercised; because we wrote them, they do not measure real-world accuracy. When authorized, GOTHAMITE points directly to lawful feeds without altering the core engine. |
 | **How does the system prevent scraper poisoning attacks?** | All ingested payloads are treated as inert data. Raw HTML and usernames are never evaluated as code, never interpolated dynamically into SQL statements (SQLAlchemy parameterized queries only), and rendered strictly escaped in the UI (`unsafe_allow_html=False`). |
 | **Why are confidence scores capped at 0.95?** | In forensic intelligence, 1.0 implies absolute mathematical certainty. Because adversaries can theoretically compromise private keys or share wallets, the system strictly reserves 1.0 and labels 0.95 as 'Very Strong Link'. |
 
@@ -135,7 +136,7 @@ Before stepping up, configure the display into clean, uncluttered windows:
 
 | Failure Mode | Immediate Remediation |
 |---|---|
-| **Simulated relay chain or scraper hangs** | Do not pause or troubleshoot live. Immediately execute the autonomous fallback:<br>`python scripts/seed_demo.py && python scripts/run_correlation.py`<br>Takes less than 2 seconds, populates all benchmark vectors, and dashboard is instantly live. |
+| **Simulated relay chain or scraper hangs** | Do not pause or troubleshoot live. Immediately execute the autonomous fallback:<br>`python scripts/seed_demo.py && python scripts/run_correlation.py`<br>Takes less than 2 seconds, populates the scenario test suite, and dashboard is instantly live. |
 | **Docker container restart required** | Run `docker compose restart backend` or fall back to local virtualenv execution: `./venv/bin/streamlit run frontend/app.py`. |
 | **Dashboard UI cache out of sync** | Click the browser reload button or click "Trigger Cross-Source Correlation Pass" on the overview page. |
 | **Host network / projector connection drops** | Cut to the cued MP4 video recording and continue vocal narration following the timing cues above. |

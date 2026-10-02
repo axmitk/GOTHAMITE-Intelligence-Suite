@@ -132,7 +132,9 @@ into the evidence store or graph**. That step (plus scheduling) is the next
 increment.
 
 Nothing in either repository connects to the live dark web. "Lexical similarity" is
-a bag-of-words term-frequency cosine; it is not a trained or language model.
+a bag-of-words term-frequency cosine; it is not a trained or language model. It compares
+the raw HTML of each persona's first artifact, fires on no pair in the scenario set and has
+no test of its own.
 
 NIST mapping uses CSF 2.0 categories, checked against the official Core:
 https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf
@@ -172,7 +174,9 @@ idempotent seed logic; future seed/schema revisions will need explicit migration
 
 Verified on Windows x64, Python 3.12.7 and project-local Node 22.22. Production
 build passes, 98 backend tests pass, and 12 isolated Edge browser checks pass with
-zero console/page errors (2026-09-29). Six pre-existing lint warnings remain in legacy React
+zero console/page errors (2026-09-29). Re-verified 2026-10-03 after the wallet-weight change
+(0.45 to 0.25): 100 backend tests pass plus 2 strict expected failures, 12/12 browser checks,
+164 sandbox tests. Six pre-existing lint warnings remain in legacy React
 views; new workbench code has no lint warnings. Verification screenshots and an
 example exported report are in `gothamite/verification/`.
 

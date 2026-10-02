@@ -10,5 +10,10 @@ the code and these current documents win:
 - [DATA_SOURCES](../../docs/DATA_SOURCES.md): datasets, provenance and the case library
 - [THIRD_PARTY_NOTICES](../../THIRD_PARTY_NOTICES.md): licences and attribution
 
-`GOTHAMITE_PROBLEM_STATEMENT.md` still awaits the official problem-statement
-text. `reports/` holds per-phase build reports from that earlier work.
+Superseded numbers: the wallet weight is now +0.25 (it was +0.45), so the rebrand
+link scores 0.40 (it was 0.60); see [scoring rationale](../../docs/scoring_rationale.md).
+"Benchmark" in these notes means the team-written scenario set, which checks the rules
+and does not measure real-world accuracy. Streamlit and `docker compose` describe the
+original build; the current demo is the React workbench.
+
+`reports/` holds per-phase build reports from that earlier work.

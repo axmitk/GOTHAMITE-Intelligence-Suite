@@ -1,7 +1,7 @@
 # PROBLEM_STATEMENT.md
 
 **Repo:** `GOTHAMITE`
-**Status:** ⚠️ **INCOMPLETE — Tanish must paste the official description into §2 before any agent reads this file.**
+**Status:** Complete. §2 holds the official description from the SIH portal.
 
 ---
 
@@ -26,9 +26,11 @@ Verified against `SIH_2026_Problem_Statements.xlsx` (SIH 2026 software problem s
 
 ## 2. Official description
 
-> **PASTE THE VERBATIM NTRO DESCRIPTION FROM THE SIH PORTAL HERE.**
+> • Background The dark web has become a preferred operating space for threat actors in the modern age, mainly because it lets them hide their identity behind Tor hidden services, which makes attribution of threat actors operating on darkweb the main challenge for any investigation. Such threat actors carry out a wide range of unlawful activities such as drugs and arms sale, stolen data and hacking services, money laundering, terror financing, etc. The objective of this problem statement is to build a system for the deanonymization of dark web threat actors and link them to suspect real-world entities.
 >
-> Do not paraphrase it, do not summarise it, do not clean it up. Agents and the pitch both read from this. The spreadsheet contains metadata only — no description field — so this text has to come from the portal.
+> • Description The system shall deanonymize dark web threat actors by continuously gathering their footprints from a range of sources (marketplaces, forums, deep web etc.) and linking them to the identifying information available on those sources. The system envisages three core capabilities. First, finding misconfigurations in Tor hidden services—such as exposed server-status pages, SSL certificates tied to clearnet domains, default service banners, descriptor inconsistencies, etc and matching them with clearnet infrastructure to point to the likely origin servers. Second, mapping threat actors across multiple marketplaces into a single relationship graph of handles, PGP keys, wallets and trust links. Third, using AI-based analysis, including stylometric persona identification and behavioural profiling, to link rebranded or migrated personas to known threat actors. The system shall provide an analytical front end to query the database across a chosen timeline and shall work in an autonomous mode, drawing on available sources of good quality and reliability.
+>
+> • Expected Solution An end-to-end system shall be developed for the collection, storage, contextualization and querying (through GUI/dashboards) of dark web threat actor intelligence—covering actor profiles, identifiers (handles, PGP keys, wallets etc.), hidden service infrastructure indicators, persona linkages, attribution confidence, category, last scan date and source. The system shall also provide the facility to export the result set in CSV, JSON and report formats.
 
 ---
 

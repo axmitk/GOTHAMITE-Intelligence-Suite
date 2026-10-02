@@ -1,6 +1,0 @@
-{
-  "name": "GOTHAMITE - Dark Web Sandbox Browser",
-  "description": "Interactive dark web sandbox browser simulation for cybersecurity research and threat intelligence analysis.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

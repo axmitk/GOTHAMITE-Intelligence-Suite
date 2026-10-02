@@ -98,7 +98,7 @@ Click the edge → evidence panel.
 
 Then the rebrand:
 
-> This one is more interesting. `quillfeather` stops posting in April. Seventeen days later `quill_v2` appears on a different forum. Different PGP key — they rotated it. But the same wallet, and the timing lines up. 0.60. That's a rebrand caught without a key match.
+> This one is more interesting. `quillfeather` stops posting in April. Seventeen days later `quill_v2` appears on a different forum. Different PGP key — they rotated it. But the same wallet, and the timing lines up. 0.40: wallet plus timing, no key match. That's a rebrand caught after key rotation.
 
 Then — **do not skip this** — the decoy:
 
