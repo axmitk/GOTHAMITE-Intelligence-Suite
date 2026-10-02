@@ -6,6 +6,8 @@ from sqlalchemy.orm import Session
 
 from backend.models.entities import Persona, Identifier, Relationship, Evidence, Artifact
 
+LEXICAL_WEIGHT = 0.0  # was 0.25; see docs/scoring_rationale.md
+
 
 def ensure_utc(dt: datetime) -> Optional[datetime]:
     if dt is None:
@@ -24,7 +26,8 @@ class CorrelationService:
         Rules:
         1. Evaluates all cross-source persona pairs (P.source_id != Q.source_id).
         2. Exact-match signals (PGP: +0.70, Wallet: +0.25, Succession: +0.15, Handle: +0.05, Overlap: -0.30)
-           plus one lexical corroboration signal (+0.25). Weights are hand-set priors; see docs/scoring_rationale.md.
+           A lexical signal exists but is weighted 0 (off) until real stylometry is built.
+           Weights are hand-set priors; see docs/scoring_rationale.md.
         3. Clamps scores to [0.00, 0.95]. Emits edge only if score >= 0.30.
         4. Preserves analyst rejections (status == 'rejected' is never overwritten or recreated).
         5. Handles transaction references into separate 'transacted_with' edges (never promoted to identity).
@@ -342,8 +345,12 @@ class CorrelationService:
                 "note": f"Activity overlap conflict: concurrent activity between {overlap_start.strftime('%Y-%m-%d')} and {overlap_end.strftime('%Y-%m-%d')} with no cryptographic identity verification",
             })
 
-        # Signal 6: Lexical similarity (+0.25). Bag-of-words term-frequency cosine between
-        # the first artifact of each persona. Deterministic; not a trained or AI model.
+        # Signal 6: Lexical similarity. Bag-of-words term-frequency cosine between the
+        # first artifact of each persona. Deterministic; not a trained or AI model.
+        # Weight 0 until a real stylometric model exists: on templated pages the cosine
+        # is dominated by shared markup and does not separate true pairs from negatives.
+        if LEXICAL_WEIGHT == 0:
+            return signals
         try:
             from backend.services.stylometry import compute_stylometric_similarity
             from backend.models.entities import Artifact
@@ -361,7 +368,7 @@ class CorrelationService:
                         signals.append({
                             "signal_type": "lexical_similarity",
                             "direction": "supporting",
-                            "weight": 0.25,
+                            "weight": LEXICAL_WEIGHT,
                             "artifact_id": successor_artifact_id,
                             "note": f"Lexical similarity: term-frequency cosine {similarity:.2f} >= 0.85 threshold (bag-of-words; corroborating only).",
                         })
