@@ -11,7 +11,7 @@ plan for calibration.
 |---|---|---|
 | Shared PGP fingerprint | +0.70 | identical normalised 40-hex fingerprint |
 | Shared wallet | +0.25 | identical address string (was +0.45 until 2026-10-02; see §4) |
-| Lexical similarity | +0.25 | term-frequency cosine ≥ 0.85 between the first stored artifact of each persona |
+| Lexical similarity | 0 (off; was +0.25 until 2026-10-03, see §5) | term-frequency cosine ≥ 0.85 between the first stored artifact of each persona |
 | Temporal succession | +0.15 | one persona's last post precedes the other's first post by fewer than 45 days |
 | Handle similarity | +0.05 | Levenshtein distance ≤ 1, or ≤ 2 when no PGP key is shared |
 | Concurrent activity | −0.30 | activity windows overlap and no PGP key is shared |
@@ -31,10 +31,10 @@ produce by accident:
 - **Wallet, next.** Reusing an address is costly for an actor who wants separation.
   However, addresses are also shared, quoted and reused by services, so the weight now
   sits below the threshold.
-- **Lexical similarity, corroborating only.** Short posts make writing-style evidence
+- **Lexical similarity, now switched off.** Short posts make writing-style evidence
   weak. This signal was added later and was first labelled "AI stylometric match" in
   the code. It is a bag-of-words cosine, not a trained model, and was renamed on that
-  basis.
+  basis. Since 2026-10-03 its weight is 0 (see §5).
 - **Timing and handle shape, weak.** These are circumstantial and easy to imitate.
   They can only tip a score that other evidence has already built.
 - **Concurrent activity, a penalty.** One person running two personas at the same time
@@ -84,16 +84,12 @@ scam-warning post:
 | Quoted wallet; poster active at the same time as the owner | 0.00 | no edge | pass |
 | Quoted wallet; poster first appears < 45 days after the owner's last post | 0.40 | **edge (false)** | xfail, strict |
 | Quoted PGP public-key block | 0.70 | **edge (false)**. A shared key also switches off the overlap penalty. | xfail, strict |
+| Quoted wallet on pages sharing a site template (`tests/test_lexical_template.py`) | 0.25 (was 0.50 with lexical on) | no edge | pass |
 
 Other limits of the current rules:
 
 - **Shared service addresses.** Escrow, exchange-deposit and mixer addresses are not
   excluded. Two customers of one escrow address get +0.25 each time.
-- **The lexical signal reads raw HTML.** It compares the first stored artifact of each
-  persona, markup included, so template tags inflate the similarity. No pair in the seeded
-  scenario set triggers it, and no test covers it. In an end-to-end run on 2026-10-03 over pages scraped through the sandbox, it fired on
-  8 of 12 pairs, 6 of them negatives; the overlap penalty kept every negative below the
-  threshold, and the rebrand pair scored 0.65 instead of 0.40.
 - **Same-source sock puppets are never compared.** Two handles on one forum are never
   scored against each other.
 - **All pairs are compared.** The cost grows with the square of the number of personas,
@@ -113,7 +109,24 @@ Effect on the scenario set:
   The link still forms. Its display band changes from strong to moderate.
 - No negative pair changes outcome.
 
-## 5. Calibration plan
+## 5. Change on 2026-10-03: lexical weight 0.25 → 0
+
+The lexical signal compares the raw HTML of each persona's first stored page. In an
+end-to-end run over pages scraped through the sandbox, it fired on 8 of the 12 pairs,
+6 of them negatives, because the shared page template dominated the vocabulary. With
+it on, a quoted wallet on two templated pages scored 0.50 and formed a false edge
+(`tests/test_lexical_template.py`), and the rebrand pair scored 0.65.
+
+Comparing visible text only stopped the firing but did not separate the pairs. On
+the same 12 scraped pairs, the two true pairs scored 0.796 and 0.798, while the 10 negatives scored 0.706 to 0.808, and one negative (nightjar and quill_v2, 0.808) scored above both true pairs. A signal
+that cannot tell true pairs from negatives should not add to an attribution score,
+so its weight is 0 until real stylometry exists. The code skips the comparison
+entirely while the weight is 0 (`LEXICAL_WEIGHT = 0.0` in `correlation_service.py`).
+
+Effect: seed set unchanged (0.95 and 0.40; it never fired there). Scraped set:
+nightjar ↔ n1ghtjar_ 0.95, quillfeather → quill_v2 0.40 (was 0.65), no false edge.
+
+## 6. Calibration plan
 
 1. **Build a labelled pair set from public sources**, with each label's source recorded:
    - aliases confirmed in court records or takedown announcements;

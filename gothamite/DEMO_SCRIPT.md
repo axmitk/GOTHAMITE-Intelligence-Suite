@@ -70,13 +70,13 @@ Before stepping up, configure the display into clean, uncluttered windows:
 
 > "Every attribution score must be rebuildable by hand from its evidence.
 > 
-> GOTHAMITE implements a deterministic correlation engine. It evaluates six signals:
+> GOTHAMITE implements a deterministic correlation engine. It evaluates five scored signals, plus one that is switched off:
 > 1. Cryptographic PGP Key Matching (+0.70)
 > 2. Cryptocurrency Wallet Reuse (+0.25, needs a second signal to form a link)
 > 3. Handle Similarity via Levenshtein Edit Distance (+0.05)
 > 4. Temporal Succession for Migrations and Rebrands (+0.15)
 > 5. Activity Overlap Conflict Penalties (-0.30)
-> 6. Lexical similarity, term-frequency cosine on raw HTML (+0.25, corroboration only; fires on no seeded pair, but on 8 of 12 scraped pairs because of shared page markup)
+> 6. Lexical similarity, term-frequency cosine (weight 0, off until real stylometry exists: on scraped pages it fired on 8 of 12 pairs because of shared page markup)
 >
 > Scores are strictly capped at 0.95. Let us trigger the correlation pass."
 
