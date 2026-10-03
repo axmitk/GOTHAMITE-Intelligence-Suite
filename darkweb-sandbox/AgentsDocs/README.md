@@ -9,7 +9,7 @@ Superseded figures and wording:
   link scores 0.40 (it was 0.60). See `../../docs/scoring_rationale.md`.
 - **"Benchmark".** It refers to the team-written scenario set, which checks the
   rules and does not measure real-world accuracy.
-- **Test counts.** They are as of each report. The current sandbox suite has 164
+- **Test counts.** They are as of each report. The current sandbox suite has 171
   tests.
 
 Current documentation: the root [README](../../README.md),

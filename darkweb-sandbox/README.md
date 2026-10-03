@@ -203,7 +203,7 @@ Development follows a strict phase-gate protocol documented in `AgentsDocs/IMPLE
 - [x] **Phase 5: Scraper Agent** — Automated crawl loop over `onion_client`, structured identifier extraction, and schema-validated dispatch to GOTHAMITE.
 - [x] **Phase 6: Integration & Demo Hardening** — End-to-end `docker compose` validation, cold-start repeatability, and demo rehearsal.
 
-> **Current status (2026-10-03).** Phases 1–6 are implemented (commit `46daed4`). The 164 unit
+> **Current status (2026-10-03).** Phases 1–6 are implemented (commit `46daed4`). The 171 unit
 > tests pass (`python -m unittest discover -s tests -t .`). On the same date the Docker stack
 > (directory, 7 relays, 3 mock sites) was run end to end: the scraper agent fetched 57 pages over
 > 3-hop circuits and GOTHAMITE's ingest accepted 48. The 9 rejected pages are 3 index pages with
@@ -247,15 +247,50 @@ python -m scripts.phase1_demo
 
 ### Run the tests
 
-164 tests. Phase 1 (38) covers layer construction, the visibility table, nonce
+171 tests. Phase 1 (38) covers layer construction, the visibility table, nonce
 discipline, log hygiene, invalid input and relay failure. Phase 4 (42) crawls all
 three mock sites through real 3-hop paths and checks the planted corpus — including
 that no page carries an identifier belonging to another persona. The Phase 5 and demo-viewer
-suites cover the scraper and the bridge. No test touches the network:
+suites cover the scraper and the bridge, and `test_collect_loop` covers the collection loop. No test touches the network:
 
 ```bash
 python -m unittest discover -s tests -t . -v
 ```
+
+### Scheduled collection loop (local, simulated network only)
+
+`scripts/collect_loop.py` runs the scraper on an interval. Each cycle crawls the
+three mock sites one at a time through the relay network, posts every page to
+GOTHAMITE's `POST /api/v1/ingest`, calls `POST /api/v1/correlate`, and prints a
+per-source summary (status, page counts, last successful scan). A source that
+fails is logged and the others still run. It is started by hand, runs locally,
+reaches only `.onion.mock` addresses, and is not part of the hosted demo.
+
+| Option | Meaning | Default |
+| --- | --- | --- |
+| `--interval` | minutes between cycle starts | `10` |
+| `--cycles` | number of cycles; `0` runs until Ctrl+C | `0` |
+| `--backend` | base URL of a local GOTHAMITE `backend.main` | `http://127.0.0.1:8000` |
+| `--directory` | relay directory URL | `http://directory:8000` |
+
+The relays are reachable only inside `sandbox-net`, so the loop runs in a
+container. The image does not include `scraper/` or `scripts/`, so they are
+mounted. Inside a container `127.0.0.1` is the container itself, so pass
+`--backend`. Start `backend.main` on the host with
+`GOTHAMITE_PUBLIC_URL=http://host.docker.internal` so it accepts that host name:
+
+```bash
+docker compose -f docker-compose.yml -f mock_sites/docker-compose.sites.yml run --rm -T \
+    -v "$PWD/scraper:/app/scraper:ro" -v "$PWD/scripts:/app/scripts:ro" \
+    --entrypoint python directory -m scripts.collect_loop \
+    --directory http://directory:8000 --backend http://host.docker.internal:8044 \
+    --interval 10 --cycles 3
+```
+
+The loop opens a workbench session first. The session cookie and the CSRF token
+are sent only to the backend's host. `last_scan` in the summary is the loop's own
+record; GOTHAMITE stores a scan time at ingest, but no API or screen shows it yet.
+Tests: `tests/test_collect_loop.py` (fake agent and clock, no network).
 
 ### Run a single request by hand
 

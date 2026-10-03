@@ -2,7 +2,7 @@
 
 > **Historical development log.** Counts and weights below are as of each entry. Current
 > state: wallet weight +0.25 (rebrand link 0.40), 100 backend tests + 2 expected failures,
-> 12 browser checks, 164 sandbox tests. See the [README](../README.md) and
+> 12 browser checks, 171 sandbox tests. See the [README](../README.md) and
 > [scoring rationale](scoring_rationale.md).
 
 ## TOR exit-node intelligence and case library (2026-09-29)

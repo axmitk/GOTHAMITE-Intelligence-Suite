@@ -103,7 +103,8 @@ the importer from dataset records. INC-1042 to INC-1045 are untouched.
 ```text
 Source adapter ─▶ Scheduler* ─▶ Collection worker* ─▶ Raw observation ─▶ Normalization
   ─▶ Deduplication ─▶ Entity resolution ─▶ Correlation ─▶ Evidence store ─▶ Investigation
-(* architecture only: no scheduler or worker runs in this build)
+(* not in the application: no scheduler or worker runs in GOTHAMITE itself. A local loop for
+   the simulated network exists in darkweb-sandbox/scripts/collect_loop.py, started by hand.)
 ```
 
 - `base.py`: `CollectionAdapter`, `EnrichmentAdapter`, `SourceRegistryAdapter`;
@@ -178,7 +179,7 @@ build passes, 98 backend tests pass, and 12 isolated Edge browser checks pass wi
 zero console/page errors (2026-09-29). Re-verified 2026-10-03 after the wallet-weight change
 (0.45 to 0.25): 100 backend tests pass plus 2 strict expected failures. After the
 lexical weight was set to 0 (2026-10-03): 102 backend tests pass plus 2 strict expected failures, 12/12 browser checks,
-164 sandbox tests. Six pre-existing lint warnings remain in legacy React
+171 sandbox tests. Six pre-existing lint warnings remain in legacy React
 views; new workbench code has no lint warnings. Verification screenshots and an
 example exported report are in `gothamite/verification/`.
 
