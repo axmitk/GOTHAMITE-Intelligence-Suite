@@ -8,9 +8,11 @@ Every ``--interval`` minutes, for ``--cycles`` cycles (0 runs until Ctrl+C):
 3. call the existing ``POST /api/v1/correlate``;
 4. print a run summary with each source's status and last successful scan.
 
-It targets a local ``backend.main`` and opens a workbench session first; the
-session cookie and CSRF token travel on every request. It reaches only the
-``.onion.mock`` sites, because that is all ``OnionClient`` can resolve.
+It targets a local ``backend.main`` and opens a workbench session first. The
+session cookie and the CSRF token are sent only to the backend's host: the cookie
+jar scopes the cookie, and ``BackendCsrfHeader`` scopes the token, so directory
+and relay calls carry neither. It reaches only the ``.onion.mock`` sites, because
+that is all ``OnionClient`` can resolve.
 
 ``last_scan`` in the summary is the UTC time of this loop's last successful crawl
 of that source. GOTHAMITE also records ``last_scan`` at ingest, but no API serves

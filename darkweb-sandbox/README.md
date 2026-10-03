@@ -263,7 +263,9 @@ python -m unittest discover -s tests -t . -v
 three mock sites one at a time through the relay network, posts every page to
 GOTHAMITE's `POST /api/v1/ingest`, calls `POST /api/v1/correlate`, and prints a
 per-source summary (status, page counts, last successful scan). A source that
-fails is logged and the others still run. It is started by hand, runs locally,
+fails is logged and the others still run. The scraper does not retry connection
+failures (it retries only 5xx responses), so a page lost to a network error is
+picked up on the next cycle. It is started by hand, runs locally,
 reaches only `.onion.mock` addresses, and is not part of the hosted demo.
 
 | Option | Meaning | Default |
