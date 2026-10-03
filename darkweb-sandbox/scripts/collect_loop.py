@@ -24,6 +24,7 @@ import http.cookiejar
 import json
 import logging
 import time
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -180,8 +181,31 @@ def render(cycle: CycleResult) -> str:
     return "\n".join(lines)
 
 
+class BackendCsrfHeader(urllib.request.BaseHandler):
+    """Adds the CSRF token only to requests for the backend's host.
+
+    The directory and relay calls share urllib with the backend calls, so a
+    global default header would send the token to them as well.
+    """
+
+    def __init__(self, backend: str, csrf: str) -> None:
+        self.netloc = urllib.parse.urlsplit(backend).netloc
+        self.csrf = csrf
+
+    def http_request(self, request: urllib.request.Request) -> urllib.request.Request:
+        if urllib.parse.urlsplit(request.full_url).netloc == self.netloc:
+            request.add_unredirected_header("X-CSRF-Token", self.csrf)
+        return request
+
+    https_request = http_request
+
+
 def open_session(backend: str, timeout: float) -> str:
-    """Get a workbench session; the cookie and CSRF header then go on every request."""
+    """Get a workbench session for the backend.
+
+    The cookie jar sends the session cookie only to the backend's host, and
+    BackendCsrfHeader does the same for the CSRF token.
+    """
     jar = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
     request = urllib.request.Request(
@@ -192,7 +216,7 @@ def open_session(backend: str, timeout: float) -> str:
         csrf = json.loads(response.read())["csrf"]
     if not any(cookie.name == "gothamite_demo" for cookie in jar):
         raise RuntimeError("session endpoint did not set the session cookie")
-    opener.addheaders = [("X-CSRF-Token", csrf)]
+    opener.add_handler(BackendCsrfHeader(backend, csrf))
     urllib.request.install_opener(opener)
     return csrf
 

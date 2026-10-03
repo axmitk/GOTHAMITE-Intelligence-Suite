@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import unittest
+import urllib.request
 
 from client.onion_client import OnionClientError
 from scraper.scraper_agent import SOURCES, Outcome
-from scripts.collect_loop import CollectLoop
+from scripts.collect_loop import BackendCsrfHeader, CollectLoop
 
 PAGES_PER_SOURCE = 4
 CYCLE_SECONDS = 5.0
@@ -131,6 +132,15 @@ class CollectLoopTests(unittest.TestCase):
         self.assertTrue(loop.stopped_by_user)
         self.assertEqual(2, len(history))
         self.assertTrue(world.output[-1].startswith("stopped by user after 2 completed cycle(s)"))
+
+    def test_csrf_header_goes_only_to_the_backend(self) -> None:
+        handler = BackendCsrfHeader("http://host.docker.internal:8044", "token-123")
+        backend = handler.http_request(urllib.request.Request("http://host.docker.internal:8044/api/v1/ingest"))
+        directory = handler.http_request(urllib.request.Request("http://directory:8000/path?hops=3"))
+        relay = handler.http_request(urllib.request.Request("http://relay-01:9001/"))
+        self.assertEqual("token-123", backend.get_header("X-csrf-token"))
+        self.assertIsNone(directory.get_header("X-csrf-token"))
+        self.assertIsNone(relay.get_header("X-csrf-token"))
 
     def test_correlation_failure_is_reported_not_raised(self) -> None:
         world = FakeWorld()
